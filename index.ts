@@ -1,8 +1,11 @@
+import * as fs from "fs";
 import * as soap from "soap";
 
 import { IPPTPortSoap } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
+import { IPSPPortSoap } from "./wsdl-lib/FespPspService/PSPPort";
 
-const NODO_WSDL = "wsdl/nodo/NodoPerPsp.wsdl";
+const NODO_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
+const PSP_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
 
 /**
  * Helper method that wraps the creation of a WSDL client within a Promise and
@@ -10,7 +13,7 @@ const NODO_WSDL = "wsdl/nodo/NodoPerPsp.wsdl";
  */
 function createClient<T>(wsdlUri: string, options: soap.IOptions): Promise<soap.Client & T> {
   return new Promise((resolve, reject) => {
-    soap.createClient(NODO_WSDL, options, (err, client) => {
+    soap.createClient(wsdlUri, options, (err, client) => {
       if (err) {
         reject(err);
       } else {
@@ -20,9 +23,37 @@ function createClient<T>(wsdlUri: string, options: soap.IOptions): Promise<soap.
   })
 }
 
+
 /**
  * Creates a client for the "Nodo" service
  */
 export function createNodoClient(options: soap.IOptions) {
-  return createClient<IPPTPortSoap>(NODO_WSDL, options);
+  return createClient<IPPTPortSoap>(NODO_WSDL_PATH, options);
+}
+
+/**
+ * The interface of the PSP server endpoints
+ */
+export type IPSPHandlers = IPSPPortSoap;
+
+/**
+ * Creates a server for the PSP service.
+ *
+ * This function mostly wraps the `soap.listen(...)` method.
+ * @see https://github.com/vpulim/node-soap#soaplistenserver-path-services-wsdl---create-a-new-soap-server-that-listens-on-path-and-provides-services
+ *
+ * @param server    See soap.listen documentation
+ * @param path      See soap.listen documentation
+ * @param handlers  An object that implements the IPSPPortSoap interface
+ */
+export function createPspServer(server: any, path: string, handlers: IPSPHandlers): soap.Server {
+  const wsdl = fs.readFileSync(PSP_WSDL_PATH, "UTF-8");
+
+  const service = {
+    FespPspService: {
+      PSPPort: handlers
+    }
+  };
+
+  return soap.listen(server, path, service, wsdl);
 }
