@@ -5,7 +5,7 @@
   "main": "index.ts",
   "repository": "https://github.com/teamdigitale/italia-pagopa-ts",
   "author": "Federico Feroldi <federico@teamdigitale.governo.it>",
-  "license": "MIT",
+  "license": "AGPL v3",
   "devDependencies": {
     "wsdl-to-ts": "^0.1.3"
   },
