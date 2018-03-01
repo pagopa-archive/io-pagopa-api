@@ -1,0 +1,9 @@
+{
+  "name": "italia-pagopa-ts",
+  "version": "0.0.1",
+  "description": "Typescript client for pagoPA APIs",
+  "main": "index.ts",
+  "repository": "https://github.com/teamdigitale/italia-pagopa-ts",
+  "author": "Federico Feroldi <federico@teamdigitale.governo.it>",
+  "license": "MIT"
+}
