@@ -326,7 +326,7 @@ export namespace PPTPortTypes {
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stNazioneProvincia(pattern) */
         nazioneVersante: string;
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stEMail(pattern,maxLength) */
-        e-mailVersante: string;
+        "e-mailVersante": string;
     }
     export interface IidentificativoUnivocoPagatore {
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stTipoIdentificativoUnivocoPersFG(F,G,length) */
@@ -351,7 +351,7 @@ export namespace PPTPortTypes {
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stNazioneProvincia(pattern) */
         nazionePagatore: string;
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stEMail(pattern,maxLength) */
-        e-mailPagatore: string;
+        "e-mailPagatore": string;
     }
     export interface IdatiPagamentoPSP {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */

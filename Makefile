@@ -29,8 +29,9 @@ TS_PREFIX =\
 	type int = number;\n
 
 $(TS_FILES):
-	@ sed -i '' -e 's/xsd://' $@
-	echo "$(TS_PREFIX)\n$$(cat $@)" > $@
+	@sed -i '' 's/xsd://' $@
+	@sed -i '' 's/\(e-mail.*\):/"\1":/' $@
+	@echo "$(TS_PREFIX)\n$$(cat $@)" > $@
 
 fix-types: $(TS_FILES)
 
