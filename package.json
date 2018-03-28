@@ -1,6 +1,6 @@
 {
   "name": "italia-pagopa-ts",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Typescript client for pagoPA APIs",
   "main": "index.ts",
   "repository": "https://github.com/teamdigitale/italia-pagopa-ts",
