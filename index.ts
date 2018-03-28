@@ -1,21 +1,21 @@
 import * as fs from "fs";
 import * as soap from "soap";
 
-// import interface for "PSP" service
+// import interface for "PSP" services
 import { IPSPPortSoap as IFespPspService } from "./wsdl-lib/FespPspService/PSPPort";
+import { IPPTPortSoap as IAvvisiDigitaliService } from "./wsdl-lib/AvvisiDigitaliService/PPTPort";
 
 // import interfaces for "pagoPA" services (Nodo and Avvisatura)
 import { IPPTPortSoap as IPagamentiTelematiciPspNodoService } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
-import { IPPTPortSoap as IAvvisiDigitaliService } from "./wsdl-lib/AvvisiDigitaliService/PPTPort";
 import { IPPTPortSoap as IIscrizioniAvvisaturaService } from "./wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
 import { IPPTPortSoap as INodoChiediElencoAvvisiDigitaliService } from "./wsdl-lib/NodoChiediElencoAvvisiDigitaliService/PPTPort";
 
 // path to WSDL(s) of "PSP" service
 const FespPspService_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
+const AvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/PSPPerNodoAvvisiDigitali.wsdl";
 
 // path to WSDL(s) of "pagoPA" services (Nodo and Avvisatura)
 const PagamentiTelematiciPspNodoService_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
-const AvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/PSPPerNodoAvvisiDigitali.wsdl";
 const IscrizioniAvvisaturaService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl";
 const NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl";
 
@@ -63,13 +63,6 @@ export function createPagamentiTelematiciPspNodoClient(options: soap.IOptions): 
 }
 
 /**
- * Creates a client for the "AvvisiDigitali" service
- */
-export function createAvvisiDigitaliClient(options: soap.IOptions): Promise<soap.Client & IAvvisiDigitaliService> {
-  return createClient<IAvvisiDigitaliService>(AvvisiDigitaliService_WSDL_PATH, options);
-}
-
-/**
  * Creates a client for the "IscrizioniAvvisatura" service
  */
 export function createIscrizioniAvvisaturaClient(options: soap.IOptions): Promise<soap.Client & IIscrizioniAvvisaturaService> {
@@ -105,18 +98,6 @@ export class PagamentiTelematiciPspNodoAsyncClient {
 }
 
 /**
- * Converts the callback based methods of a AvvisiDigitali client to
- * promise based methods.
- */
-export class AvvisiDigitaliAsyncClient {
-
-  constructor(private readonly client: IAvvisiDigitaliService) {}
-
-  pspInviaAvvisoDigitale = promisifySoapMethod(this.client.pspInviaAvvisoDigitale)
-
-}
-
-/**
  * Converts the callback based methods of a IscrizioniAvvisatura client to
  * promise based methods.
  */
@@ -140,30 +121,65 @@ export class NodoChiediElencoAvvisiDigitaliAsyncClient {
 
 }
 
+async function readWsdl(path: string): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
+    fs.readFile(path, { encoding: "UTF-8" }, (err, wsdl) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(wsdl);
+    });
+  });
+}
+
 /**
- * Creates a server for the PSP service.
+ * Creates a server for the FespPsp service.
  *
  * This function mostly wraps the `soap.listen(...)` method.
  * @see https://github.com/vpulim/node-soap#soaplistenserver-path-services-wsdl---create-a-new-soap-server-that-listens-on-path-and-provides-services
  *
  * @param server    See soap.listen documentation
  * @param path      See soap.listen documentation
- * @param handlers  An object that implements the IPSPPortSoap interface
+ * @param fespPspHandlers  An object that implements the IPSPPortSoap interface
  */
-export function createPspServer(server: any, path: string, handlers: IFespPspService): Promise<soap.Server> {
-  return new Promise((resolve, reject) => {
-    fs.readFile(PagamentiTelematiciPspNodoService_WSDL_PATH, { encoding: "UTF-8" }, (err, wsdl) => {
-      if (err) {
-        return reject(err);
-      }
-      const service = {
-        FespPspService: {
-          PSPPort: handlers,
-        },
-      };
+export async function attachFespPspServer(
+  server: any,
+  path: string,
+  fespPspHandlers: IFespPspService
+): Promise<soap.Server> {
+  const wsdl = await readWsdl(FespPspService_WSDL_PATH);
 
-      resolve(soap.listen(server, path, service, wsdl));
-    });
+  const service = {
+    FespPspService: {
+      PSPPort: fespPspHandlers,
+    },
+  };
 
-  });
+  return(soap.listen(server, path, service, wsdl));
+}
+
+/**
+ * Creates a server for the AvvisiDigitali service.
+ *
+ * This function mostly wraps the `soap.listen(...)` method.
+ * @see https://github.com/vpulim/node-soap#soaplistenserver-path-services-wsdl---create-a-new-soap-server-that-listens-on-path-and-provides-services
+ *
+ * @param server    See soap.listen documentation
+ * @param path      See soap.listen documentation
+ * @param fespPspHandlers  An object that implements the IPSPPortSoap interface
+ */
+export async function attachAvvisiDigitaliServer(
+  server: any,
+  path: string,
+  avvisiDigitaliHandlers: IAvvisiDigitaliService
+): Promise<soap.Server> {
+  const wsdl = await readWsdl(FespPspService_WSDL_PATH);
+
+  const service = {
+    AvvisiDigitaliService: {
+      PPTPort: avvisiDigitaliHandlers,
+    }
+  };
+
+  return(soap.listen(server, path, service, wsdl));
 }
