@@ -26,8 +26,49 @@ function createClient<T>(wsdlUri: string, options: soap.IOptions): Promise<soap.
 /**
  * Creates a client for the "Nodo" service
  */
-export function createNodoClient(options: soap.IOptions) {
+export function createNodoClient(options: soap.IOptions): Promise<soap.Client & IPPTPortSoap> {
   return createClient<IPPTPortSoap>(NODO_WSDL_PATH, options);
+}
+
+// type signature for callback based async soap methods
+type SoapMethodCB<I, O> = (input: I, cb: (err: any | null, result: O, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+
+// type signature for Promise based async soap methods
+type SoapMethodPromise<I, O> = (input: I) => Promise<O>;
+
+/**
+ * Converts a SoapMethodCB into a SoapMethodPromise
+ */
+function promisifySoapMethod<I, O>(f: SoapMethodCB<I, O>): SoapMethodPromise<I, O> {
+  return (input: I) => new Promise((resolve, reject) => {
+    f(input, (err, result) => {
+      if(err) {
+        return reject(err);
+      }
+      resolve(result);
+    });
+  });
+}
+
+/**
+ * Converts the callback based methods of an IPPTPortSoap client to promise
+ * based methods.
+ */
+export class AsyncNodoClient {
+
+  constructor(private readonly client: IPPTPortSoap) {}
+
+  nodoVerificaRPT = promisifySoapMethod(this.client.nodoVerificaRPT)
+  nodoAttivaRPT = promisifySoapMethod(this.client.nodoAttivaRPT)
+  nodoInviaRT = promisifySoapMethod(this.client.nodoInviaRT)
+  nodoChiediInformativaPA = promisifySoapMethod(this.client.nodoChiediInformativaPA)
+  nodoChiediTemplateInformativaPSP = promisifySoapMethod(this.client.nodoChiediTemplateInformativaPSP)
+  nodoInviaFlussoRendicontazione = promisifySoapMethod(this.client.nodoInviaFlussoRendicontazione)
+  nodoChiediElencoQuadraturePSP = promisifySoapMethod(this.client.nodoChiediElencoQuadraturePSP)
+  nodoChiediQuadraturaPSP = promisifySoapMethod(this.client.nodoChiediQuadraturaPSP)
+  nodoInviaEsitoStorno = promisifySoapMethod(this.client.nodoInviaEsitoStorno)
+  nodoInviaRichiestaRevoca = promisifySoapMethod(this.client.nodoInviaRichiestaRevoca)
+
 }
 
 /**
