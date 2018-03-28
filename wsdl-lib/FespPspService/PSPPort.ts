@@ -1,6 +1,8 @@
 // Aliases for types used in WSDLs
  type base64Binary = string;
  type dateTime = Date; 
+ type date = Date; 
+ type gYear = number; 
  type int = number;
 
 /* tslint:disable:max-line-length */

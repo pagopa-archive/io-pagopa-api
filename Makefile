@@ -3,7 +3,10 @@
 #
 
 WSDL_FILES = 	nodo/NodoPerPsp.wsdl \
-							nodo/PspPerNodo.wsdl
+							nodo/PspPerNodo.wsdl \
+							avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl \
+							avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl \
+							avvisatura/PSPPerNodoAvvisiDigitali.wsdl
 
 WSDL_DIR ?= ./wsdl
 OUTPUT_DIR ?= ./wsdl-lib
@@ -26,6 +29,8 @@ TS_PREFIX =\
 	// Aliases for types used in WSDLs\n\
 	type base64Binary = string;\n\
 	type dateTime = Date; \n\
+	type date = Date; \n\
+	type gYear = number; \n\
 	type int = number;\n
 
 $(TS_FILES):
