@@ -1,11 +1,23 @@
 import * as fs from "fs";
 import * as soap from "soap";
 
-import { IPSPPortSoap } from "./wsdl-lib/FespPspService/PSPPort";
-import { IPPTPortSoap } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
+// import interface for "PSP" service
+import { IPSPPortSoap as IFespPspService } from "./wsdl-lib/FespPspService/PSPPort";
 
-const NODO_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
-const PSP_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
+// import interfaces for "pagoPA" services (Nodo and Avvisatura)
+import { IPPTPortSoap as IPagamentiTelematiciPspNodoService } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
+import { IPPTPortSoap as IAvvisiDigitaliService } from "./wsdl-lib/AvvisiDigitaliService/PPTPort";
+import { IPPTPortSoap as IIscrizioniAvvisaturaService } from "./wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
+import { IPPTPortSoap as INodoChiediElencoAvvisiDigitaliService } from "./wsdl-lib/NodoChiediElencoAvvisiDigitaliService/PPTPort";
+
+// path to WSDL(s) of "PSP" service
+const FespPspService_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
+
+// path to WSDL(s) of "pagoPA" services (Nodo and Avvisatura)
+const PagamentiTelematiciPspNodoService_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
+const AvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/PSPPerNodoAvvisiDigitali.wsdl";
+const IscrizioniAvvisaturaService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl";
+const NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl";
 
 /**
  * Helper method that wraps the creation of a WSDL client within a Promise and
@@ -21,13 +33,6 @@ function createClient<T>(wsdlUri: string, options: soap.IOptions): Promise<soap.
       }
     });
   });
-}
-
-/**
- * Creates a client for the "Nodo" service
- */
-export function createNodoClient(options: soap.IOptions): Promise<soap.Client & IPPTPortSoap> {
-  return createClient<IPPTPortSoap>(NODO_WSDL_PATH, options);
 }
 
 // type signature for callback based async soap methods
@@ -51,12 +56,40 @@ function promisifySoapMethod<I, O>(f: SoapMethodCB<I, O>): SoapMethodPromise<I, 
 }
 
 /**
- * Converts the callback based methods of an IPPTPortSoap client to promise
- * based methods.
+ * Creates a client for the "PagamentiTelematiciPspNodo" service
  */
-export class AsyncNodoClient {
+export function createPagamentiTelematiciPspNodoClient(options: soap.IOptions): Promise<soap.Client & IPagamentiTelematiciPspNodoService> {
+  return createClient<IPagamentiTelematiciPspNodoService>(PagamentiTelematiciPspNodoService_WSDL_PATH, options);
+}
 
-  constructor(private readonly client: IPPTPortSoap) {}
+/**
+ * Creates a client for the "AvvisiDigitali" service
+ */
+export function createAvvisiDigitaliClient(options: soap.IOptions): Promise<soap.Client & IAvvisiDigitaliService> {
+  return createClient<IAvvisiDigitaliService>(AvvisiDigitaliService_WSDL_PATH, options);
+}
+
+/**
+ * Creates a client for the "IscrizioniAvvisatura" service
+ */
+export function createIscrizioniAvvisaturaClient(options: soap.IOptions): Promise<soap.Client & IIscrizioniAvvisaturaService> {
+  return createClient<IIscrizioniAvvisaturaService>(IscrizioniAvvisaturaService_WSDL_PATH, options);
+}
+
+/**
+ * Creates a client for the "NodoChiediElencoAvvisiDigitali" service
+ */
+export function createNodoChiediElencoAvvisiDigitaliClient(options: soap.IOptions): Promise<soap.Client & INodoChiediElencoAvvisiDigitaliService> {
+  return createClient<INodoChiediElencoAvvisiDigitaliService>(NodoChiediElencoAvvisiDigitaliService_WSDL_PATH, options);
+}
+
+/**
+ * Converts the callback based methods of a PagamentiTelematiciPspNodo client to
+ * promise based methods.
+ */
+export class PagamentiTelematiciPspNodoAsyncClient {
+
+  constructor(private readonly client: IPagamentiTelematiciPspNodoService) {}
 
   nodoVerificaRPT = promisifySoapMethod(this.client.nodoVerificaRPT)
   nodoAttivaRPT = promisifySoapMethod(this.client.nodoAttivaRPT)
@@ -72,9 +105,40 @@ export class AsyncNodoClient {
 }
 
 /**
- * The interface of the PSP server endpoints
+ * Converts the callback based methods of a AvvisiDigitali client to
+ * promise based methods.
  */
-export type IPSPHandlers = IPSPPortSoap;
+export class AvvisiDigitaliAsyncClient {
+
+  constructor(private readonly client: IAvvisiDigitaliService) {}
+
+  pspInviaAvvisoDigitale = promisifySoapMethod(this.client.pspInviaAvvisoDigitale)
+
+}
+
+/**
+ * Converts the callback based methods of a IscrizioniAvvisatura client to
+ * promise based methods.
+ */
+export class IscrizioniAvvisaturaAsyncClient {
+
+  constructor(private readonly client: IIscrizioniAvvisaturaService) {}
+
+  nodoAggiornaIscrizioniAvvisatura = promisifySoapMethod(this.client.nodoAggiornaIscrizioniAvvisatura)
+
+}
+
+/**
+ * Converts the callback based methods of a NodoChiediElencoAvvisiDigitali
+ * client to promise based methods.
+ */
+export class NodoChiediElencoAvvisiDigitaliAsyncClient {
+
+  constructor(private readonly client: INodoChiediElencoAvvisiDigitaliService) {}
+
+  nodoChiediElencoAvvisiDigitali = promisifySoapMethod(this.client.nodoChiediElencoAvvisiDigitali)
+
+}
 
 /**
  * Creates a server for the PSP service.
@@ -86,9 +150,9 @@ export type IPSPHandlers = IPSPPortSoap;
  * @param path      See soap.listen documentation
  * @param handlers  An object that implements the IPSPPortSoap interface
  */
-export function createPspServer(server: any, path: string, handlers: IPSPHandlers): Promise<soap.Server> {
+export function createPspServer(server: any, path: string, handlers: IFespPspService): Promise<soap.Server> {
   return new Promise((resolve, reject) => {
-    fs.readFile(PSP_WSDL_PATH, { encoding: "UTF-8" }, (err, wsdl) => {
+    fs.readFile(PagamentiTelematiciPspNodoService_WSDL_PATH, { encoding: "UTF-8" }, (err, wsdl) => {
       if (err) {
         return reject(err);
       }
