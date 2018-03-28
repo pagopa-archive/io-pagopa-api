@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as soap from "soap";
 
-import { IPPTPortSoap } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
 import { IPSPPortSoap } from "./wsdl-lib/FespPspService/PSPPort";
+import { IPPTPortSoap } from "./wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
 
 const NODO_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
 const PSP_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
@@ -20,9 +20,8 @@ function createClient<T>(wsdlUri: string, options: soap.IOptions): Promise<soap.
         resolve(client as soap.Client & T);
       }
     });
-  })
+  });
 }
-
 
 /**
  * Creates a client for the "Nodo" service
@@ -46,14 +45,20 @@ export type IPSPHandlers = IPSPPortSoap;
  * @param path      See soap.listen documentation
  * @param handlers  An object that implements the IPSPPortSoap interface
  */
-export function createPspServer(server: any, path: string, handlers: IPSPHandlers): soap.Server {
-  const wsdl = fs.readFileSync(PSP_WSDL_PATH, "UTF-8");
+export function createPspServer(server: any, path: string, handlers: IPSPHandlers): Promise<soap.Server> {
+  return new Promise((resolve, reject) => {
+    fs.readFile(PSP_WSDL_PATH, { encoding: "UTF-8" }, (err, wsdl) => {
+      if (err) {
+        return reject(err);
+      }
+      const service = {
+        FespPspService: {
+          PSPPort: handlers,
+        },
+      };
 
-  const service = {
-    FespPspService: {
-      PSPPort: handlers
-    }
-  };
+      resolve(soap.listen(server, path, service, wsdl));
+    });
 
-  return soap.listen(server, path, service, wsdl);
+  });
 }
