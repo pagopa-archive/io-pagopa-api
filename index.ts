@@ -17,14 +17,17 @@ export { PagamentiTelematiciPspNodoService };
 export { IscrizioniAvvisaturaService };
 export { NodoChiediElencoAvvisiDigitaliService };
 
+// base directory where to look for WSDL files
+const wsdlBaseDir = `${__dirname}/wsdl`
+
 // path to WSDL(s) of "PSP" service
-const FespPspService_WSDL_PATH = "wsdl/nodo/NodoPerPsp.wsdl";
-const AvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/PSPPerNodoAvvisiDigitali.wsdl";
+const FespPspService_WSDL_PATH = `${wsdlBaseDir}/nodo/NodoPerPsp.wsdl`;
+const AvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/PSPPerNodoAvvisiDigitali.wsdl`;
 
 // path to WSDL(s) of "pagoPA" services (Nodo and Avvisatura)
-const PagamentiTelematiciPspNodoService_WSDL_PATH = "wsdl/nodo/PspPerNodo.wsdl";
-const IscrizioniAvvisaturaService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl";
-const NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = "wsdl/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl";
+const PagamentiTelematiciPspNodoService_WSDL_PATH = `${wsdlBaseDir}/nodo/PspPerNodo.wsdl`;
+const IscrizioniAvvisaturaService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl`;
+const NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl`;
 
 /**
  * Helper method that wraps the creation of a WSDL client within a Promise and
