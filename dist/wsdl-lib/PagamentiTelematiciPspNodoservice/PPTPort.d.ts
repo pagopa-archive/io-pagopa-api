@@ -1,8 +1,4 @@
-export declare type base64Binary = string;
-export declare type dateTime = Date;
-export declare type date = Date;
-export declare type gYear = number;
-export declare type int = number;
+import { base64Binary, dateTime, int } from "../../wsdl-types";
 export interface InodoVerificaRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;

@@ -27,11 +27,7 @@ TS_FILES := $(shell find $(OUTPUT_DIR) -type f)
 
 TS_PREFIX =\
 	// Aliases for types used in WSDLs\n\
-	export type base64Binary = string;\n\
-	export type dateTime = Date; \n\
-	export type date = Date; \n\
-	export type gYear = number; \n\
-	export type int = number;\n
+	import { base64Binary, dateTime, date, gYear, int } from \"../../wsdl-types\";\n
 
 $(TS_FILES):
 	@sed -i '' 's/xsd://' $@

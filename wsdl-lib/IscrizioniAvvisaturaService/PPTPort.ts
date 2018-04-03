@@ -1,9 +1,5 @@
 // Aliases for types used in WSDLs
- export type base64Binary = string;
- export type dateTime = Date; 
- export type date = Date; 
- export type gYear = number; 
- export type int = number;
+ import { base64Binary, dateTime, date, gYear, int } from "../../wsdl-types";
 
 /* tslint:disable:max-line-length */
 export interface InodoAggiornaIscrizioniAvvisaturaInput {
