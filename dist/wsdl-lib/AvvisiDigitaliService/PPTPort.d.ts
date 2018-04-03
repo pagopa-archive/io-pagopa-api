@@ -1,11 +1,8 @@
-// Aliases for types used in WSDLs
- export type base64Binary = string;
- export type dateTime = Date; 
- export type date = Date; 
- export type gYear = number; 
- export type int = number;
-
-/* tslint:disable:max-line-length */
+export declare type base64Binary = string;
+export declare type dateTime = Date;
+export declare type date = Date;
+export declare type gYear = number;
+export declare type int = number;
 export interface IpspInviaAvvisoDigitaleInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -15,36 +12,35 @@ export interface IpspInviaAvvisoDigitaleInput {
     identificativoCanale: string;
     avvisoDigitale: PPTPortTypes.IavvisoDigitale;
 }
-
 export interface IpspInviaAvvisoDigitaleOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#stEsitoOperazione(length,OK,KO) */
     esitoOperazione: "OK" | "KO";
 }
-
 export interface IPPTPortSoap {
-    pspInviaAvvisoDigitale: (input: IpspInviaAvvisoDigitaleInput, cb: (err: any | null, result: IpspInviaAvvisoDigitaleOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    pspInviaAvvisoDigitale: (input: IpspInviaAvvisoDigitaleInput, cb: (err: any | null, result: IpspInviaAvvisoDigitaleOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
 }
-
-export namespace PPTPortTypes {
-    export interface IidentificativoUnivocoPagatore {
+export declare namespace PPTPortTypes {
+    interface IidentificativoUnivocoPagatore {
         /** http://ws.pagamenti.telematici.gov/#stTipoIdentificativoUnivocoPersFG(length,F,G) */
         tipoIdentificativoUnivoco: "F" | "G";
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         codiceIdentificativoUnivoco: string;
     }
-    export interface IsoggettoPagatore {
+    interface IsoggettoPagatore {
         /** http://ws.pagamenti.telematici.gov/#stText70(minLength,maxLength) */
         anagraficaPagatore: string;
         identificativoUnivocoPagatore: PPTPortTypes.IidentificativoUnivocoPagatore;
     }
-    export interface IdatiSingoloVersamento {
+    interface IdatiSingoloVersamento {
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
         ibanAccredito: string;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
         ibanAppoggio: string;
     }
-    export interface IavvisoDigitale {
+    interface IavvisoDigitale {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         identificativoDominio: string;
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -76,7 +72,7 @@ export namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stTipoOperazione(length,C,U,D) */
         tipoOperazione: "C" | "U" | "D";
     }
-    export interface Ifault {
+    interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         faultCode: string;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */

@@ -1,11 +1,8 @@
-// Aliases for types used in WSDLs
- export type base64Binary = string;
- export type dateTime = Date; 
- export type date = Date; 
- export type gYear = number; 
- export type int = number;
-
-/* tslint:disable:max-line-length */
+export declare type base64Binary = string;
+export declare type dateTime = Date;
+export declare type date = Date;
+export declare type gYear = number;
+export declare type int = number;
 export interface IpspInviaRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -19,11 +16,9 @@ export interface IpspInviaRPTInput {
     modelloPagamento: "0" | "1" | "2" | "4";
     elementoListaRPT: PSPPortTypes.IelementoListaRPT[];
 }
-
 export interface IpspInviaRPTOutput {
     pspInviaRPTResponse: PSPPortTypes.IpspInviaRPTResponse;
 }
-
 export interface IpspInviaCarrelloRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -37,11 +32,9 @@ export interface IpspInviaCarrelloRPTInput {
     parametriProfiloPagamento: string;
     listaRPT: PSPPortTypes.IlistaRPT;
 }
-
 export interface IpspInviaCarrelloRPTOutput {
     pspInviaCarrelloRPTResponse: PSPPortTypes.IpspInviaCarrelloRPTResponse;
 }
-
 export interface IpspInviaCarrelloRPTCarteInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -65,11 +58,9 @@ export interface IpspInviaCarrelloRPTCarteInput {
     /** http://ws.pagamenti.telematici.gov/#stText6(length) */
     codiceAutorizzativo: string;
 }
-
 export interface IpspInviaCarrelloRPTCarteOutput {
     pspInviaCarrelloRPTResponse: PSPPortTypes.IpspInviaCarrelloRPTResponse;
 }
-
 export interface IpspChiediRTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -78,11 +69,9 @@ export interface IpspChiediRTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     codiceContestoPagamento: string;
 }
-
 export interface IpspChiediRTOutput {
     pspChiediRTResponse: PSPPortTypes.IpspChiediRTResponse;
 }
-
 export interface IpspInviaAckRTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -92,11 +81,9 @@ export interface IpspInviaAckRTInput {
     codiceContestoPagamento: string;
     ackRT: PSPPortTypes.IackRT;
 }
-
 export interface IpspInviaAckRTOutput {
     pspInviaAckRTResponse: PSPPortTypes.IpspInviaAckRTResponse;
 }
-
 export interface IpspChiediAvanzamentoRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -105,11 +92,9 @@ export interface IpspChiediAvanzamentoRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     codiceContestoPagamento: string;
 }
-
 export interface IpspChiediAvanzamentoRPTOutput {
     pspChiediAvanzamentoRPTResponse: PSPPortTypes.IpspChiediAvanzamentoRPTResponse;
 }
-
 export interface IpspChiediListaRTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoRichiedente: string;
@@ -120,11 +105,9 @@ export interface IpspChiediListaRTInput {
     /** http://ws.pagamenti.telematici.gov/#stModelloPagamento(0,1,2,4) */
     modelloPagamento: "0" | "1" | "2" | "4";
 }
-
 export interface IpspChiediListaRTOutput {
     pspChiediListaRTResponse: PSPPortTypes.IpspChiediListaRTResponse;
 }
-
 export interface IpspNotificaCancellazioneRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -133,11 +116,9 @@ export interface IpspNotificaCancellazioneRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     codiceContestoPagamento: string;
 }
-
 export interface IpspNotificaCancellazioneRPTOutput {
     pspNotificaCancellazioneRPTResponse: PSPPortTypes.IpspNotificaCancellazioneRPTResponse;
 }
-
 export interface IpspInviaRichiestaStornoInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -148,11 +129,9 @@ export interface IpspInviaRichiestaStornoInput {
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     rr: base64Binary;
 }
-
 export interface IpspInviaRichiestaStornoOutput {
     pspInviaRichiestaStornoResponse: PSPPortTypes.IpspInviaRichiestaStornoResponse;
 }
-
 export interface IpspInviaRispostaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoDominio: string;
@@ -163,26 +142,43 @@ export interface IpspInviaRispostaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     er: base64Binary;
 }
-
 export interface IpspInviaRispostaRevocaOutput {
     pspInviaRispostaRevocaResponse: PSPPortTypes.IpspInviaRispostaRevocaResponse;
 }
-
 export interface IPSPPortSoap {
-    pspInviaRPT: (input: IpspInviaRPTInput, cb: (err: any | null, result: IpspInviaRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspInviaCarrelloRPT: (input: IpspInviaCarrelloRPTInput, cb: (err: any | null, result: IpspInviaCarrelloRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspInviaCarrelloRPTCarte: (input: IpspInviaCarrelloRPTCarteInput, cb: (err: any | null, result: IpspInviaCarrelloRPTCarteOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspChiediRT: (input: IpspChiediRTInput, cb: (err: any | null, result: IpspChiediRTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspInviaAckRT: (input: IpspInviaAckRTInput, cb: (err: any | null, result: IpspInviaAckRTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspChiediAvanzamentoRPT: (input: IpspChiediAvanzamentoRPTInput, cb: (err: any | null, result: IpspChiediAvanzamentoRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspChiediListaRT: (input: IpspChiediListaRTInput, cb: (err: any | null, result: IpspChiediListaRTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspNotificaCancellazioneRPT: (input: IpspNotificaCancellazioneRPTInput, cb: (err: any | null, result: IpspNotificaCancellazioneRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspInviaRichiestaStorno: (input: IpspInviaRichiestaStornoInput, cb: (err: any | null, result: IpspInviaRichiestaStornoOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
-    pspInviaRispostaRevoca: (input: IpspInviaRispostaRevocaInput, cb: (err: any | null, result: IpspInviaRispostaRevocaOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    pspInviaRPT: (input: IpspInviaRPTInput, cb: (err: any | null, result: IpspInviaRPTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspInviaCarrelloRPT: (input: IpspInviaCarrelloRPTInput, cb: (err: any | null, result: IpspInviaCarrelloRPTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspInviaCarrelloRPTCarte: (input: IpspInviaCarrelloRPTCarteInput, cb: (err: any | null, result: IpspInviaCarrelloRPTCarteOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspChiediRT: (input: IpspChiediRTInput, cb: (err: any | null, result: IpspChiediRTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspInviaAckRT: (input: IpspInviaAckRTInput, cb: (err: any | null, result: IpspInviaAckRTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspChiediAvanzamentoRPT: (input: IpspChiediAvanzamentoRPTInput, cb: (err: any | null, result: IpspChiediAvanzamentoRPTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspChiediListaRT: (input: IpspChiediListaRTInput, cb: (err: any | null, result: IpspChiediListaRTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspNotificaCancellazioneRPT: (input: IpspNotificaCancellazioneRPTInput, cb: (err: any | null, result: IpspNotificaCancellazioneRPTOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspInviaRichiestaStorno: (input: IpspInviaRichiestaStornoInput, cb: (err: any | null, result: IpspInviaRichiestaStornoOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    pspInviaRispostaRevoca: (input: IpspInviaRispostaRevocaInput, cb: (err: any | null, result: IpspInviaRispostaRevocaOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
 }
-
-export namespace PSPPortTypes {
-    export interface IelementoListaRPT {
+export declare namespace PSPPortTypes {
+    interface IelementoListaRPT {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         identificativoUnivocoVersamento: string;
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -194,7 +190,7 @@ export namespace PSPPortTypes {
         /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
         rpt: base64Binary;
     }
-    export interface Ifault {
+    interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         faultCode: string;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -206,10 +202,10 @@ export namespace PSPPortTypes {
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         serial: int;
     }
-    export interface IlistaErroriRPT {
+    interface IlistaErroriRPT {
         fault: PSPPortTypes.Ifault[];
     }
-    export interface IpspInviaRPTResponse {
+    interface IpspInviaRPTResponse {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esitoComplessivoOperazione: string;
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -218,7 +214,7 @@ export namespace PSPPortTypes {
         parametriPagamentoImmediato: string;
         listaErroriRPT: PSPPortTypes.IlistaErroriRPT;
     }
-    export interface IelementoListaCarrelloRPT {
+    interface IelementoListaCarrelloRPT {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         identificativoDominio: string;
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -230,10 +226,10 @@ export namespace PSPPortTypes {
         /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
         rpt: base64Binary;
     }
-    export interface IlistaRPT {
+    interface IlistaRPT {
         elementoListaCarrelloRPT: PSPPortTypes.IelementoListaCarrelloRPT[];
     }
-    export interface IpspInviaCarrelloRPTResponse {
+    interface IpspInviaCarrelloRPTResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esitoComplessivoOperazione: string;
@@ -243,14 +239,14 @@ export namespace PSPPortTypes {
         parametriPagamentoImmediato: string;
         listaErroriRPT: PSPPortTypes.IlistaErroriRPT;
     }
-    export interface IpspChiediRTResponse {
+    interface IpspChiediRTResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         tipoFirma: string;
         /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
         rt: base64Binary;
     }
-    export interface IdatiMessaggioReferenziato {
+    interface IdatiMessaggioReferenziato {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stIdentificativoDominio(maxLength) */
         identificativoDominio: string;
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stIdentificativoUnivocoVersamento(maxLength) */
@@ -266,7 +262,7 @@ export namespace PSPPortTypes {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stMittenteMessaggio(maxLength) */
         mittenteMessaggioReferenziato: string;
     }
-    export interface ImotivazioneStatoErrato {
+    interface ImotivazioneStatoErrato {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stCodiceErrore(maxLength) */
         codiceErrore: string;
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stElementoReferenziato(maxLength) */
@@ -274,12 +270,12 @@ export namespace PSPPortTypes {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stInformazioniAggiuntive(maxLength) */
         InformazioniAggiuntive: Array<string>;
     }
-    export interface IinformazioniStatoMessaggioReferenziato {
+    interface IinformazioniStatoMessaggioReferenziato {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stStatoMessaggio(ACTC,RJCT) */
         statoMessaggioReferenziato: "ACTC" | "RJCT";
         motivazioneStatoErrato: PSPPortTypes.ImotivazioneStatoErrato;
     }
-    export interface IackRT {
+    interface IackRT {
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stIdentificativoMessaggio(maxLength) */
         identificativoACK: string;
         /** http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/#stISODateTime() */
@@ -289,17 +285,17 @@ export namespace PSPPortTypes {
         datiMessaggioReferenziato: PSPPortTypes.IdatiMessaggioReferenziato;
         informazioniStatoMessaggioReferenziato: PSPPortTypes.IinformazioniStatoMessaggioReferenziato;
     }
-    export interface IpspInviaAckRTResponse {
+    interface IpspInviaAckRTResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: string;
     }
-    export interface IpspChiediAvanzamentoRPTResponse {
+    interface IpspChiediAvanzamentoRPTResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         value: string;
     }
-    export interface IelementoListaRTResponse {
+    interface IelementoListaRTResponse {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         identificativoDominio: string;
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -307,21 +303,21 @@ export namespace PSPPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         codiceContestoPagamento: string;
     }
-    export interface IpspChiediListaRTResponse {
+    interface IpspChiediListaRTResponse {
         fault: PSPPortTypes.Ifault;
         elementoListaRTResponse: PSPPortTypes.IelementoListaRTResponse[];
     }
-    export interface IpspNotificaCancellazioneRPTResponse {
+    interface IpspNotificaCancellazioneRPTResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: string;
     }
-    export interface IpspInviaRichiestaStornoResponse {
+    interface IpspInviaRichiestaStornoResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: string;
     }
-    export interface IpspInviaRispostaRevocaResponse {
+    interface IpspInviaRispostaRevocaResponse {
         fault: PSPPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: string;

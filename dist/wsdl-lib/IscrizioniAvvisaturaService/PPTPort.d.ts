@@ -1,11 +1,8 @@
-// Aliases for types used in WSDLs
- export type base64Binary = string;
- export type dateTime = Date; 
- export type date = Date; 
- export type gYear = number; 
- export type int = number;
-
-/* tslint:disable:max-line-length */
+export declare type base64Binary = string;
+export declare type dateTime = Date;
+export declare type date = Date;
+export declare type gYear = number;
+export declare type int = number;
 export interface InodoAggiornaIscrizioniAvvisaturaInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -17,25 +14,24 @@ export interface InodoAggiornaIscrizioniAvvisaturaInput {
     password: string;
     datiNotifica: PPTPortTypes.IdatiNotifica;
 }
-
 export interface InodoAggiornaIscrizioniAvvisaturaOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#stEsitoOperazione(length,OK,KO) */
     esitoOperazione: "OK" | "KO";
 }
-
 export interface IPPTPortSoap {
-    nodoAggiornaIscrizioniAvvisatura: (input: InodoAggiornaIscrizioniAvvisaturaInput, cb: (err: any | null, result: InodoAggiornaIscrizioniAvvisaturaOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    nodoAggiornaIscrizioniAvvisatura: (input: InodoAggiornaIscrizioniAvvisaturaInput, cb: (err: any | null, result: InodoAggiornaIscrizioniAvvisaturaOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
 }
-
-export namespace PPTPortTypes {
-    export interface IidentificativoUnivocoSoggetto {
+export declare namespace PPTPortTypes {
+    interface IidentificativoUnivocoSoggetto {
         /** http://ws.pagamenti.telematici.gov/#stTipoIdentificativoUnivocoPersFG(length,F,G) */
         tipoIdentificativoUnivoco: "F" | "G";
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         codiceIdentificativoUnivoco: string;
     }
-    export interface IdatiNotifica {
+    interface IdatiNotifica {
         /** http://ws.pagamenti.telematici.gov/#stISODateTime() */
         dataOraRichiesta: dateTime;
         /** http://ws.pagamenti.telematici.gov/#stIdentificativoMessaggioRichiesta(minLength,maxLength) */
@@ -44,7 +40,7 @@ export namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stTipoAzioneAggiornamento(length,A,D) */
         azioneDiAggiornamento: "A" | "D";
     }
-    export interface Ifault {
+    interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         faultCode: string;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */

@@ -1,11 +1,8 @@
-// Aliases for types used in WSDLs
- export type base64Binary = string;
- export type dateTime = Date; 
- export type date = Date; 
- export type gYear = number; 
- export type int = number;
-
-/* tslint:disable:max-line-length */
+export declare type base64Binary = string;
+export declare type dateTime = Date;
+export declare type date = Date;
+export declare type gYear = number;
+export declare type int = number;
 export interface InodoChiediElencoAvvisiDigitaliInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -21,26 +18,25 @@ export interface InodoChiediElencoAvvisiDigitaliInput {
     codiceServizio: string;
     periodoRiferimento: PPTPortTypes.IperiodoRiferimento;
 }
-
 export interface InodoChiediElencoAvvisiDigitaliOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#stEsitoOperazione(length,OK,KO) */
     esitoOperazione: "OK" | "KO";
     elencoAvvisiDigitali: PPTPortTypes.IelencoAvvisiDigitali;
 }
-
 export interface IPPTPortSoap {
-    nodoChiediElencoAvvisiDigitali: (input: InodoChiediElencoAvvisiDigitaliInput, cb: (err: any | null, result: InodoChiediElencoAvvisiDigitaliOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    nodoChiediElencoAvvisiDigitali: (input: InodoChiediElencoAvvisiDigitaliInput, cb: (err: any | null, result: InodoChiediElencoAvvisiDigitaliOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
 }
-
-export namespace PPTPortTypes {
-    export interface IperiodoRiferimento {
+export declare namespace PPTPortTypes {
+    interface IperiodoRiferimento {
         /** http://ws.pagamenti.telematici.gov/#gYear(undefined) */
         annoDA: gYear;
         /** http://ws.pagamenti.telematici.gov/#gYear(undefined) */
         annoA: gYear;
     }
-    export interface Ifault {
+    interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         faultCode: string;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -52,7 +48,7 @@ export namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         serial: int;
     }
-    export interface IavvisoDigitale {
+    interface IavvisoDigitale {
         /** http://ws.pagamenti.telematici.gov/#stCodiceAvviso(pattern) */
         codiceAvviso: string;
         /** http://ws.pagamenti.telematici.gov/#stStatoPagamento(length,00,01,02) */
@@ -64,7 +60,7 @@ export namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stText140(minLength,maxLength) */
         descrizionePagamento: string;
     }
-    export interface IelencoAvvisiDigitali {
+    interface IelencoAvvisiDigitali {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
         identificativoDominio: string;
         /** http://ws.pagamenti.telematici.gov/#stElencoCompleto(length,0,1) */
