@@ -1,6 +1,6 @@
 {
   "name": "italia-pagopa-ts",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Client and server for interacting with pagoPA",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
