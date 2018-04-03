@@ -7,7 +7,8 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "dist"
   },
   "include": [
     "index.ts",

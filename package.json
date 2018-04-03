@@ -1,11 +1,19 @@
 {
   "name": "italia-pagopa-ts",
   "version": "0.0.5",
-  "description": "Typescript client for pagoPA APIs",
-  "main": "index.ts",
-  "repository": "https://github.com/teamdigitale/italia-pagopa-ts",
+  "description": "Client and server for interacting with pagoPA",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/teamdigitale/italia-pagopa-api",
   "author": "Federico Feroldi <federico@teamdigitale.governo.it>",
   "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "tsc",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags && rm -rf build/temp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@types/bluebird": "^3.5.20",
     "@types/node": "^8.9.4",
