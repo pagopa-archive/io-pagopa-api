@@ -1,3 +1,7 @@
+import * as fs from "fs";
+
+import "jest-xml-matcher";
+
 import * as clients from "../clients";
 
 const avvisaturaHost = "avvisatura.test";
@@ -40,8 +44,8 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
           tipoIdentificativoUnivoco: "F"
         }
       },
-      identificativoCanale: "123",
       identificativoIntermediarioPSP: "123",
+      identificativoCanale: "456",
       identificativoPSP: "CDPSP",
       password: "password"
     };
@@ -54,7 +58,9 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
       // call will fail since customReq returns an unparsable response (null)
       // but it's ok since we're only interester in the request object
     }
-    expect(requestOptions.body).toEqual("xyz");
+
+    const expectedRequest = fs.readFileSync(`${__dirname}/fixtures/clients.test.req1.xml`, "UTF-8");
+    expect(requestOptions.body).toEqualXML(expectedRequest);
 
   });
 
