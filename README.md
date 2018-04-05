@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/teamdigitale/italia-pagopa-api.svg?style=svg)](https://circleci.com/gh/teamdigitale/italia-pagopa-api)
+
 # Client and server for interacting with pagoPA (Experimental)
 
 This is experimental code, beware!
