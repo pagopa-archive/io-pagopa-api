@@ -18,10 +18,10 @@ export function createClient<T>(wsdlUri: string, options: soap.IOptions): Promis
 }
 
 // type signature for callback based async soap methods
-type SoapMethodCB<I, O> = (input: I, cb: (err: any | null, result: O, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+export type SoapMethodCB<I, O> = (input: I, cb: (err: any | null, result: O, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
 
 // type signature for Promise based async soap methods
-type SoapMethodPromise<I, O> = (input: I) => Promise<O>;
+export type SoapMethodPromise<I, O> = (input: I) => Promise<O>;
 
 /**
  * Converts a SoapMethodCB into a SoapMethodPromise
