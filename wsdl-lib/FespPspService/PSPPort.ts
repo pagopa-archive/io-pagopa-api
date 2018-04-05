@@ -1,5 +1,5 @@
 // Aliases for types used in WSDLs
- import { base64Binary, dateTime, date, gYear, int } from "../../wsdl-types";
+ import { base64Binary, dateTime, date, gYear, int } from "../../lib/wsdl-types";
 
 /* tslint:disable:max-line-length */
 export interface IpspInviaRPTInput {

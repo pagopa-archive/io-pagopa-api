@@ -1,4 +1,4 @@
-import { base64Binary, dateTime, int } from "../../wsdl-types";
+import { base64Binary, dateTime, int } from "../../lib/wsdl-types";
 export interface InodoVerificaRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;

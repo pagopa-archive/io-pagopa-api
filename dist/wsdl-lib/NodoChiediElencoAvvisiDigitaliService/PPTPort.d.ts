@@ -1,4 +1,4 @@
-import { date, gYear, int } from "../../wsdl-types";
+import { date, gYear, int } from "../../lib/wsdl-types";
 export interface InodoChiediElencoAvvisiDigitaliInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;

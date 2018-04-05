@@ -1,4 +1,4 @@
-import { dateTime, int } from "../../wsdl-types";
+import { dateTime, int } from "../../lib/wsdl-types";
 export interface InodoAggiornaIscrizioniAvvisaturaInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;

@@ -1,4 +1,4 @@
-import { date, int } from "../../wsdl-types";
+import { date, int } from "../../lib/wsdl-types";
 export interface IpspInviaAvvisoDigitaleInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
