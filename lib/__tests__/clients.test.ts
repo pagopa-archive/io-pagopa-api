@@ -1,3 +1,7 @@
+import * as fs from "fs";
+
+import "jest-xml-matcher";
+
 import * as clients from "../clients";
 
 const avvisaturaHost = "avvisatura.test";
@@ -30,20 +34,23 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
       iscrizioniAvvisaturaClientBase
     );
 
+    // NOTE: order of fields is IMPORTANT!!! the SOAP library WILL NOT reorder
+    // the fields based on the WSDL schema!!! The order of the fields in the
+    // JSON MUST be the same of the WSDL schema!!!
     const input: clients.IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaInput = {
+      identificativoPSP: "CDPSP",
+      identificativoIntermediarioPSP: "123",
+      identificativoCanale: "456",
+      password: "password",
       datiNotifica: {
-        azioneDiAggiornamento: "A",
         dataOraRichiesta: "2018-04-03T16:41:00",
         identificativoMessaggioRichiesta: "1",
         identificativoUnivocoSoggetto: {
+          tipoIdentificativoUnivoco: "F",
           codiceIdentificativoUnivoco: "FISCAL_CODE",
-          tipoIdentificativoUnivoco: "F"
-        }
+        },
+        azioneDiAggiornamento: "A",
       },
-      identificativoCanale: "123",
-      identificativoIntermediarioPSP: "123",
-      identificativoPSP: "CDPSP",
-      password: "password"
     };
 
     try {
@@ -54,7 +61,9 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
       // call will fail since customReq returns an unparsable response (null)
       // but it's ok since we're only interester in the request object
     }
-    expect(requestOptions.body).toEqual("xyz");
+
+    const expectedRequest = fs.readFileSync(`${__dirname}/fixtures/clients.test.req1.xml`, "UTF-8");
+    expect(requestOptions.body).toEqualXML(expectedRequest);
 
   });
 
