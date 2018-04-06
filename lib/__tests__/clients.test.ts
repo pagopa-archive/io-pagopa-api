@@ -35,19 +35,19 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
     );
 
     const input: clients.IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaInput = {
+      identificativoPSP: "CDPSP",
+      identificativoIntermediarioPSP: "123",
+      identificativoCanale: "456",
+      password: "password",
       datiNotifica: {
-        azioneDiAggiornamento: "A",
         dataOraRichiesta: "2018-04-03T16:41:00",
         identificativoMessaggioRichiesta: "1",
         identificativoUnivocoSoggetto: {
+          tipoIdentificativoUnivoco: "F",
           codiceIdentificativoUnivoco: "FISCAL_CODE",
-          tipoIdentificativoUnivoco: "F"
-        }
+        },
+        azioneDiAggiornamento: "A",
       },
-      identificativoIntermediarioPSP: "123",
-      identificativoCanale: "456",
-      identificativoPSP: "CDPSP",
-      password: "password"
     };
 
     try {
