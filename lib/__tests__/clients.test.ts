@@ -34,6 +34,9 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
       iscrizioniAvvisaturaClientBase
     );
 
+    // NOTE: order of fields is IMPORTANT!!! the SOAP library WILL NOT reorder
+    // the fields based on the WSDL schema!!! The order of the fields in the
+    // JSON MUST be the same of the WSDL schema!!!
     const input: clients.IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaInput = {
       identificativoPSP: "CDPSP",
       identificativoIntermediarioPSP: "123",
