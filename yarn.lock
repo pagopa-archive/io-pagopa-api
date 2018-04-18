@@ -39,12 +39,6 @@
   version "8.9.4"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.9.4.tgz#dfd327582a06c114eb6e0441fa3d6fab35edad48"
 
-"@types/soap@^0.21.0":
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/@types/soap/-/soap-0.21.0.tgz#d240c80e410f07b07d2acdea99e60d3e4aa412f3"
-  dependencies:
-    soap "*"
-
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -2329,7 +2323,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.4:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -3313,24 +3307,6 @@ sntp@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-soap@*, soap@^0.23.0:
-  version "0.23.0"
-  resolved "https://registry.yarnpkg.com/soap/-/soap-0.23.0.tgz#2d8f22bef979ded90c0b4d7a5b3ce23d1ed1e52f"
-  dependencies:
-    bluebird "^3.5.0"
-    concat-stream "^1.5.1"
-    debug "^2.6.9"
-    ejs "~2.5.5"
-    finalhandler "^1.0.3"
-    lodash "^3.10.1"
-    request ">=2.9.0"
-    sax ">=0.6"
-    selectn "^0.9.6"
-    serve-static "^1.11.1"
-    strip-bom "~0.3.1"
-    uuid "^3.1.0"
-    xml-crypto "~0.8.0"
-
 soap@^0.19.1:
   version "0.19.2"
   resolved "https://registry.yarnpkg.com/soap/-/soap-0.19.2.tgz#548c0b9ae7d17bd903751292471f6ad9a9e7e3c7"
@@ -3347,6 +3323,24 @@ soap@^0.19.1:
     serve-static "^1.11.1"
     strip-bom "~0.3.1"
     uuid "^3.0.1"
+    xml-crypto "~0.8.0"
+
+soap@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/soap/-/soap-0.24.0.tgz#8a101e63ae0763afc45e876b2761091665abaed8"
+  dependencies:
+    bluebird "^3.5.0"
+    concat-stream "^1.5.1"
+    debug "^2.6.9"
+    ejs "~2.5.5"
+    finalhandler "^1.0.3"
+    lodash "^4.17.5"
+    request ">=2.9.0"
+    sax ">=0.6"
+    selectn "^0.9.6"
+    serve-static "^1.11.1"
+    strip-bom "~0.3.1"
+    uuid "^3.1.0"
     xml-crypto "~0.8.0"
 
 source-map-resolve@^0.5.0:

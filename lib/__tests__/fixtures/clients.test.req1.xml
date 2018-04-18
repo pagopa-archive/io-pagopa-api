@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<soapenv:Envelope
-  xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:sac="http://ws.pagamenti.telematici.gov/"
-  xmlns:tns="http://PuntoAccessoPSP.spcoop.gov.it/servizi/IscrizioniAvvisatura">
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sac="http://ws.pagamenti.telematici.gov/" xmlns:tns="http://PuntoAccessoPSP.spcoop.gov.it/servizi/IscrizioniAvvisatura">
   <soapenv:Body>
-    <sac:nodoAggiornaIscrizioniAvvisatura
-      xmlns:sac="http://ws.pagamenti.telematici.gov/">
+    <sac:nodoAggiornaIscrizioniAvvisatura xmlns:sac="http://ws.pagamenti.telematici.gov/">
       <identificativoPSP>CDPSP</identificativoPSP>
       <identificativoIntermediarioPSP>123</identificativoIntermediarioPSP>
       <identificativoCanale>456</identificativoCanale>

@@ -30,6 +30,22 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
     );
     iscrizioniAvvisaturaClientBase.addHttpHeader("Host", avvisaturaHost);
 
+    console.log(
+      iscrizioniAvvisaturaClientBase.describe()
+      .IscrizioniAvvisaturaService
+      .PPTPort
+      .nodoAggiornaIscrizioniAvvisatura
+    );
+    console.log(
+      iscrizioniAvvisaturaClientBase.describe()
+      .IscrizioniAvvisaturaService
+      .PPTPort
+      .nodoAggiornaIscrizioniAvvisatura
+      .input
+      .datiNotifica
+      .identificativoUnivocoSoggetto
+    );
+
     const iscrizioniAvvisaturaClient = new clients.IscrizioniAvvisaturaAsyncClient(
       iscrizioniAvvisaturaClientBase
     );
@@ -55,7 +71,7 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
 
     try {
       const output = await iscrizioniAvvisaturaClient.nodoAggiornaIscrizioniAvvisatura(
-        input
+        input as any
       );
     } catch {
       // call will fail since customReq returns an unparsable response (null)
