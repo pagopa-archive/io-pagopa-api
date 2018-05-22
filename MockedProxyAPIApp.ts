@@ -4,7 +4,7 @@ import * as core from "express-serve-static-core";
 import * as http from "http";
 import { CONFIG } from "./Configuration";
 import { MockedProxyAPIData } from "./MockedProxyAPIData";
-import { logger } from "./api/utils/logger"
+import { logger } from "./utils/logger"
 
 
 export function startApp(): http.Server {

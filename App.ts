@@ -3,7 +3,7 @@ import * as express from "express";
 import * as core from "express-serve-static-core";
 import * as http from "http";
 import { CONFIG } from "./Configuration";
-import { logger } from "./api/utils/logger"
+import { logger } from "./utils/logger"
 import {NotificationAPI} from "./api/NotificationAPI"
 
 
