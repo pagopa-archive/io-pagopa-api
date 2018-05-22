@@ -28,7 +28,7 @@ afterAll(() => {
   MockedProxyAPIApp.stopServer(mockedProxyAPIServer);
 });
 
-describe("From ts type to wsdl", () => {
+/*describe("From ts type to wsdl", () => {
   test("should send the right WSDL", async () => {
     let richiestaAggiornamento: InodoAggiornaIscrizioniAvvisaturaInput = {
       datiNotifica: {
@@ -62,7 +62,7 @@ describe("From ts type to wsdl", () => {
     expect(requestOptions.body).toMatch("<password>password</password>");
     expect(requestOptions.headers).toHaveProperty("Accept");
   });
-});
+});*/
 
 describe("Call POST /notifications/register service proxy->API", () => {
   test("should return ok status", done => {

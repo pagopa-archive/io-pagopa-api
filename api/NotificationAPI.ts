@@ -1,3 +1,4 @@
+"use-strict"
 import fetch from "node-fetch";
 import { CONFIG } from "../Configuration";
 import * as clients from "../lib/clients";
@@ -25,20 +26,19 @@ export class NotificationAPI {
     /*TRASFORMARE IL BODY IN WSDL*/
 
     let requestOptions;
-
-    function customReq(
+    //THE FOLLOWING COMMENTED BLOCK IS ONLY FOR STAND-ALONE TESTING
+    /*function customReq(
       options: any,
       callback?: (error: any, res: any, body: any) => void
     ): void {
       requestOptions = options;
       callback(null, null, null);
-    }
-
+    }*/
     let iscrizioniAvvisaturaClientBase = await clients.createIscrizioniAvvisaturaClient(
       {
         endpoint: url,
         envelopeKey: "soapenv",
-        request: customReq
+        //request: customReq
       }
     );
 
