@@ -1,48 +1,37 @@
-/**
- * Italia PagoPA Proxy
- * Cittadinanza Digitale PagoPA services
- */
-
 import * as bodyParser from "body-parser";
 import * as debug from "debug";
 import * as express from "express";
 import * as core from "express-serve-static-core";
 import * as http from "http";
 import { CONFIG } from "./Configuration";
-import { NotificationAPI } from "./api/NotificationAPI"
+import { MockedProxyAPIData } from "./MockedProxyAPIData";
 
-
-// Define server and routes
 debug("ts-express:server");
 
-export class App {
+export class MockedProxyAPIApp {
   private readonly app?: core.Express;
-  private server?: http.Server; // tslint:disable-line
-  private readonly serverPort?: number | string | boolean;
+  private server?: http.Server;
 
   public constructor() {
-    this.serverPort = this.normalizePort(
-      process.env.PORT || CONFIG.CONTROLLER.PORT
-    );
     this.app = express();
     this.setGlobalSettings();
     this.setServerRoutes();
   }
 
   public startServer(): boolean {
-    console.log("Starting Proxy PagoPa Server...");
+    console.log("Starting PagoPa Mocked Server...");
     if (this.app === undefined) {
       return false;
     }
     this.server = http.createServer(this.app);
-    this.server.listen(this.serverPort);
+    this.server.listen(CONFIG.PAGOPA.PORT);
     this.server.on("error", this.onError);
     this.server.on("listening", this.onListening);
     return true;
   }
 
   public stopServer(): boolean {
-    console.log("Stopping Proxy PagoPa Server...");
+    console.log("Stopping PagoPa Mocked Server...");
     if (this.server === undefined) {
       return false;
     }
@@ -54,9 +43,25 @@ export class App {
     if (this.app === undefined) {
       return false;
     }
-    this.app.post(CONFIG.CONTROLLER.ROUTES.NOTIFICATION_REGISTER, req => {
-      console.log("Serving Login Request (GET)...");
-      NotificationAPI.prototype.register(req.body);
+    const mockedProxyAPIData = new MockedProxyAPIData();
+
+    this.app.post(CONFIG.PAGOPA.SERVICES.NOTIFICATION_REGISTER, (req, res) => {
+      if (
+        req.body.identificativoPSP == "CDPSP" &&
+        req.body.password == "password"
+      ) {
+        res
+          .status(200)
+          .json(
+            mockedProxyAPIData.getNodoAggiornaIscrizioneAvvisaturaRispostaMocked()
+          );
+      } else {
+        res
+          .status(400)
+          .json(
+            mockedProxyAPIData.getNodoAggiornaIscrizioneAvvisaturaErrorMocked()
+          );
+      }
     });
     return true;
   }
@@ -65,30 +70,17 @@ export class App {
     if (this.app === undefined) {
       return false;
     }
-    this.app.set("port", this.serverPort);
+    this.app.set("port", String(CONFIG.PAGOPA.PORT));
+    this.app.use(bodyParser.json()); // @ts-ignore error
+    this.app.use(bodyParser.urlencoded({ extended: false }));
     return true;
-  }
-
-  private normalizePort(val: number | string): number | string | boolean {
-    const xport: number = typeof val === "string" ? parseInt(val, 10) : val;
-    if (isNaN(xport)) {
-      return val;
-    } else if (xport >= 0) {
-      return xport;
-    } else {
-      return false;
-    }
   }
 
   private onError(error: NodeJS.ErrnoException): void {
     if (error.syscall !== "listen") {
       throw error;
     }
-    const stringPort = String(this.serverPort);
-    const bind =
-      typeof this.serverPort === "string"
-        ? "Pipe " + stringPort
-        : "Port " + stringPort;
+    const bind = "Port " + String(CONFIG.PAGOPA.PORT);
     switch (error.code) {
       case "EACCES":
         console.error(`${bind} requires elevated privileges`);

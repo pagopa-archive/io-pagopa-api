@@ -5,7 +5,7 @@ import soap from "soap";
 import fs from "fs";
 import fetch from "node-fetch";
 
-import { MockedProxyAPIApp } from "../../mocks/MockedProxyAPIApp";
+import { MockedProxyAPIApp } from "../../MockedProxyAPIApp";
 import { App } from "../../App";
 import { CONFIG } from "../../Configuration";
 
