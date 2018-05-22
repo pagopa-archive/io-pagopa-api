@@ -11,11 +11,11 @@ export interface InodoAggiornaIscrizioniAvvisaturaInput {
     identificativoCanale: string;
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     password: string;
-    datiNotifica: PPTPortTypes.IdatiNotifica;
+    datiNotifica?: PPTPortTypes.IdatiNotifica;
 }
 
 export interface InodoAggiornaIscrizioniAvvisaturaOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#stEsitoOperazione(length,OK,KO) */
     esitoOperazione: "OK" | "KO";
 }
