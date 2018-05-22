@@ -1,51 +1,29 @@
 import * as bodyParser from "body-parser";
-import * as debug from "debug";
 import * as express from "express";
 import * as core from "express-serve-static-core";
 import * as http from "http";
 import { CONFIG } from "./Configuration";
 import { MockedProxyAPIData } from "./MockedProxyAPIData";
+import { logger } from "./api/utils/logger"
 
-debug("ts-express:server");
 
-export class MockedProxyAPIApp {
-  private readonly app?: core.Express;
-  private server?: http.Server;
+export function startApp(): http.Server {
+  logger.info("Starting Proxy PagoPa Server...");
+  const app = express();
+  setGlobalSettings(app);
+  setServerRoutes(app);
+  const server = http.createServer(app);
+  server.listen(CONFIG.PAGOPA.PORT);
+  server.on("error", onError);
+  return server;
+}
+export function stopServer(server: http.Server): void {
+  logger.info("Stopping PagoPa Mocked Server...");
+  server.close();
+}
 
-  public constructor() {
-    this.app = express();
-    this.setGlobalSettings();
-    this.setServerRoutes();
-  }
-
-  public startServer(): boolean {
-    console.log("Starting PagoPa Mocked Server...");
-    if (this.app === undefined) {
-      return false;
-    }
-    this.server = http.createServer(this.app);
-    this.server.listen(CONFIG.PAGOPA.PORT);
-    this.server.on("error", this.onError);
-    this.server.on("listening", this.onListening);
-    return true;
-  }
-
-  public stopServer(): boolean {
-    console.log("Stopping PagoPa Mocked Server...");
-    if (this.server === undefined) {
-      return false;
-    }
-    this.server.close();
-    return true;
-  }
-
-  private setServerRoutes(): boolean {
-    if (this.app === undefined) {
-      return false;
-    }
-    const mockedProxyAPIData = new MockedProxyAPIData();
-
-    this.app.post(CONFIG.PAGOPA.SERVICES.NOTIFICATION_REGISTER, (req, res) => {
+export function setServerRoutes(app: core.Express): void {
+app.post(CONFIG.PAGOPA.SERVICES.NOTIFICATION_REGISTER, (req: express.Request, res: express.Response) => {
       if (
         req.body.identificativoPSP == "CDPSP" &&
         req.body.password == "password"
@@ -53,56 +31,30 @@ export class MockedProxyAPIApp {
         res
           .status(200)
           .json(
-            mockedProxyAPIData.getNodoAggiornaIscrizioneAvvisaturaRispostaMocked()
+            MockedProxyAPIData.prototype.getNodoAggiornaIscrizioneAvvisaturaRispostaMocked()
           );
       } else {
+        logger.info(String(res))
         res
           .status(400)
           .json(
-            mockedProxyAPIData.getNodoAggiornaIscrizioneAvvisaturaErrorMocked()
+            MockedProxyAPIData.prototype.getNodoAggiornaIscrizioneAvvisaturaErrorMocked()
           );
       }
     });
-    return true;
   }
 
-  private setGlobalSettings(): boolean {
-    if (this.app === undefined) {
-      return false;
-    }
-    this.app.set("port", String(CONFIG.PAGOPA.PORT));
-    this.app.use(bodyParser.json()); // @ts-ignore error
-    this.app.use(bodyParser.urlencoded({ extended: false }));
-    return true;
+  export function setGlobalSettings(app: core.Express): void {
+    app.set("port", CONFIG.PAGOPA.PORT);
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
   }
 
-  private onError(error: NodeJS.ErrnoException): void {
-    if (error.syscall !== "listen") {
-      throw error;
-    }
-    const bind = "Port " + String(CONFIG.PAGOPA.PORT);
-    switch (error.code) {
-      case "EACCES":
-        console.error(`${bind} requires elevated privileges`);
-        process.exit(1);
-        break;
-      case "EADDRINUSE":
-        console.error(`${bind} is already in use`);
-        process.exit(1);
-        break;
-      default:
-        throw error;
-    }
+  export function onError(error: NodeJS.ErrnoException): void {
+    logger.error(
+      `Server error ( ${CONFIG.CONTROLLER.HOST} : ${
+        CONFIG.CONTROLLER.PORT
+      } : ${error.code}`
+    );
+    process.exit(1);
   }
-
-  private onListening(): boolean {
-    if (this.server === undefined) {
-      return false;
-    }
-    const addr = this.server.address();
-    const bind =
-      typeof addr === "string" ? `pipe ${addr}` : `port ${addr.port}`;
-    debug(`Listening on ${bind}`);
-    return true;
-  }
-}
