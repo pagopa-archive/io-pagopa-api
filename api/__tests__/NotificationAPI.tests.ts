@@ -8,7 +8,7 @@ import * as MockedProxyAPIApp from "../../MockedProxyAPIApp";
 import * as App from "../../App";
 
 import { CONFIG } from "../../Configuration";
-import * as logger from "../utils/logger"
+import * as logger from "../../utils/logger"
 
 import { NotificationAPI } from "../NotificationApi";
 import { InodoAggiornaIscrizioniAvvisaturaInput } from "../../wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
