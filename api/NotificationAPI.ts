@@ -14,7 +14,7 @@ import { request } from "https";
 
 // Notification Service for PagoPA communications
 export class NotificationAPI {
-  // Retrieve wallet containing payment methods
+
   public async register(
     richiestaAggiornamento: InodoAggiornaIscrizioniAvvisaturaInput
   ) {
@@ -23,7 +23,7 @@ export class NotificationAPI {
       ":" +
       CONFIG.PAGOPA.PORT +
       CONFIG.PAGOPA.SERVICES.NOTIFICATION_REGISTER;
-    /*TRASFORMARE IL BODY IN WSDL*/
+
 
     let requestOptions;
     //THE FOLLOWING COMMENTED BLOCK IS ONLY FOR STAND-ALONE TESTING
