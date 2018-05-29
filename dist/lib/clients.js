@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const wsdl_paths = require("./wsdl-paths");
+const wsdl_paths = require("../lib/wsdl-paths");
 const utils_1 = require("./utils");
 // import interfaces for "pagoPA" services (Nodo and Avvisatura)
 const PagamentiTelematiciPspNodoService = require("../wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort");
