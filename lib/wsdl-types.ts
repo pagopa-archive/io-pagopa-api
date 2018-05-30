@@ -4,6 +4,8 @@
 
 export type base64Binary = string;
 
+export type stText35 = string;
+
 // needs to have ISO format: 2018-03-30T15:22:00
 export type dateTime = string;
 

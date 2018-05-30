@@ -35,8 +35,8 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
     // JSON MUST be the same of the WSDL schema!!!
 
     const identificativoUnivocoSoggetto: clients.IscrizioniAvvisaturaService.PPTPortTypes.IidentificativoUnivocoSoggetto = {
-      "sac:tipoIdentificativoUnivoco": "F",
-      "sac:codiceIdentificativoUnivoco": "FISCAL_CODE"
+      tipoIdentificativoUnivoco: "F",
+      codiceIdentificativoUnivoco: "FISCAL_CODE"
     };
 
     const datiNotifica: clients.IscrizioniAvvisaturaService.PPTPortTypes.IdatiNotifica = {

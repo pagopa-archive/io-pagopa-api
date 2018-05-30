@@ -50,7 +50,7 @@ exports.attachFespPspServer = attachFespPspServer;
  */
 function attachAvvisiDigitaliServer(server, path, avvisiDigitaliHandlers) {
     return __awaiter(this, void 0, void 0, function* () {
-        const wsdl = yield utils_1.readWsdl(wsdl_paths.FespPspService_WSDL_PATH);
+        const wsdl = yield utils_1.readWsdl(wsdl_paths.AvvisiDigitaliService_WSDL_PATH);
         const service = {
             AvvisiDigitaliService: {
                 PPTPort: avvisiDigitaliHandlers,

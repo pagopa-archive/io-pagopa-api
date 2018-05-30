@@ -23,9 +23,9 @@ export interface IPPTPortSoap {
 export declare namespace PPTPortTypes {
     interface IidentificativoUnivocoSoggetto {
         /** http://ws.pagamenti.telematici.gov/#stTipoIdentificativoUnivocoPersFG(length,F,G) */
-        "sac:tipoIdentificativoUnivoco": "F" | "G";
+        tipoIdentificativoUnivoco: "F" | "G";
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
-        "sac:codiceIdentificativoUnivoco": string;
+        codiceIdentificativoUnivoco: string;
     }
     interface IdatiNotifica {
         /** http://ws.pagamenti.telematici.gov/#stISODateTime() */

@@ -9,10 +9,9 @@
                   targetNamespace="http://PuntoAccessoPA.spcoop.gov.it/servizi/ChiediElencoAvvisiDigitali">
 
     <wsdl:types>
-        <xsd:schema version="1.0" targetNamespace="http://ws.pagamenti.telematici.gov/">
+        <xsd:schema version="2.1" targetNamespace="http://ws.pagamenti.telematici.gov/">
 
             <xsd:include schemaLocation="avvisi-digitali-1.0.xsd"/>
-            <xsd:include schemaLocation="sac-common-types-1.0.xsd"/>
 
             <xsd:element name="intestazionePPT" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
                 <xsd:complexType>
@@ -51,14 +50,13 @@
             </xsd:complexType>
 
             <!-- Wrapper Elements -->
-            <xsd:element name="paaChiediElencoAvvisiDigitali" type="sac:ctPaaChiediElencoAvvisiDigitali" minOccurs="0" maxOccurs="1"/>
-            <xsd:element name="paaChiediElencoAvvisiDigitaliRisposta" type="sac:ctPaaChiediElencoAvvisiDigitaliRisposta" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="paaChiediElencoAvvisiDigitali" type="sac:ctPaaChiediElencoAvvisiDigitali" />
+            <xsd:element name="paaChiediElencoAvvisiDigitaliRisposta" type="sac:ctPaaChiediElencoAvvisiDigitaliRisposta"/>
 
         </xsd:schema>
     </wsdl:types>
 
     <wsdl:message name="paaChiediElencoAvvisiDigitali">
-        <wsdl:part name="header" element="sac:intestazionePPT"/>
         <wsdl:part name="bodyrichiesta" element="sac:paaChiediElencoAvvisiDigitali"/>
     </wsdl:message>
     <wsdl:message name="paaChiediElencoAvvisiDigitaliRisposta">

@@ -90,7 +90,7 @@
 
     <xsd:simpleType name="stEMail">
         <xsd:restriction base="xsd:string">
-            <xsd:pattern value="[A-Za-z0-9_]+([\-\+\.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([\-\.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([\-\.][A-Za-z0-9_]+)*"/>
+            <xsd:pattern value="(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"/>
             <xsd:maxLength value="256"/>
         </xsd:restriction>
     </xsd:simpleType>
@@ -120,7 +120,7 @@
 
     <xsd:complexType name="ctIdentificativoUnivocoPersonaFG">
         <xsd:sequence>
-            <xsd:element name="tipoIdentificativoUnivoco" type="stTipoIdentificativoUnivocoPersFG" minOccurs="1">
+            <xsd:element form="qualified" name="tipoIdentificativoUnivoco" type="stTipoIdentificativoUnivocoPersFG" minOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation>Campo alfanumerico che indica la natura del
                         soggetto, può assumere i seguenti valori:
@@ -129,7 +129,7 @@
                     <xsd:documentation>G - Persona Giuridica</xsd:documentation>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="codiceIdentificativoUnivoco" type="stText35" minOccurs="1">
+            <xsd:element form="qualified" name="codiceIdentificativoUnivoco" type="stText35" minOccurs="1">
                 <xsd:annotation>
                     <xsd:documentation>Campo alfanumerico che può contenere il codice
                         fiscale o, in alternativa, la partita IVA del soggetto.
