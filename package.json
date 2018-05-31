@@ -19,12 +19,12 @@
     "@types/jest": "^22.2.2",
     "@types/node": "^8.9.4",
     "@types/soap": "^0.21.0",
+    "danger": "^3.1.7",
+    "danger-plugin-digitalcitizenship": "git+https://github.com/teamdigitale/danger-plugin-digitalcitizenship.git#v0.0.4",
     "jest": "^22.4.3",
     "ts-jest": "^22.4.2",
     "typescript": "^2.8.0",
-    "wsdl-to-ts": "^0.1.3",
-    "danger": "^3.1.7",
-    "danger-plugin-digitalcitizenship": "https://github.com/teamdigitale/danger-plugin-digitalcitizenship#v0.0.4"
+    "wsdl-to-ts": "^0.1.3"
   },
   "dependencies": {
     "jest-xml-matcher": "^1.1.1",
@@ -39,7 +39,9 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "modulePathIgnorePatterns": ["<rootDir>/dist/"],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist/"
+    ],
     "verbose": true,
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
