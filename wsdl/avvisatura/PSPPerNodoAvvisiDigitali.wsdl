@@ -9,7 +9,7 @@
                   targetNamespace="http://PuntoAccessoPSP.spcoop.gov.it/servizi/AvvisiDigitali">
 
     <wsdl:types>
-        <xsd:schema version="1.0" targetNamespace="http://ws.pagamenti.telematici.gov/">
+        <xsd:schema version="2.1" targetNamespace="http://ws.pagamenti.telematici.gov/">
 
             <xsd:include schemaLocation="avvisi-digitali-1.0.xsd"/>
 

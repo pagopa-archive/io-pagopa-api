@@ -10,7 +10,7 @@
                   targetNamespace="http://PuntoAccessoPA.spcoop.gov.it/servizi/AvvisiDigitali">
 
     <wsdl:types>
-        <xsd:schema version="1.0" targetNamespace="http://ws.pagamenti.telematici.gov/sachead">
+        <xsd:schema version="2.1" targetNamespace="http://ws.pagamenti.telematici.gov/sachead">
 
             <xsd:simpleType name="stText35">
                 <xsd:restriction base="xsd:string">

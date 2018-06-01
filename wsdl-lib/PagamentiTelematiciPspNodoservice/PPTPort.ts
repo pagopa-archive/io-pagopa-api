@@ -64,6 +64,8 @@ export interface InodoInviaRTInput {
     codiceContestoPagamento: string;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     tipoFirma: string;
+    /** http://ws.pagamenti.telematici.gov/#stForzaControlloSegno(0,1) */
+    forzaControlloSegno: "0" | "1";
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     rt: base64Binary;
 }
@@ -214,7 +216,11 @@ export interface InodoInviaRichiestaRevocaInput {
     rr: base64Binary;
 }
 
-export interface InodoInviaRichiestaRevocaOutput {}
+export interface InodoInviaRichiestaRevocaOutput {
+    fault: PPTPortTypes.Ifault;
+    /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+    esito: string;
+}
 
 export interface IPPTPortSoap {
     nodoVerificaRPT: (input: InodoVerificaRPTInput, cb: (err: any | null, result: InodoVerificaRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
@@ -242,6 +248,12 @@ export namespace PPTPortTypes {
         description: string;
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         serial: int;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalFaultCode: string;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalFaultString: string;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalDescription: string;
     }
     export interface IidentificativoUnivocoBeneficiario {
         /** http://www.digitpa.gov.it/schemas/2011/Pagamenti/#stTipoIdentificativoUnivocoPersG(G,length) */

@@ -2,7 +2,7 @@
 <!-- Questo WSDL rappresenta l'interfaccia esposta dal PSP -->
 <wsdl:definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ppt="http://ws.pagamenti.telematici.gov/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:pay_j="http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://PuntoAccessoPSP.spcoop.gov.it" name="PSP" targetNamespace="http://PuntoAccessoPSP.spcoop.gov.it">
 	<wsdl:types>
-		<xsd:schema version="1.0" targetNamespace="http://ws.pagamenti.telematici.gov/">
+		<xsd:schema version="2.1" targetNamespace="http://ws.pagamenti.telematici.gov/">
 			<xsd:import schemaLocation="ACK_PagamentiTelematici_6_0_1.xsd" namespace="http://www.cnipa.gov.it/schemas/2010/Pagamenti/Ack_1_0/" />
 			
 			<xsd:simpleType name="stText35">
@@ -144,6 +144,9 @@
 					<xsd:element name="id" type="xsd:string" />
 					<xsd:element name="description" type="xsd:string" minOccurs="0" />
 					<xsd:element name="serial" type="xsd:int" minOccurs="0" />
+					<xsd:element name="originalFaultCode" type="xsd:string"  minOccurs="0"  />
+					<xsd:element name="originalFaultString" type="xsd:string"  minOccurs="0"  />
+					<xsd:element name="originalDescription" type="xsd:string" minOccurs="0" />
 				</xsd:sequence>
 			</xsd:complexType>
 			<xsd:complexType name="pspInviaRichiestaStorno">

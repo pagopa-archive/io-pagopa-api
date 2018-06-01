@@ -51,7 +51,7 @@ export async function attachAvvisiDigitaliServer(
   path: string,
   avvisiDigitaliHandlers: AvvisiDigitaliService.IPPTPortSoap
 ): Promise<soap.Server> {
-  const wsdl = await readWsdl(wsdl_paths.FespPspService_WSDL_PATH);
+  const wsdl = await readWsdl(wsdl_paths.AvvisiDigitaliService_WSDL_PATH);
 
   const service = {
     AvvisiDigitaliService: {
