@@ -272,7 +272,7 @@ export declare namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stText25(minLength,maxLength) */
         causaleSpezzone: string;
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSpezzone: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSpezzone: number;
     }
     interface IspezzoniCausaleVersamento {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -281,7 +281,7 @@ export declare namespace PPTPortTypes {
     }
     interface IdatiPagamentoPA {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSingoloVersamento: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSingoloVersamento: number;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
         ibanAccredito: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
@@ -351,7 +351,7 @@ export declare namespace PPTPortTypes {
     }
     interface IdatiPagamentoPSP {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSingoloVersamento: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSingoloVersamento: number;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
         ibanAppoggio: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
