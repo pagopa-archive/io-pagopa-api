@@ -201,6 +201,12 @@ export namespace PSPPortTypes {
         description: string;
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         serial: int;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalFaultCode: string;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalFaultString: string;
+        /** http://ws.pagamenti.telematici.gov/#string(undefined) */
+        originalDescription: string;
     }
     export interface IlistaErroriRPT {
         fault: PSPPortTypes.Ifault[];

@@ -10,9 +10,9 @@
 
     <wsdl:types>
         <xsd:schema version="2.1" targetNamespace="http://ws.pagamenti.telematici.gov/">
-        
+
             <xsd:include schemaLocation="sac-common-types-1.0.xsd"/>
-            <xsd:include schemaLocation="avvisi-digitali-1.0.xsd"/>
+
             <xsd:complexType name="ctDatiNotifica">
                 <xsd:sequence>
                     <xsd:element name="dataOraRichiesta" type="sac:stISODateTime"/>
@@ -28,7 +28,7 @@
                     <xsd:element name="identificativoIntermediarioPSP" type="sac:stText35"/>
                     <xsd:element name="identificativoCanale" type="sac:stText35"/>
                     <xsd:element name="password" type="sac:stText35"/>
-                    <xsd:element name="datiNotifica" type="ctDatiNotifica"/>
+                    <xsd:element name="datiNotifica" type="sac:ctDatiNotifica"/>
                 </xsd:sequence>
             </xsd:complexType>
 
