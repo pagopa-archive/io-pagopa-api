@@ -230,7 +230,12 @@ export interface IPPTPortSoap {
 }
 
 export namespace PPTPortTypes {
-    export interface IcodiceIdRPT {}
+    export interface IcodiceIdRPT {
+        CF: string,
+        CodStazPA: string,
+        AuxDigit: string,
+        CodIUV: string
+    }
     export interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         faultCode: string;
@@ -387,4 +392,13 @@ export namespace PPTPortTypes {
         totRestituiti: int;
         idQuadratura: PPTPortTypes.IidQuadratura[];
     }
+
+    export interface IcdInfoWisp {
+        identificativioDominio: string,
+        identificativoUnivocoVersamento: string,
+        codiceContestoPagamento: string,
+        urlWisp: string,
+        codiceIdRPT: PPTPortTypes.IcodiceIdRPT
+    }
 }
+
