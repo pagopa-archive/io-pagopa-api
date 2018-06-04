@@ -90,6 +90,13 @@ export interface InodoChiediTemplateInformativaPSPInput {
     /** http://ws.pagamenti.telematici.gov/#stPassword(minLength,maxLength) */
     password: string;
 }
+export interface IcdInfoWisp {
+    identificativioDominio: string;
+    identificativoUnivocoVersamento: string;
+    codiceContestoPagamento: string;
+    urlWisp: string;
+    codiceIdRPT: PPTPortTypes.IcodiceIdRPT;
+}
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
@@ -228,6 +235,10 @@ export interface IPPTPortSoap {
 }
 export declare namespace PPTPortTypes {
     interface IcodiceIdRPT {
+        CF: string;
+        CodStazPA: string;
+        AuxDigit: string;
+        CodIUV: string;
     }
     interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */

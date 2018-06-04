@@ -102,6 +102,15 @@ export interface InodoChiediTemplateInformativaPSPInput {
     password: string;
 }
 
+export interface IcdInfoWisp {
+    identificativioDominio: string,
+    identificativoUnivocoVersamento: string,
+    codiceContestoPagamento: string,
+    urlWisp: string,
+    codiceIdRPT: PPTPortTypes.IcodiceIdRPT
+}
+
+
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
@@ -213,6 +222,8 @@ export interface InodoInviaRichiestaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     rr: base64Binary;
 }
+
+
 
 export interface InodoInviaRichiestaRevocaOutput {}
 
@@ -392,13 +403,4 @@ export namespace PPTPortTypes {
         totRestituiti: int;
         idQuadratura: PPTPortTypes.IidQuadratura[];
     }
-
-    export interface IcdInfoWisp {
-        identificativioDominio: string,
-        identificativoUnivocoVersamento: string,
-        codiceContestoPagamento: string,
-        urlWisp: string,
-        codiceIdRPT: PPTPortTypes.IcodiceIdRPT
-    }
 }
-
