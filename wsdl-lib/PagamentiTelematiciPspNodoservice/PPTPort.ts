@@ -102,7 +102,7 @@ export interface InodoChiediTemplateInformativaPSPInput {
     password: string;
 }
 
-export interface IcdInfoWisp {
+export interface IcdInfoWispInput {
     identificativioDominio: string,
     identificativoUnivocoVersamento: string,
     codiceContestoPagamento: string,
@@ -223,6 +223,9 @@ export interface InodoInviaRichiestaRevocaInput {
     rr: base64Binary;
 }
 
+export interface IcdInfoWispOutput {
+    esito: "OK" | "KO"
+}
 
 
 export interface InodoInviaRichiestaRevocaOutput {}
@@ -238,6 +241,7 @@ export interface IPPTPortSoap {
     nodoChiediQuadraturaPSP: (input: InodoChiediQuadraturaPSPInput, cb: (err: any | null, result: InodoChiediQuadraturaPSPOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
     nodoInviaEsitoStorno: (input: InodoInviaEsitoStornoInput, cb: (err: any | null, result: InodoInviaEsitoStornoOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
     nodoInviaRichiestaRevoca: (input: InodoInviaRichiestaRevocaInput, cb: (err: any | null, result: InodoInviaRichiestaRevocaOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    nodoInviaCdInfoWisp: (input: IcdInfoWispInput, cb: (err: any | null, result: IcdInfoWispOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
 }
 
 export namespace PPTPortTypes {

@@ -164,6 +164,8 @@ export interface IpspInviaRispostaRevocaOutput {
     pspInviaRispostaRevocaResponse: PSPPortTypes.IpspInviaRispostaRevocaResponse;
 }
 
+
+
 export interface IPSPPortSoap {
     pspInviaRPT: (input: IpspInviaRPTInput, cb: (err: any | null, result: IpspInviaRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
     pspInviaCarrelloRPT: (input: IpspInviaCarrelloRPTInput, cb: (err: any | null, result: IpspInviaCarrelloRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
@@ -175,6 +177,7 @@ export interface IPSPPortSoap {
     pspNotificaCancellazioneRPT: (input: IpspNotificaCancellazioneRPTInput, cb: (err: any | null, result: IpspNotificaCancellazioneRPTOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
     pspInviaRichiestaStorno: (input: IpspInviaRichiestaStornoInput, cb: (err: any | null, result: IpspInviaRichiestaStornoOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
     pspInviaRispostaRevoca: (input: IpspInviaRispostaRevocaInput, cb: (err: any | null, result: IpspInviaRispostaRevocaOutput, raw: string,  soapHeader: {[k: string]: any}) => any) => void;
+    
 }
 
 export namespace PSPPortTypes {

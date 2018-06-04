@@ -90,7 +90,7 @@ export interface InodoChiediTemplateInformativaPSPInput {
     /** http://ws.pagamenti.telematici.gov/#stPassword(minLength,maxLength) */
     password: string;
 }
-export interface IcdInfoWisp {
+export interface IcdInfoWispInput {
     identificativioDominio: string;
     identificativoUnivocoVersamento: string;
     codiceContestoPagamento: string;
@@ -199,6 +199,9 @@ export interface InodoInviaRichiestaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     rr: base64Binary;
 }
+export interface IcdInfoWispOutput {
+    esito: "OK" | "KO";
+}
 export interface InodoInviaRichiestaRevocaOutput {
 }
 export interface IPPTPortSoap {
@@ -230,6 +233,9 @@ export interface IPPTPortSoap {
         [k: string]: any;
     }) => any) => void;
     nodoInviaRichiestaRevoca: (input: InodoInviaRichiestaRevocaInput, cb: (err: any | null, result: InodoInviaRichiestaRevocaOutput, raw: string, soapHeader: {
+        [k: string]: any;
+    }) => any) => void;
+    nodoInviaCdInfoWisp: (input: IcdInfoWispInput, cb: (err: any | null, result: IcdInfoWispOutput, raw: string, soapHeader: {
         [k: string]: any;
     }) => any) => void;
 }
