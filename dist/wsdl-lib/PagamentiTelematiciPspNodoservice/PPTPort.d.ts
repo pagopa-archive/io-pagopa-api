@@ -370,15 +370,15 @@ export declare namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
         importoSingoloVersamento: number;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-        ibanAppoggio: string;
+        ibanAppoggio?: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-        bicAppoggio: string;
-        soggettoVersante: PPTPortTypes.IsoggettoVersante;
+        bicAppoggio?: string;
+        soggettoVersante?: PPTPortTypes.IsoggettoVersante;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-        ibanAddebito: string;
+        ibanAddebito?: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-        bicAddebito: string;
-        soggettoPagatore: PPTPortTypes.IsoggettoPagatore;
+        bicAddebito?: string;
+        soggettoPagatore?: PPTPortTypes.IsoggettoPagatore;
     }
     interface InodoAttivaRPTRisposta {
         fault: PPTPortTypes.Ifault;
