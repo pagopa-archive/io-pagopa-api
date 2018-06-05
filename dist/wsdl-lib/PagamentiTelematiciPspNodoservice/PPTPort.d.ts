@@ -202,6 +202,11 @@ export interface InodoInviaRichiestaRevocaInput {
 export interface IcdInfoWispOutput {
     esito: "OK" | "KO";
 }
+export declare enum codificaInfrastrutturaPSPEnum {
+    QR_CODE = "QR-CODE",
+    BARCODE_GS1_128 = "BARCODE-GS1-128",
+    BARCODE_128_AIM = "BARCODE-128-AIM",
+}
 export interface InodoInviaRichiestaRevocaOutput {
 }
 export interface IPPTPortSoap {
