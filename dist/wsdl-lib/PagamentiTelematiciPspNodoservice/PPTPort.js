@@ -6,4 +6,12 @@ var codificaInfrastrutturaPSPEnum;
     codificaInfrastrutturaPSPEnum["BARCODE_GS1_128"] = "BARCODE-GS1-128";
     codificaInfrastrutturaPSPEnum["BARCODE_128_AIM"] = "BARCODE-128-AIM";
 })(codificaInfrastrutturaPSPEnum = exports.codificaInfrastrutturaPSPEnum || (exports.codificaInfrastrutturaPSPEnum = {}));
+var PPTPortTypes;
+(function (PPTPortTypes) {
+    let Esito;
+    (function (Esito) {
+        Esito["OK"] = "OK";
+        Esito["KO"] = "KO";
+    })(Esito = PPTPortTypes.Esito || (PPTPortTypes.Esito = {}));
+})(PPTPortTypes = exports.PPTPortTypes || (exports.PPTPortTypes = {}));
 //# sourceMappingURL=PPTPort.js.map

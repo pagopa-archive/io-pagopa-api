@@ -123,7 +123,7 @@ export interface InodoInviaFlussoRendicontazioneInput {
 export interface InodoInviaFlussoRendicontazioneOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 export interface InodoChiediElencoQuadraturePSPInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -179,7 +179,7 @@ export interface InodoInviaEsitoStornoInput {
 export interface InodoInviaEsitoStornoOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 export interface InodoInviaRichiestaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -318,7 +318,7 @@ export declare namespace PPTPortTypes {
     interface InodoVerificaRPTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     interface IidentificativoUnivocoVersante {
@@ -388,13 +388,13 @@ export declare namespace PPTPortTypes {
     interface InodoAttivaRPTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     interface InodoInviaRTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
     }
     interface IidQuadratura {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -406,5 +406,9 @@ export declare namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         totRestituiti: int;
         idQuadratura: PPTPortTypes.IidQuadratura[];
+    }
+    enum Esito {
+        OK = "OK",
+        KO = "KO",
     }
 }
