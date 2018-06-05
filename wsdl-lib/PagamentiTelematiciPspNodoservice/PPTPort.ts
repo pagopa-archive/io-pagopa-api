@@ -139,7 +139,7 @@ export interface InodoInviaFlussoRendicontazioneInput {
 export interface InodoInviaFlussoRendicontazioneOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 
 export interface InodoChiediElencoQuadraturePSPInput {
@@ -201,7 +201,7 @@ export interface InodoInviaEsitoStornoInput {
 export interface InodoInviaEsitoStornoOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 
 export interface InodoInviaRichiestaRevocaInput {
@@ -226,6 +226,8 @@ export interface InodoInviaRichiestaRevocaInput {
 export interface IcdInfoWispOutput {
     esito: "OK" | "KO"
 }
+
+
 
 export enum codificaInfrastrutturaPSPEnum {
     QR_CODE = "QR-CODE",
@@ -323,7 +325,7 @@ export namespace PPTPortTypes {
     export interface InodoVerificaRPTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     export interface IidentificativoUnivocoVersante {
@@ -393,13 +395,13 @@ export namespace PPTPortTypes {
     export interface InodoAttivaRPTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     export interface InodoInviaRTRisposta {
         fault: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
     }
     export interface IidQuadratura {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -411,5 +413,10 @@ export namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#int(undefined) */
         totRestituiti: int;
         idQuadratura: PPTPortTypes.IidQuadratura[];
+    }
+
+    export enum Esito {
+        OK = "OK",
+        KO = "KO"
     }
 }
