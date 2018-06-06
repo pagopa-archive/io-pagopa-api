@@ -95,7 +95,7 @@ export interface IcdInfoWispInput {
     identificativoUnivocoVersamento: string;
     codiceContestoPagamento: string;
     urlWisp: string;
-    codiceIdRPT: PPTPortTypes.IcodiceIdRPT;
+    idPagamento: string;
 }
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;

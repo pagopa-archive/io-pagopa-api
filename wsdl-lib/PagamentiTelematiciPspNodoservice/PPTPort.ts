@@ -104,13 +104,12 @@ export interface InodoChiediTemplateInformativaPSPInput {
 }
 
 export interface IcdInfoWispInput {
-    identificativioDominio: string,
-    identificativoUnivocoVersamento: string,
-    codiceContestoPagamento: string,
-    urlWisp: string,
-    codiceIdRPT: PPTPortTypes.IcodiceIdRPT
-}
-
+    identificativioDominio: string;
+    identificativoUnivocoVersamento: string;
+    codiceContestoPagamento: string;
+    urlWisp: string;
+    idPagamento: string;
+ }
 
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;
