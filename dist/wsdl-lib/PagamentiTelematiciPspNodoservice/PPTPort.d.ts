@@ -91,11 +91,8 @@ export interface InodoChiediTemplateInformativaPSPInput {
     password: string;
 }
 export interface IcdInfoWispInput {
-    identificativioDominio: string;
-    identificativoUnivocoVersamento: string;
     codiceContestoPagamento: string;
-    urlWisp: string;
-    idPagamento: string;
+    codiceIdRPT: PPTPortTypes.IcodiceIdRPT;
 }
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;
