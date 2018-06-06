@@ -2,6 +2,7 @@
  import { base64Binary, dateTime, int } from "../../lib/wsdl-types";
 
 /* tslint:disable:max-line-length */
+
 export interface InodoVerificaRPTInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
     identificativoPSP: string;
@@ -226,8 +227,6 @@ export interface InodoInviaRichiestaRevocaInput {
 export interface IcdInfoWispOutput {
     esito: "OK" | "KO"
 }
-
-
 
 export enum codificaInfrastrutturaPSPEnum {
     QR_CODE = "QR-CODE",
