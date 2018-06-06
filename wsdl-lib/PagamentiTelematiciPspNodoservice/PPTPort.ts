@@ -104,10 +104,12 @@ export interface InodoChiediTemplateInformativaPSPInput {
 }
 
 export interface IcdInfoWispInput {
-    codiceContestoPagamento:
-        string,
-      codiceIdRPT: PPTPortTypes.IcodiceIdRPT
-}
+    identificativioDominio: string;
+    identificativoUnivocoVersamento: string;
+    codiceContestoPagamento: string;
+    urlWisp: string;
+    idPagamento: string;
+ }
 
 
 export interface InodoChiediTemplateInformativaPSPOutput {
@@ -223,7 +225,7 @@ export interface InodoInviaRichiestaRevocaInput {
 }
 
 export interface IcdInfoWispOutput {
-    esito: "OK" | "KO"
+    esito: PPTPortTypes.Esito.OK | PPTPortTypes.Esito.KO
 }
 
 export enum codificaInfrastrutturaPSPEnum {

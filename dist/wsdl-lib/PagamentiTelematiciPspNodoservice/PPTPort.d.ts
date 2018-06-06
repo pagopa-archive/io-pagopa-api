@@ -91,8 +91,11 @@ export interface InodoChiediTemplateInformativaPSPInput {
     password: string;
 }
 export interface IcdInfoWispInput {
+    identificativioDominio: string;
+    identificativoUnivocoVersamento: string;
     codiceContestoPagamento: string;
-    codiceIdRPT: PPTPortTypes.IcodiceIdRPT;
+    urlWisp: string;
+    idPagamento: string;
 }
 export interface InodoChiediTemplateInformativaPSPOutput {
     fault: PPTPortTypes.Ifault;
@@ -197,7 +200,7 @@ export interface InodoInviaRichiestaRevocaInput {
     rr: base64Binary;
 }
 export interface IcdInfoWispOutput {
-    esito: "OK" | "KO";
+    esito: PPTPortTypes.Esito.OK | PPTPortTypes.Esito.KO;
 }
 export declare enum codificaInfrastrutturaPSPEnum {
     QR_CODE = "QR-CODE",
