@@ -55,7 +55,7 @@ export interface IpspInviaCarrelloRPTCarteInput {
   /** http://ws.pagamenti.telematici.gov/#string(undefined) */
   esitoTransazioneCarta: string;
   /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-  importoTotalePagato: number; //TODO [#158031250] wsdl-to-ts fix
+  importoTotalePagato: number; //TODO [#158031250] wsdl-to-ts fix https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
   /** http://ws.pagamenti.telematici.gov/#stISODateTime() */
   timestampOperazione: dateTime;
   /** http://ws.pagamenti.telematici.gov/#stText6(length) */

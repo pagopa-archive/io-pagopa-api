@@ -78,7 +78,7 @@ export namespace PPTPortTypes {
     /** http://ws.pagamenti.telematici.gov/#stISODate() */
     dataScadenzaAvviso: date;
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-    importoAvviso: number; //TODO [#158031250] wsdl-to-ts fix
+    importoAvviso: number; //TODO [#158031250] wsdl-to-ts fix https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#stEMail(pattern,maxLength) */
     eMailSoggetto: string;
     /** http://ws.pagamenti.telematici.gov/#stCellulareSoggetto(pattern) */

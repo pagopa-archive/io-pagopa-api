@@ -387,7 +387,7 @@ export namespace PPTPortTypes {
     /** http://ws.pagamenti.telematici.gov/#stText25(minLength,maxLength) */
     causaleSpezzone: string;
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-    importoSpezzone: number; //TODO: [#158031250] Fix wsdl-to-ts
+    importoSpezzone: number; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
   }
   export interface IspezzoniCausaleVersamento {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -396,7 +396,7 @@ export namespace PPTPortTypes {
   }
   export interface IdatiPagamentoPA {
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-    importoSingoloVersamento: number; //TODO: [#158031250] Fix wsdl-to-ts
+    importoSingoloVersamento: number; //: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
     ibanAccredito: string;
     /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
