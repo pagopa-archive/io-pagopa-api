@@ -2355,7 +2355,6 @@ jest-worker@^23.0.1:
   dependencies:
     merge-stream "^1.0.1"
 
-
 jest-xml-matcher@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/jest-xml-matcher/-/jest-xml-matcher-1.1.1.tgz#4aedb3bf378e9a3bd2beef4c05b6237c15af74bd"
@@ -2367,7 +2366,6 @@ jest-xml-matcher@^1.1.1:
 jest@^23.1.0:
   version "23.1.0"
   resolved "https://registry.yarnpkg.com/jest/-/jest-23.1.0.tgz#bbb7f893100a11a742dd8bd0d047a54b0968ad1a"
-
   dependencies:
     import-local "^1.0.0"
     jest-cli "^23.1.0"
@@ -3139,6 +3137,10 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
+prettier@^1.13.4:
+  version "1.13.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.13.4.tgz#31bbae6990f13b1093187c731766a14036fa72e6"
+
 pretty-data@^0.40.0:
   version "0.40.0"
   resolved "https://registry.yarnpkg.com/pretty-data/-/pretty-data-0.40.0.tgz#572aa8ea23467467ab94b6b5266a6fd9c8fddd72"
@@ -3616,7 +3618,7 @@ sntp@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-soap@*, soap@^0.24.0:
+soap@*:
   version "0.24.0"
   resolved "https://registry.yarnpkg.com/soap/-/soap-0.24.0.tgz#8a101e63ae0763afc45e876b2761091665abaed8"
   dependencies:
@@ -3650,6 +3652,24 @@ soap@^0.19.1:
     serve-static "^1.11.1"
     strip-bom "~0.3.1"
     uuid "^3.0.1"
+    xml-crypto "~0.8.0"
+
+soap@^0.23.0:
+  version "0.23.0"
+  resolved "https://registry.yarnpkg.com/soap/-/soap-0.23.0.tgz#2d8f22bef979ded90c0b4d7a5b3ce23d1ed1e52f"
+  dependencies:
+    bluebird "^3.5.0"
+    concat-stream "^1.5.1"
+    debug "^2.6.9"
+    ejs "~2.5.5"
+    finalhandler "^1.0.3"
+    lodash "^3.10.1"
+    request ">=2.9.0"
+    sax ">=0.6"
+    selectn "^0.9.6"
+    serve-static "^1.11.1"
+    strip-bom "~0.3.1"
+    uuid "^3.1.0"
     xml-crypto "~0.8.0"
 
 source-map-resolve@^0.5.0:
@@ -4085,7 +4105,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
 
 vm2@^3.6.0:
   version "3.6.0"

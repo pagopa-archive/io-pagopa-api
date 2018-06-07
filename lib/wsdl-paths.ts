@@ -1,5 +1,5 @@
 // base directory where to look for WSDL files
-const wsdlBaseDir = `${__dirname}/../wsdl`
+const wsdlBaseDir = `${__dirname}/../wsdl`;
 
 // path to WSDL(s) of "PSP" service
 export const FespPspService_WSDL_PATH = `${wsdlBaseDir}/nodo/NodoPerPsp.wsdl`;

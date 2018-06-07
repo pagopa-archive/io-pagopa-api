@@ -16,22 +16,37 @@ export { NodoChiediElencoAvvisiDigitaliService };
 /**
  * Creates a client for the "PagamentiTelematiciPspNodo" service
  */
-export function createPagamentiTelematiciPspNodoClient(options: soap.IOptions): Promise<soap.Client & PagamentiTelematiciPspNodoService.IPPTPortSoap> {
-  return createClient<PagamentiTelematiciPspNodoService.IPPTPortSoap>(wsdl_paths.PagamentiTelematiciPspNodoService_WSDL_PATH, options);
+export function createPagamentiTelematiciPspNodoClient(
+  options: soap.IOptions
+): Promise<soap.Client & PagamentiTelematiciPspNodoService.IPPTPortSoap> {
+  return createClient<PagamentiTelematiciPspNodoService.IPPTPortSoap>(
+    wsdl_paths.PagamentiTelematiciPspNodoService_WSDL_PATH,
+    options
+  );
 }
 
 /**
  * Creates a client for the "IscrizioniAvvisatura" service
  */
-export function createIscrizioniAvvisaturaClient(options: soap.IOptions): Promise<soap.Client & IscrizioniAvvisaturaService.IPPTPortSoap> {
-  return createClient<IscrizioniAvvisaturaService.IPPTPortSoap>(wsdl_paths.IscrizioniAvvisaturaService_WSDL_PATH, options);
+export function createIscrizioniAvvisaturaClient(
+  options: soap.IOptions
+): Promise<soap.Client & IscrizioniAvvisaturaService.IPPTPortSoap> {
+  return createClient<IscrizioniAvvisaturaService.IPPTPortSoap>(
+    wsdl_paths.IscrizioniAvvisaturaService_WSDL_PATH,
+    options
+  );
 }
 
 /**
  * Creates a client for the "NodoChiediElencoAvvisiDigitali" service
  */
-export function createNodoChiediElencoAvvisiDigitaliClient(options: soap.IOptions): Promise<soap.Client & NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap> {
-  return createClient<NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap>(wsdl_paths.NodoChiediElencoAvvisiDigitaliService_WSDL_PATH, options);
+export function createNodoChiediElencoAvvisiDigitaliClient(
+  options: soap.IOptions
+): Promise<soap.Client & NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap> {
+  return createClient<NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap>(
+    wsdl_paths.NodoChiediElencoAvvisiDigitaliService_WSDL_PATH,
+    options
+  );
 }
 
 /**
@@ -39,20 +54,32 @@ export function createNodoChiediElencoAvvisiDigitaliClient(options: soap.IOption
  * promise based methods.
  */
 export class PagamentiTelematiciPspNodoAsyncClient {
+  constructor(
+    private readonly client: PagamentiTelematiciPspNodoService.IPPTPortSoap
+  ) {}
 
-  constructor(private readonly client: PagamentiTelematiciPspNodoService.IPPTPortSoap) {}
-
-  nodoVerificaRPT = promisifySoapMethod(this.client.nodoVerificaRPT)
-  nodoAttivaRPT = promisifySoapMethod(this.client.nodoAttivaRPT)
-  nodoInviaRT = promisifySoapMethod(this.client.nodoInviaRT)
-  nodoChiediInformativaPA = promisifySoapMethod(this.client.nodoChiediInformativaPA)
-  nodoChiediTemplateInformativaPSP = promisifySoapMethod(this.client.nodoChiediTemplateInformativaPSP)
-  nodoInviaFlussoRendicontazione = promisifySoapMethod(this.client.nodoInviaFlussoRendicontazione)
-  nodoChiediElencoQuadraturePSP = promisifySoapMethod(this.client.nodoChiediElencoQuadraturePSP)
-  nodoChiediQuadraturaPSP = promisifySoapMethod(this.client.nodoChiediQuadraturaPSP)
-  nodoInviaEsitoStorno = promisifySoapMethod(this.client.nodoInviaEsitoStorno)
-  nodoInviaRichiestaRevoca = promisifySoapMethod(this.client.nodoInviaRichiestaRevoca)
-
+  nodoVerificaRPT = promisifySoapMethod(this.client.nodoVerificaRPT);
+  nodoAttivaRPT = promisifySoapMethod(this.client.nodoAttivaRPT);
+  nodoInviaRT = promisifySoapMethod(this.client.nodoInviaRT);
+  nodoChiediInformativaPA = promisifySoapMethod(
+    this.client.nodoChiediInformativaPA
+  );
+  nodoChiediTemplateInformativaPSP = promisifySoapMethod(
+    this.client.nodoChiediTemplateInformativaPSP
+  );
+  nodoInviaFlussoRendicontazione = promisifySoapMethod(
+    this.client.nodoInviaFlussoRendicontazione
+  );
+  nodoChiediElencoQuadraturePSP = promisifySoapMethod(
+    this.client.nodoChiediElencoQuadraturePSP
+  );
+  nodoChiediQuadraturaPSP = promisifySoapMethod(
+    this.client.nodoChiediQuadraturaPSP
+  );
+  nodoInviaEsitoStorno = promisifySoapMethod(this.client.nodoInviaEsitoStorno);
+  nodoInviaRichiestaRevoca = promisifySoapMethod(
+    this.client.nodoInviaRichiestaRevoca
+  );
 }
 
 /**
@@ -60,11 +87,13 @@ export class PagamentiTelematiciPspNodoAsyncClient {
  * promise based methods.
  */
 export class IscrizioniAvvisaturaAsyncClient {
+  constructor(
+    private readonly client: IscrizioniAvvisaturaService.IPPTPortSoap
+  ) {}
 
-  constructor(private readonly client: IscrizioniAvvisaturaService.IPPTPortSoap) {}
-
-  nodoAggiornaIscrizioniAvvisatura = promisifySoapMethod(this.client.nodoAggiornaIscrizioniAvvisatura)
-
+  nodoAggiornaIscrizioniAvvisatura = promisifySoapMethod(
+    this.client.nodoAggiornaIscrizioniAvvisatura
+  );
 }
 
 /**
@@ -72,9 +101,11 @@ export class IscrizioniAvvisaturaAsyncClient {
  * client to promise based methods.
  */
 export class NodoChiediElencoAvvisiDigitaliAsyncClient {
+  constructor(
+    private readonly client: NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap
+  ) {}
 
-  constructor(private readonly client: NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap) {}
-
-  nodoChiediElencoAvvisiDigitali = promisifySoapMethod(this.client.nodoChiediElencoAvvisiDigitali)
-
+  nodoChiediElencoAvvisiDigitali = promisifySoapMethod(
+    this.client.nodoChiediElencoAvvisiDigitali
+  );
 }
