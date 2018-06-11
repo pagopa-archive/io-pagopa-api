@@ -505,4 +505,6 @@ export namespace PPTPortTypes {
     OK = "OK",
     KO = "KO"
   }
+
+  export const envelopeKey = "soapenv";
 }

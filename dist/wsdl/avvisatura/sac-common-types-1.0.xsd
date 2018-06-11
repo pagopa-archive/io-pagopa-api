@@ -121,6 +121,7 @@
     <xsd:complexType name="ctIdentificativoUnivocoPersonaFG">
         <xsd:sequence>
             <xsd:element form="qualified" name="tipoIdentificativoUnivoco" type="stTipoIdentificativoUnivocoPersFG" minOccurs="1">
+            <!-- FIX: versione aggiornata perchè il prefix del namespace per tipoIdentificativoUnivoco non compariva nella generazione dell'xml richiesta-->
                 <xsd:annotation>
                     <xsd:documentation>Campo alfanumerico che indica la natura del
                         soggetto, può assumere i seguenti valori:
@@ -130,6 +131,7 @@
                 </xsd:annotation>
             </xsd:element>
             <xsd:element form="qualified" name="codiceIdentificativoUnivoco" type="stText35" minOccurs="1">
+                        <!-- FIX: versione aggiornata perchè il prefix del namespace per codiceIdentificativoUnivoco non compariva nella generazione dell'xml richiesta-->
                 <xsd:annotation>
                     <xsd:documentation>Campo alfanumerico che può contenere il codice
                         fiscale o, in alternativa, la partita IVA del soggetto.
