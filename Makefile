@@ -6,7 +6,8 @@ WSDL_FILES = 	nodo/NodoPerPsp.wsdl \
 							nodo/PspPerNodo.wsdl \
 							avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl \
 							avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl \
-							avvisatura/PSPPerNodoAvvisiDigitali.wsdl
+							avvisatura/PSPPerNodoAvvisiDigitali.wsdl \
+							nodo/CdPerNodo.wsdl
 
 WSDL_DIR ?= ./wsdl
 OUTPUT_DIR ?= ./wsdl-lib
