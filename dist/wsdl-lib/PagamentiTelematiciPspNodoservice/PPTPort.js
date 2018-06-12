@@ -13,5 +13,6 @@ var PPTPortTypes;
         Esito["OK"] = "OK";
         Esito["KO"] = "KO";
     })(Esito = PPTPortTypes.Esito || (PPTPortTypes.Esito = {}));
+    PPTPortTypes.envelopeKey = "soapenv";
 })(PPTPortTypes = exports.PPTPortTypes || (exports.PPTPortTypes = {}));
 //# sourceMappingURL=PPTPort.js.map
