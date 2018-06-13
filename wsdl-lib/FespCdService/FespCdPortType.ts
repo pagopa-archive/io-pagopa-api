@@ -14,9 +14,9 @@ export interface IcdInfoPagamentoInput {
 }
 
 export interface IcdInfoPagamentoOutput {
-  fault: FespCdPortTypeTypes.Ifault;
+  fault?: FespCdPortTypeTypes.Ifault;
   /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-  esito: Esito;
+  esito?: Esito;
 }
 
 export interface IFespCdPortTypeSoap {

@@ -13,11 +13,7 @@ export { AvvisiDigitaliService };
  * @param path      See soap.listen documentation
  * @param fespPspHandlers  An object that implements the IPSPPortSoap interface
  */
-export declare function attachFespPspServer(
-  server: any,
-  path: string,
-  fespPspHandlers: FespPspService.IPSPPortSoap
-): Promise<soap.Server>;
+export declare function attachFespPspServer(server: any, path: string, fespPspHandlers: FespPspService.IPSPPortSoap): Promise<soap.Server>;
 /**
  * Creates a server for the AvvisiDigitali service.
  *
@@ -28,8 +24,4 @@ export declare function attachFespPspServer(
  * @param path      See soap.listen documentation
  * @param fespPspHandlers  An object that implements the IPSPPortSoap interface
  */
-export declare function attachAvvisiDigitaliServer(
-  server: any,
-  path: string,
-  avvisiDigitaliHandlers: AvvisiDigitaliService.IPPTPortSoap
-): Promise<soap.Server>;
+export declare function attachAvvisiDigitaliServer(server: any, path: string, avvisiDigitaliHandlers: AvvisiDigitaliService.IPPTPortSoap): Promise<soap.Server>;
