@@ -9,3 +9,4 @@ export const AvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/PSPPer
 export const PagamentiTelematiciPspNodoService_WSDL_PATH = `${wsdlBaseDir}/nodo/PspPerNodo.wsdl`;
 export const IscrizioniAvvisaturaService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl`;
 export const NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl`;
+export const FespCdService_WSDL_PATH = `${wsdlBaseDir}/nodo/CdPerNodo.wsdl`; 
