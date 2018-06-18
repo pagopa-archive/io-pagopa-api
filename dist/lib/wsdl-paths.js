@@ -9,4 +9,5 @@ exports.AvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/PSPPerNodoA
 exports.PagamentiTelematiciPspNodoService_WSDL_PATH = `${wsdlBaseDir}/nodo/PspPerNodo.wsdl`;
 exports.IscrizioniAvvisaturaService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPIscrizioniAvvisatura.wsdl`;
 exports.NodoChiediElencoAvvisiDigitaliService_WSDL_PATH = `${wsdlBaseDir}/avvisatura/NodoPerPSPChiediElencoAvvisiDigitali.wsdl`;
+exports.FespCdService_WSDL_PATH = `${wsdlBaseDir}/nodo/CdPerNodo.wsdl`;
 //# sourceMappingURL=wsdl-paths.js.map

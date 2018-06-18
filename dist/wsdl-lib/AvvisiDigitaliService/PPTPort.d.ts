@@ -53,7 +53,7 @@ export declare namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stISODate() */
         dataScadenzaAvviso: date;
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoAvviso: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoAvviso: number;
         /** http://ws.pagamenti.telematici.gov/#stEMail(pattern,maxLength) */
         eMailSoggetto: string;
         /** http://ws.pagamenti.telematici.gov/#stCellulareSoggetto(pattern) */

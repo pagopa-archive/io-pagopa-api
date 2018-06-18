@@ -1,0 +1,2710 @@
+swagger: '2.0'
+info:
+  title: PagamentiTelematiciPspNodoservice
+  description: ''
+  x-ibm-name: pagamentitelematicipspnodoservice
+  version: 1.0.0
+schemes:
+  - https
+basePath: /PagamentiTelematiciPspNodoservice
+produces:
+  - application/xml
+consumes:
+  - text/xml
+securityDefinitions:
+  clientID:
+    type: apiKey
+    name: X-IBM-Client-Id
+    in: header
+    description: ''
+security:
+  - clientID: []
+x-ibm-configuration:
+  type: wsdl
+  phase: realized
+  enforced: true
+  testable: true
+  gateway: datapower-gateway
+  cors:
+    enabled: true
+  wsdl-definition:
+    wsdl: ./wsdl/nodo/NodoPerPsp.wsdl
+    service: PagamentiTelematiciPspNodoservice
+    port: PPTPort
+    soap-version: '1.1'
+  assembly:
+    execute:
+      - proxy:
+          title: proxy
+          target-url: 'http://PuntoAccessoPSP.spcoop.gov.it/'
+paths:
+  /nodoVerificaRPT:
+    post:
+      summary: Operation nodoVerificaRPT
+      description: ''
+      operationId: nodoVerificaRPT
+      x-ibm-soap:
+        soap-action: nodoVerificaRPT
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoVerificaRPT'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoVerificaRPTInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoVerificaRPTOutput'
+  /nodoAttivaRPT:
+    post:
+      summary: Operation nodoAttivaRPT
+      description: ''
+      operationId: nodoAttivaRPT
+      x-ibm-soap:
+        soap-action: nodoAttivaRPT
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoAttivaRPT'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoAttivaRPTInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoAttivaRPTOutput'
+  /nodoInviaRT:
+    post:
+      summary: Operation nodoInviaRT
+      description: ''
+      operationId: nodoInviaRT
+      x-ibm-soap:
+        soap-action: nodoInviaRT
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoInviaRT'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoInviaRTInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoInviaRTOutput'
+  /nodoChiediInformativaPA:
+    post:
+      summary: Operation nodoChiediInformativaPA
+      description: ''
+      operationId: nodoChiediInformativaPA
+      x-ibm-soap:
+        soap-action: nodoChiediInformativaPA
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoChiediInformativaPA'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoChiediInformativaPAInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoChiediInformativaPAOutput'
+  /nodoChiediTemplateInformativaPSP:
+    post:
+      summary: Operation nodoChiediTemplateInformativaPSP
+      description: ''
+      operationId: nodoChiediTemplateInformativaPSP
+      x-ibm-soap:
+        soap-action: nodoChiediTemplateInformativaPSP
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoChiediTemplateInformativaPSP'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoChiediTemplateInformativaPSPInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoChiediTemplateInformativaPSPOutput'
+  /nodoInviaFlussoRendicontazione:
+    post:
+      summary: Operation nodoInviaFlussoRendicontazione
+      description: ''
+      operationId: nodoInviaFlussoRendicontazione
+      x-ibm-soap:
+        soap-action: nodoInviaFlussoRendicontazione
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoInviaFlussoRendicontazione'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoInviaFlussoRendicontazioneInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoInviaFlussoRendicontazioneOutput'
+  /nodoChiediElencoQuadraturePSP:
+    post:
+      summary: Operation nodoChiediElencoQuadraturePSP
+      description: ''
+      operationId: nodoChiediElencoQuadraturePSP
+      x-ibm-soap:
+        soap-action: nodoChiediElencoQuadraturePSP
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoChiediElencoQuadraturePSP'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoChiediElencoQuadraturePSPInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoChiediElencoQuadraturePSPOutput'
+  /nodoChiediQuadraturaPSP:
+    post:
+      summary: Operation nodoChiediQuadraturaPSP
+      description: ''
+      operationId: nodoChiediQuadraturaPSP
+      x-ibm-soap:
+        soap-action: nodoChiediQuadraturaPSP
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoChiediQuadraturaPSP'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoChiediQuadraturaPSPInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoChiediQuadraturaPSPOutput'
+  /nodoInviaEsitoStorno:
+    post:
+      summary: Operation nodoInviaEsitoStorno
+      description: ''
+      operationId: nodoInviaEsitoStorno
+      x-ibm-soap:
+        soap-action: nodoInviaEsitoStorno
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoInviaEsitoStorno'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoInviaEsitoStornoInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoInviaEsitoStornoOutput'
+  /nodoInviaRichiestaRevoca:
+    post:
+      summary: Operation nodoInviaRichiestaRevoca
+      description: ''
+      operationId: nodoInviaRichiestaRevoca
+      x-ibm-soap:
+        soap-action: nodoRichiestaRevoca
+        soap-operation: '{http://ws.pagamenti.telematici.gov/}nodoInviaRichiestaRevoca'
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            $ref: '#/definitions/nodoInviaRichiestaRevocaInput'
+      responses:
+        default:
+          description: ''
+          schema:
+            $ref: '#/definitions/nodoInviaRichiestaRevocaOutput'
+definitions:
+  Security:
+    xml:
+      namespace: >-
+        http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+      prefix: wsse
+    type: object
+    properties:
+      UsernameToken:
+        xml:
+          namespace: >-
+            http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+          prefix: wsse
+        type: object
+        properties:
+          Username:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+          Password:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+          Nonce:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd
+              prefix: wsse
+            type: string
+            properties:
+              EncodingType:
+                xml:
+                  namespace: ''
+                  attribute: true
+                type: string
+          Created:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+      Timestamp:
+        xml:
+          namespace: >-
+            http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+          prefix: wsu
+        type: object
+        properties:
+          Created:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+          Expires:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+            type: string
+          Id:
+            xml:
+              namespace: >-
+                http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd
+              prefix: wsu
+              attribute: true
+            type: string
+  nodoVerificaRPTInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoVerificaRPTHeader'
+          Body:
+            type: object
+            properties:
+              nodoVerificaRPT:
+                $ref: '#/definitions/nodoVerificaRPT_ppt'
+            required:
+              - nodoVerificaRPT
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoVerificaRPT xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+         <codificaInfrastrutturaPSP><!-- mandatory -->string</codificaInfrastrutturaPSP>
+         <codiceIdRPT><!-- mandatory --></codiceIdRPT>
+        </ppt:nodoVerificaRPT>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoVerificaRPTHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoVerificaRPTOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoVerificaRPTRisposta:
+                $ref: '#/definitions/nodoVerificaRPTRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoVerificaRPTRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/" xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/">
+         <nodoVerificaRPTRisposta><!-- mandatory -->
+          <fault>
+           <faultCode><!-- mandatory -->string</faultCode>
+           <faultString><!-- mandatory -->string</faultString>
+           <id><!-- mandatory -->string</id>
+           <description>string</description>
+           <serial>3</serial>
+          </fault>
+          <esito>string</esito>
+          <datiPagamentoPA>
+           <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+           <ibanAccredito>string</ibanAccredito>
+           <bicAccredito>string</bicAccredito>
+           <enteBeneficiario>
+            <pay_i:identificativoUnivocoBeneficiario><!-- mandatory -->
+             <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+             <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+            </pay_i:identificativoUnivocoBeneficiario>
+            <pay_i:denominazioneBeneficiario><!-- mandatory -->string</pay_i:denominazioneBeneficiario>
+            <pay_i:codiceUnitOperBeneficiario>string</pay_i:codiceUnitOperBeneficiario>
+            <pay_i:denomUnitOperBeneficiario>string</pay_i:denomUnitOperBeneficiario>
+            <pay_i:indirizzoBeneficiario>string</pay_i:indirizzoBeneficiario>
+            <pay_i:civicoBeneficiario>string</pay_i:civicoBeneficiario>
+            <pay_i:capBeneficiario>string</pay_i:capBeneficiario>
+            <pay_i:localitaBeneficiario>string</pay_i:localitaBeneficiario>
+            <pay_i:provinciaBeneficiario>string</pay_i:provinciaBeneficiario>
+            <pay_i:nazioneBeneficiario>string</pay_i:nazioneBeneficiario>
+           </enteBeneficiario>
+           <credenzialiPagatore>string</credenzialiPagatore>
+           <causaleVersamento>string</causaleVersamento>
+           <spezzoniCausaleVersamento>
+            <spezzoneCausaleVersamento>string</spezzoneCausaleVersamento>
+            <spezzoneStrutturatoCausaleVersamento>
+             <causaleSpezzone><!-- mandatory -->string</causaleSpezzone>
+             <importoSpezzone><!-- mandatory -->999996.99</importoSpezzone>
+            </spezzoneStrutturatoCausaleVersamento>
+           </spezzoniCausaleVersamento>
+          </datiPagamentoPA>
+         </nodoVerificaRPTRisposta>
+        </ppt:nodoVerificaRPTRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoAttivaRPTInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoAttivaRPTHeader'
+          Body:
+            type: object
+            properties:
+              nodoAttivaRPT:
+                $ref: '#/definitions/nodoAttivaRPT_ppt'
+            required:
+              - nodoAttivaRPT
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoAttivaRPT xmlns:ppt="http://ws.pagamenti.telematici.gov/" xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+         <identificativoIntermediarioPSPPagamento><!-- mandatory -->string</identificativoIntermediarioPSPPagamento>
+         <identificativoCanalePagamento><!-- mandatory -->string</identificativoCanalePagamento>
+         <codificaInfrastrutturaPSP><!-- mandatory -->string</codificaInfrastrutturaPSP>
+         <codiceIdRPT><!-- mandatory --></codiceIdRPT>
+         <datiPagamentoPSP><!-- mandatory -->
+          <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+          <ibanAppoggio>string</ibanAppoggio>
+          <bicAppoggio>string</bicAppoggio>
+          <soggettoVersante>
+           <pay_i:identificativoUnivocoVersante><!-- mandatory -->
+            <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+            <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+           </pay_i:identificativoUnivocoVersante>
+           <pay_i:anagraficaVersante><!-- mandatory -->string</pay_i:anagraficaVersante>
+           <pay_i:indirizzoVersante>string</pay_i:indirizzoVersante>
+           <pay_i:civicoVersante>string</pay_i:civicoVersante>
+           <pay_i:capVersante>string</pay_i:capVersante>
+           <pay_i:localitaVersante>string</pay_i:localitaVersante>
+           <pay_i:provinciaVersante>string</pay_i:provinciaVersante>
+           <pay_i:nazioneVersante>string</pay_i:nazioneVersante>
+           <pay_i:e-mailVersante>string</pay_i:e-mailVersante>
+          </soggettoVersante>
+          <ibanAddebito>string</ibanAddebito>
+          <bicAddebito>string</bicAddebito>
+          <soggettoPagatore>
+           <pay_i:identificativoUnivocoPagatore><!-- mandatory -->
+            <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+            <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+           </pay_i:identificativoUnivocoPagatore>
+           <pay_i:anagraficaPagatore><!-- mandatory -->string</pay_i:anagraficaPagatore>
+           <pay_i:indirizzoPagatore>string</pay_i:indirizzoPagatore>
+           <pay_i:civicoPagatore>string</pay_i:civicoPagatore>
+           <pay_i:capPagatore>string</pay_i:capPagatore>
+           <pay_i:localitaPagatore>string</pay_i:localitaPagatore>
+           <pay_i:provinciaPagatore>string</pay_i:provinciaPagatore>
+           <pay_i:nazionePagatore>string</pay_i:nazionePagatore>
+           <pay_i:e-mailPagatore>string</pay_i:e-mailPagatore>
+          </soggettoPagatore>
+         </datiPagamentoPSP>
+        </ppt:nodoAttivaRPT>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoAttivaRPTHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoAttivaRPTOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoAttivaRPTRisposta:
+                $ref: '#/definitions/nodoAttivaRPTRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoAttivaRPTRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/" xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/">
+         <nodoAttivaRPTRisposta><!-- mandatory -->
+          <fault>
+           <faultCode><!-- mandatory -->string</faultCode>
+           <faultString><!-- mandatory -->string</faultString>
+           <id><!-- mandatory -->string</id>
+           <description>string</description>
+           <serial>3</serial>
+          </fault>
+          <esito>string</esito>
+          <datiPagamentoPA>
+           <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+           <ibanAccredito>string</ibanAccredito>
+           <bicAccredito>string</bicAccredito>
+           <enteBeneficiario>
+            <pay_i:identificativoUnivocoBeneficiario><!-- mandatory -->
+             <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+             <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+            </pay_i:identificativoUnivocoBeneficiario>
+            <pay_i:denominazioneBeneficiario><!-- mandatory -->string</pay_i:denominazioneBeneficiario>
+            <pay_i:codiceUnitOperBeneficiario>string</pay_i:codiceUnitOperBeneficiario>
+            <pay_i:denomUnitOperBeneficiario>string</pay_i:denomUnitOperBeneficiario>
+            <pay_i:indirizzoBeneficiario>string</pay_i:indirizzoBeneficiario>
+            <pay_i:civicoBeneficiario>string</pay_i:civicoBeneficiario>
+            <pay_i:capBeneficiario>string</pay_i:capBeneficiario>
+            <pay_i:localitaBeneficiario>string</pay_i:localitaBeneficiario>
+            <pay_i:provinciaBeneficiario>string</pay_i:provinciaBeneficiario>
+            <pay_i:nazioneBeneficiario>string</pay_i:nazioneBeneficiario>
+           </enteBeneficiario>
+           <credenzialiPagatore>string</credenzialiPagatore>
+           <causaleVersamento>string</causaleVersamento>
+           <spezzoniCausaleVersamento>
+            <spezzoneCausaleVersamento>string</spezzoneCausaleVersamento>
+            <spezzoneStrutturatoCausaleVersamento>
+             <causaleSpezzone><!-- mandatory -->string</causaleSpezzone>
+             <importoSpezzone><!-- mandatory -->999996.99</importoSpezzone>
+            </spezzoneStrutturatoCausaleVersamento>
+           </spezzoniCausaleVersamento>
+          </datiPagamentoPA>
+         </nodoAttivaRPTRisposta>
+        </ppt:nodoAttivaRPTRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaRTInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoInviaRTHeader'
+          Body:
+            type: object
+            properties:
+              nodoInviaRT:
+                $ref: '#/definitions/nodoInviaRT_ppt'
+            required:
+              - nodoInviaRT
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoInviaRT xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+         <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+         <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+         <tipoFirma><!-- mandatory -->string</tipoFirma>
+         <rt><!-- mandatory -->abcd</rt>
+        </ppt:nodoInviaRT>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaRTHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoInviaRTOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoInviaRTRisposta:
+                $ref: '#/definitions/nodoInviaRTRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoInviaRTRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <nodoInviaRTRisposta><!-- mandatory -->
+          <fault>
+           <faultCode><!-- mandatory -->string</faultCode>
+           <faultString><!-- mandatory -->string</faultString>
+           <id><!-- mandatory -->string</id>
+           <description>string</description>
+           <serial>3</serial>
+          </fault>
+          <esito><!-- mandatory -->string</esito>
+         </nodoInviaRTRisposta>
+        </ppt:nodoInviaRTRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediInformativaPAInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoChiediInformativaPAHeader'
+          Body:
+            type: object
+            properties:
+              nodoChiediInformativaPA:
+                $ref: '#/definitions/nodoChiediInformativaPA_ppt'
+            required:
+              - nodoChiediInformativaPA
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoChiediInformativaPA xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP>string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoDominio>string</identificativoDominio>
+        </ppt:nodoChiediInformativaPA>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediInformativaPAHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoChiediInformativaPAOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoChiediInformativaPARisposta:
+                $ref: '#/definitions/nodoChiediInformativaPARisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoChiediInformativaPARisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <xmlInformativa>abcd</xmlInformativa>
+        </ppt:nodoChiediInformativaPARisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediTemplateInformativaPSPInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoChiediTemplateInformativaPSPHeader'
+          Body:
+            type: object
+            properties:
+              nodoChiediTemplateInformativaPSP:
+                $ref: '#/definitions/nodoChiediTemplateInformativaPSP_ppt'
+            required:
+              - nodoChiediTemplateInformativaPSP
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoChiediTemplateInformativaPSP xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+        </ppt:nodoChiediTemplateInformativaPSP>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediTemplateInformativaPSPHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoChiediTemplateInformativaPSPOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoChiediTemplateInformativaPSPRisposta:
+                $ref: '#/definitions/nodoChiediTemplateInformativaPSPRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoChiediTemplateInformativaPSPRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <xmlTemplateInformativa>abcd</xmlTemplateInformativa>
+        </ppt:nodoChiediTemplateInformativaPSPRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaFlussoRendicontazioneInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoInviaFlussoRendicontazioneHeader'
+          Body:
+            type: object
+            properties:
+              nodoInviaFlussoRendicontazione:
+                $ref: '#/definitions/nodoInviaFlussoRendicontazione_ppt'
+            required:
+              - nodoInviaFlussoRendicontazione
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoInviaFlussoRendicontazione xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP>string</identificativoIntermediarioPSP>
+         <identificativoCanale>string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+         <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+         <dataOraFlusso><!-- mandatory -->2016-04-18T14:07:37</dataOraFlusso>
+         <xmlRendicontazione><!-- mandatory -->abcd</xmlRendicontazione>
+        </ppt:nodoInviaFlussoRendicontazione>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaFlussoRendicontazioneHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoInviaFlussoRendicontazioneOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoInviaFlussoRendicontazioneRisposta:
+                $ref: '#/definitions/nodoInviaFlussoRendicontazioneRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoInviaFlussoRendicontazioneRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <esito>string</esito>
+        </ppt:nodoInviaFlussoRendicontazioneRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediElencoQuadraturePSPInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoChiediElencoQuadraturePSPHeader'
+          Body:
+            type: object
+            properties:
+              nodoChiediElencoQuadraturePSP:
+                $ref: '#/definitions/nodoChiediElencoQuadraturePSP_ppt'
+            required:
+              - nodoChiediElencoQuadraturePSP
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoChiediElencoQuadraturePSP xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoDominio>string</identificativoDominio>
+        </ppt:nodoChiediElencoQuadraturePSP>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediElencoQuadraturePSPHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoChiediElencoQuadraturePSPOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoChiediElencoQuadraturePSPRisposta:
+                $ref: '#/definitions/nodoChiediElencoQuadraturePSPRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoChiediElencoQuadraturePSPRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <listaQuadrature>
+          <totRestituiti><!-- mandatory -->3</totRestituiti>
+          <idQuadratura><!-- between zero and unlimited repetitions of this element -->
+           <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+           <dataOraFlusso><!-- mandatory -->2016-04-18T14:07:37</dataOraFlusso>
+          </idQuadratura>
+         </listaQuadrature>
+        </ppt:nodoChiediElencoQuadraturePSPRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediQuadraturaPSPInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoChiediQuadraturaPSPHeader'
+          Body:
+            type: object
+            properties:
+              nodoChiediQuadraturaPSP:
+                $ref: '#/definitions/nodoChiediQuadraturaPSP_ppt'
+            required:
+              - nodoChiediQuadraturaPSP
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoChiediQuadraturaPSP xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+        </ppt:nodoChiediQuadraturaPSP>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoChiediQuadraturaPSPHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoChiediQuadraturaPSPOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoChiediQuadraturaPSPRisposta:
+                $ref: '#/definitions/nodoChiediQuadraturaPSPRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoChiediQuadraturaPSPRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <xmlQuadratura>abcd</xmlQuadratura>
+        </ppt:nodoChiediQuadraturaPSPRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaEsitoStornoInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoInviaEsitoStornoHeader'
+          Body:
+            type: object
+            properties:
+              nodoInviaEsitoStorno:
+                $ref: '#/definitions/nodoInviaEsitoStorno_ppt'
+            required:
+              - nodoInviaEsitoStorno
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoInviaEsitoStorno xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+         <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+         <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+         <er>abcd</er>
+        </ppt:nodoInviaEsitoStorno>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaEsitoStornoHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoInviaEsitoStornoOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoInviaEsitoStornoRisposta:
+                $ref: '#/definitions/nodoInviaEsitoStornoRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoInviaEsitoStornoRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <esito>string</esito>
+        </ppt:nodoInviaEsitoStornoRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaRichiestaRevocaInput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Header:
+            $ref: '#/definitions/nodoInviaRichiestaRevocaHeader'
+          Body:
+            type: object
+            properties:
+              nodoInviaRichiestaRevoca:
+                $ref: '#/definitions/nodoInviaRichiestaRevoca_ppt'
+            required:
+              - nodoInviaRichiestaRevoca
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Header>
+        <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+         <wsse:UsernameToken>
+          <wsse:Username>string</wsse:Username>
+          <wsse:Password>string</wsse:Password>
+          <wsse:Nonce EncodingType="string">string</wsse:Nonce>
+          <wsu:Created>string</wsu:Created>
+         </wsse:UsernameToken>
+         <wsu:Timestamp wsu:Id="string">
+          <wsu:Created>string</wsu:Created>
+          <wsu:Expires>string</wsu:Expires>
+         </wsu:Timestamp>
+        </wsse:Security>
+       </soapenv:Header>
+       <soapenv:Body>
+        <ppt:nodoInviaRichiestaRevoca xmlns:ppt="http://ws.pagamenti.telematici.gov/"><!-- mandatory -->
+         <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+         <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+         <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+         <password><!-- mandatory -->string</password>
+         <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+         <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+         <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+         <rr><!-- mandatory -->abcd</rr>
+        </ppt:nodoInviaRichiestaRevoca>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoInviaRichiestaRevocaHeader:
+    type: object
+    properties:
+      Security:
+        $ref: '#/definitions/Security'
+  nodoInviaRichiestaRevocaOutput:
+    type: object
+    properties:
+      Envelope:
+        xml:
+          prefix: soapenv
+          namespace: 'http://schemas.xmlsoap.org/soap/envelope/'
+        type: object
+        properties:
+          Body:
+            type: object
+            properties:
+              nodoInviaRichiestaRevocaRisposta:
+                $ref: '#/definitions/nodoInviaRichiestaRevocaRisposta_ppt'
+        required:
+          - Body
+    required:
+      - Envelope
+    example: >-
+
+      <soapenv:Envelope
+      xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+       <soapenv:Body>
+        <ppt:nodoInviaRichiestaRevocaRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+         <fault>
+          <faultCode><!-- mandatory -->string</faultCode>
+          <faultString><!-- mandatory -->string</faultString>
+          <id><!-- mandatory -->string</id>
+          <description>string</description>
+          <serial>3</serial>
+         </fault>
+         <esito>string</esito>
+        </ppt:nodoInviaRichiestaRevocaRisposta>
+       </soapenv:Body>
+      </soapenv:Envelope>
+  nodoVerificaRPT_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      codiceContestoPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      codificaInfrastrutturaPSP:
+        type: string
+        xml:
+          namespace: ''
+      codiceIdRPT:
+        $ref: '#/definitions/nodoTipoCodiceIdRPT_ppt'
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - codiceContestoPagamento
+      - codificaInfrastrutturaPSP
+      - codiceIdRPT
+    example: |-
+
+      <ppt:nodoVerificaRPT xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+       <codificaInfrastrutturaPSP><!-- mandatory -->string</codificaInfrastrutturaPSP>
+       <codiceIdRPT><!-- mandatory --></codiceIdRPT>
+      </ppt:nodoVerificaRPT>
+  nodoVerificaRPTRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      nodoVerificaRPTRisposta:
+        $ref: '#/definitions/esitoNodoVerificaRPTRisposta_ppt'
+    required:
+      - nodoVerificaRPTRisposta
+    example: >-
+
+      <ppt:nodoVerificaRPTRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/"
+      xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/">
+       <nodoVerificaRPTRisposta><!-- mandatory -->
+        <fault>
+         <faultCode><!-- mandatory -->string</faultCode>
+         <faultString><!-- mandatory -->string</faultString>
+         <id><!-- mandatory -->string</id>
+         <description>string</description>
+         <serial>3</serial>
+        </fault>
+        <esito>string</esito>
+        <datiPagamentoPA>
+         <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+         <ibanAccredito>string</ibanAccredito>
+         <bicAccredito>string</bicAccredito>
+         <enteBeneficiario>
+          <pay_i:identificativoUnivocoBeneficiario><!-- mandatory -->
+           <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+           <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+          </pay_i:identificativoUnivocoBeneficiario>
+          <pay_i:denominazioneBeneficiario><!-- mandatory -->string</pay_i:denominazioneBeneficiario>
+          <pay_i:codiceUnitOperBeneficiario>string</pay_i:codiceUnitOperBeneficiario>
+          <pay_i:denomUnitOperBeneficiario>string</pay_i:denomUnitOperBeneficiario>
+          <pay_i:indirizzoBeneficiario>string</pay_i:indirizzoBeneficiario>
+          <pay_i:civicoBeneficiario>string</pay_i:civicoBeneficiario>
+          <pay_i:capBeneficiario>string</pay_i:capBeneficiario>
+          <pay_i:localitaBeneficiario>string</pay_i:localitaBeneficiario>
+          <pay_i:provinciaBeneficiario>string</pay_i:provinciaBeneficiario>
+          <pay_i:nazioneBeneficiario>string</pay_i:nazioneBeneficiario>
+         </enteBeneficiario>
+         <credenzialiPagatore>string</credenzialiPagatore>
+         <causaleVersamento>string</causaleVersamento>
+         <spezzoniCausaleVersamento>
+          <spezzoneCausaleVersamento>string</spezzoneCausaleVersamento>
+          <spezzoneStrutturatoCausaleVersamento>
+           <causaleSpezzone><!-- mandatory -->string</causaleSpezzone>
+           <importoSpezzone><!-- mandatory -->999996.99</importoSpezzone>
+          </spezzoneStrutturatoCausaleVersamento>
+         </spezzoniCausaleVersamento>
+        </datiPagamentoPA>
+       </nodoVerificaRPTRisposta>
+      </ppt:nodoVerificaRPTRisposta>
+  nodoAttivaRPT_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      codiceContestoPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSPPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanalePagamento:
+        $ref: '#/definitions/stText35_ppt'
+      codificaInfrastrutturaPSP:
+        type: string
+        xml:
+          namespace: ''
+      codiceIdRPT:
+        $ref: '#/definitions/nodoTipoCodiceIdRPT_ppt'
+      datiPagamentoPSP:
+        $ref: '#/definitions/nodoTipoDatiPagamentoPSP_ppt'
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - codiceContestoPagamento
+      - identificativoIntermediarioPSPPagamento
+      - identificativoCanalePagamento
+      - codificaInfrastrutturaPSP
+      - codiceIdRPT
+      - datiPagamentoPSP
+    example: >-
+
+      <ppt:nodoAttivaRPT xmlns:ppt="http://ws.pagamenti.telematici.gov/"
+      xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+       <identificativoIntermediarioPSPPagamento><!-- mandatory -->string</identificativoIntermediarioPSPPagamento>
+       <identificativoCanalePagamento><!-- mandatory -->string</identificativoCanalePagamento>
+       <codificaInfrastrutturaPSP><!-- mandatory -->string</codificaInfrastrutturaPSP>
+       <codiceIdRPT><!-- mandatory --></codiceIdRPT>
+       <datiPagamentoPSP><!-- mandatory -->
+        <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+        <ibanAppoggio>string</ibanAppoggio>
+        <bicAppoggio>string</bicAppoggio>
+        <soggettoVersante>
+         <pay_i:identificativoUnivocoVersante><!-- mandatory -->
+          <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+          <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+         </pay_i:identificativoUnivocoVersante>
+         <pay_i:anagraficaVersante><!-- mandatory -->string</pay_i:anagraficaVersante>
+         <pay_i:indirizzoVersante>string</pay_i:indirizzoVersante>
+         <pay_i:civicoVersante>string</pay_i:civicoVersante>
+         <pay_i:capVersante>string</pay_i:capVersante>
+         <pay_i:localitaVersante>string</pay_i:localitaVersante>
+         <pay_i:provinciaVersante>string</pay_i:provinciaVersante>
+         <pay_i:nazioneVersante>string</pay_i:nazioneVersante>
+         <pay_i:e-mailVersante>string</pay_i:e-mailVersante>
+        </soggettoVersante>
+        <ibanAddebito>string</ibanAddebito>
+        <bicAddebito>string</bicAddebito>
+        <soggettoPagatore>
+         <pay_i:identificativoUnivocoPagatore><!-- mandatory -->
+          <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+          <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+         </pay_i:identificativoUnivocoPagatore>
+         <pay_i:anagraficaPagatore><!-- mandatory -->string</pay_i:anagraficaPagatore>
+         <pay_i:indirizzoPagatore>string</pay_i:indirizzoPagatore>
+         <pay_i:civicoPagatore>string</pay_i:civicoPagatore>
+         <pay_i:capPagatore>string</pay_i:capPagatore>
+         <pay_i:localitaPagatore>string</pay_i:localitaPagatore>
+         <pay_i:provinciaPagatore>string</pay_i:provinciaPagatore>
+         <pay_i:nazionePagatore>string</pay_i:nazionePagatore>
+         <pay_i:e-mailPagatore>string</pay_i:e-mailPagatore>
+        </soggettoPagatore>
+       </datiPagamentoPSP>
+      </ppt:nodoAttivaRPT>
+  nodoAttivaRPTRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      nodoAttivaRPTRisposta:
+        $ref: '#/definitions/esitoNodoAttivaRPTRisposta_ppt'
+    required:
+      - nodoAttivaRPTRisposta
+    example: >-
+
+      <ppt:nodoAttivaRPTRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/"
+      xmlns:pay_i="http://www.digitpa.gov.it/schemas/2011/Pagamenti/">
+       <nodoAttivaRPTRisposta><!-- mandatory -->
+        <fault>
+         <faultCode><!-- mandatory -->string</faultCode>
+         <faultString><!-- mandatory -->string</faultString>
+         <id><!-- mandatory -->string</id>
+         <description>string</description>
+         <serial>3</serial>
+        </fault>
+        <esito>string</esito>
+        <datiPagamentoPA>
+         <importoSingoloVersamento><!-- mandatory -->99999996.99</importoSingoloVersamento>
+         <ibanAccredito>string</ibanAccredito>
+         <bicAccredito>string</bicAccredito>
+         <enteBeneficiario>
+          <pay_i:identificativoUnivocoBeneficiario><!-- mandatory -->
+           <pay_i:tipoIdentificativoUnivoco><!-- mandatory -->string</pay_i:tipoIdentificativoUnivoco>
+           <pay_i:codiceIdentificativoUnivoco><!-- mandatory -->string</pay_i:codiceIdentificativoUnivoco>
+          </pay_i:identificativoUnivocoBeneficiario>
+          <pay_i:denominazioneBeneficiario><!-- mandatory -->string</pay_i:denominazioneBeneficiario>
+          <pay_i:codiceUnitOperBeneficiario>string</pay_i:codiceUnitOperBeneficiario>
+          <pay_i:denomUnitOperBeneficiario>string</pay_i:denomUnitOperBeneficiario>
+          <pay_i:indirizzoBeneficiario>string</pay_i:indirizzoBeneficiario>
+          <pay_i:civicoBeneficiario>string</pay_i:civicoBeneficiario>
+          <pay_i:capBeneficiario>string</pay_i:capBeneficiario>
+          <pay_i:localitaBeneficiario>string</pay_i:localitaBeneficiario>
+          <pay_i:provinciaBeneficiario>string</pay_i:provinciaBeneficiario>
+          <pay_i:nazioneBeneficiario>string</pay_i:nazioneBeneficiario>
+         </enteBeneficiario>
+         <credenzialiPagatore>string</credenzialiPagatore>
+         <causaleVersamento>string</causaleVersamento>
+         <spezzoniCausaleVersamento>
+          <spezzoneCausaleVersamento>string</spezzoneCausaleVersamento>
+          <spezzoneStrutturatoCausaleVersamento>
+           <causaleSpezzone><!-- mandatory -->string</causaleSpezzone>
+           <importoSpezzone><!-- mandatory -->999996.99</importoSpezzone>
+          </spezzoneStrutturatoCausaleVersamento>
+         </spezzoniCausaleVersamento>
+        </datiPagamentoPA>
+       </nodoAttivaRPTRisposta>
+      </ppt:nodoAttivaRPTRisposta>
+  nodoInviaRT_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoUnivocoVersamento:
+        $ref: '#/definitions/stText35_ppt'
+      codiceContestoPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      tipoFirma:
+        type: string
+        xml:
+          namespace: ''
+      rt:
+        type: string
+        format: binary
+        xml:
+          namespace: ''
+    required:
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - identificativoPSP
+      - identificativoDominio
+      - identificativoUnivocoVersamento
+      - codiceContestoPagamento
+      - tipoFirma
+      - rt
+    example: |-
+
+      <ppt:nodoInviaRT xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+       <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+       <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+       <tipoFirma><!-- mandatory -->string</tipoFirma>
+       <rt><!-- mandatory -->abcd</rt>
+      </ppt:nodoInviaRT>
+  nodoInviaRTRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      nodoInviaRTRisposta:
+        $ref: '#/definitions/esitoNodoInviaRTRisposta_ppt'
+    required:
+      - nodoInviaRTRisposta
+    example: |-
+
+      <ppt:nodoInviaRTRisposta xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <nodoInviaRTRisposta><!-- mandatory -->
+        <fault>
+         <faultCode><!-- mandatory -->string</faultCode>
+         <faultString><!-- mandatory -->string</faultString>
+         <id><!-- mandatory -->string</id>
+         <description>string</description>
+         <serial>3</serial>
+        </fault>
+        <esito><!-- mandatory -->string</esito>
+       </nodoInviaRTRisposta>
+      </ppt:nodoInviaRTRisposta>
+  nodoChiediInformativaPA_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+    required:
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+    example: >-
+
+      <ppt:nodoChiediInformativaPA
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP>string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoDominio>string</identificativoDominio>
+      </ppt:nodoChiediInformativaPA>
+  nodoChiediInformativaPARisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          xmlInformativa:
+            type: string
+            format: binary
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoChiediInformativaPARisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <xmlInformativa>abcd</xmlInformativa>
+      </ppt:nodoChiediInformativaPARisposta>
+  nodoChiediTemplateInformativaPSP_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+    example: >-
+
+      <ppt:nodoChiediTemplateInformativaPSP
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+      </ppt:nodoChiediTemplateInformativaPSP>
+  nodoChiediTemplateInformativaPSPRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          xmlTemplateInformativa:
+            type: string
+            format: binary
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoChiediTemplateInformativaPSPRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <xmlTemplateInformativa>abcd</xmlTemplateInformativa>
+      </ppt:nodoChiediTemplateInformativaPSPRisposta>
+  nodoInviaFlussoRendicontazione_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoFlusso:
+        type: string
+        xml:
+          namespace: ''
+      dataOraFlusso:
+        type: string
+        format: date-time
+        xml:
+          namespace: ''
+      xmlRendicontazione:
+        type: string
+        format: binary
+        xml:
+          namespace: ''
+    required:
+      - identificativoPSP
+      - password
+      - identificativoDominio
+      - identificativoFlusso
+      - dataOraFlusso
+      - xmlRendicontazione
+    example: >-
+
+      <ppt:nodoInviaFlussoRendicontazione
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP>string</identificativoIntermediarioPSP>
+       <identificativoCanale>string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+       <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+       <dataOraFlusso><!-- mandatory -->2016-04-18T14:07:37</dataOraFlusso>
+       <xmlRendicontazione><!-- mandatory -->abcd</xmlRendicontazione>
+      </ppt:nodoInviaFlussoRendicontazione>
+  nodoInviaFlussoRendicontazioneRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoInviaFlussoRendicontazioneRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <esito>string</esito>
+      </ppt:nodoInviaFlussoRendicontazioneRisposta>
+  nodoChiediElencoQuadraturePSP_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+    example: >-
+
+      <ppt:nodoChiediElencoQuadraturePSP
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoDominio>string</identificativoDominio>
+      </ppt:nodoChiediElencoQuadraturePSP>
+  nodoChiediElencoQuadraturePSPRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          listaQuadrature:
+            $ref: '#/definitions/tipoListaQuadrature_ppt'
+    example: >-
+
+      <ppt:nodoChiediElencoQuadraturePSPRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <listaQuadrature>
+        <totRestituiti><!-- mandatory -->3</totRestituiti>
+        <idQuadratura><!-- between zero and unlimited repetitions of this element -->
+         <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+         <dataOraFlusso><!-- mandatory -->2016-04-18T14:07:37</dataOraFlusso>
+        </idQuadratura>
+       </listaQuadrature>
+      </ppt:nodoChiediElencoQuadraturePSPRisposta>
+  nodoChiediQuadraturaPSP_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoFlusso:
+        type: string
+        xml:
+          namespace: ''
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - identificativoFlusso
+    example: >-
+
+      <ppt:nodoChiediQuadraturaPSP
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoFlusso><!-- mandatory -->string</identificativoFlusso>
+      </ppt:nodoChiediQuadraturaPSP>
+  nodoChiediQuadraturaPSPRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          xmlQuadratura:
+            type: string
+            format: binary
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoChiediQuadraturaPSPRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <xmlQuadratura>abcd</xmlQuadratura>
+      </ppt:nodoChiediQuadraturaPSPRisposta>
+  nodoInviaEsitoStorno_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoUnivocoVersamento:
+        $ref: '#/definitions/stText35_ppt'
+      codiceContestoPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      er:
+        type: string
+        format: binary
+        xml:
+          namespace: ''
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - identificativoDominio
+      - identificativoUnivocoVersamento
+      - codiceContestoPagamento
+    example: |-
+
+      <ppt:nodoInviaEsitoStorno xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+       <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+       <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+       <er>abcd</er>
+      </ppt:nodoInviaEsitoStorno>
+  nodoInviaEsitoStornoRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoInviaEsitoStornoRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <esito>string</esito>
+      </ppt:nodoInviaEsitoStornoRisposta>
+  nodoInviaRichiestaRevoca_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    type: object
+    properties:
+      identificativoPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoIntermediarioPSP:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoCanale:
+        $ref: '#/definitions/stText35_ppt'
+      password:
+        $ref: '#/definitions/stPassword_ppt'
+      identificativoDominio:
+        $ref: '#/definitions/stText35_ppt'
+      identificativoUnivocoVersamento:
+        $ref: '#/definitions/stText35_ppt'
+      codiceContestoPagamento:
+        $ref: '#/definitions/stText35_ppt'
+      rr:
+        type: string
+        format: binary
+        xml:
+          namespace: ''
+    required:
+      - identificativoPSP
+      - identificativoIntermediarioPSP
+      - identificativoCanale
+      - password
+      - identificativoDominio
+      - identificativoUnivocoVersamento
+      - codiceContestoPagamento
+      - rr
+    example: >-
+
+      <ppt:nodoInviaRichiestaRevoca
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <identificativoPSP><!-- mandatory -->string</identificativoPSP>
+       <identificativoIntermediarioPSP><!-- mandatory -->string</identificativoIntermediarioPSP>
+       <identificativoCanale><!-- mandatory -->string</identificativoCanale>
+       <password><!-- mandatory -->string</password>
+       <identificativoDominio><!-- mandatory -->string</identificativoDominio>
+       <identificativoUnivocoVersamento><!-- mandatory -->string</identificativoUnivocoVersamento>
+       <codiceContestoPagamento><!-- mandatory -->string</codiceContestoPagamento>
+       <rr><!-- mandatory -->abcd</rr>
+      </ppt:nodoInviaRichiestaRevoca>
+  nodoInviaRichiestaRevocaRisposta_ppt:
+    xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: 'http://ws.pagamenti.telematici.gov/'
+          prefix: ppt
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+    example: >-
+
+      <ppt:nodoInviaRichiestaRevocaRisposta
+      xmlns:ppt="http://ws.pagamenti.telematici.gov/">
+       <fault>
+        <faultCode><!-- mandatory -->string</faultCode>
+        <faultString><!-- mandatory -->string</faultString>
+        <id><!-- mandatory -->string</id>
+        <description>string</description>
+        <serial>3</serial>
+       </fault>
+       <esito>string</esito>
+      </ppt:nodoInviaRichiestaRevocaRisposta>
+  stText35_ppt:
+    xml:
+      namespace: ''
+    type: string
+    maxLength: 35
+    minLength: 1
+    x-xsi-type: stText35
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: stText35_ppt
+  stPassword_ppt:
+    xml:
+      namespace: ''
+    type: string
+    maxLength: 15
+    minLength: 8
+    x-xsi-type: stPassword
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: stPassword_ppt
+  nodoTipoCodiceIdRPT_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties: {}
+    additionalProperties: true
+    x-xsi-type: nodoTipoCodiceIdRPT
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: nodoTipoCodiceIdRPT_ppt
+  esitoNodoVerificaRPTRisposta_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: ''
+          prefix: ''
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+          datiPagamentoPA:
+            $ref: '#/definitions/nodoTipoDatiPagamentoPA_ppt'
+    x-xsi-type: esitoNodoVerificaRPTRisposta
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: esitoNodoVerificaRPTRisposta_ppt
+  nodoTipoDatiPagamentoPSP_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      importoSingoloVersamento:
+        type: number
+        x-ibm-fractionDigits: 2
+        x-ibm-totalDigits: 12
+        minimum: 0
+        maximum: 99999999.99
+      ibanAppoggio:
+        type: string
+        pattern: '[a-zA-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}'
+      bicAppoggio:
+        type: string
+        pattern: '[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}'
+      soggettoVersante:
+        $ref: '#/definitions/ctSoggettoVersante_pay_i_unqual'
+      ibanAddebito:
+        type: string
+        pattern: '[a-zA-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}'
+      bicAddebito:
+        type: string
+        pattern: '[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}'
+      soggettoPagatore:
+        $ref: '#/definitions/ctSoggettoPagatore_pay_i_unqual'
+    required:
+      - importoSingoloVersamento
+    x-xsi-type: nodoTipoDatiPagamentoPSP
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: nodoTipoDatiPagamentoPSP_ppt
+  esitoNodoAttivaRPTRisposta_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: ''
+          prefix: ''
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+          datiPagamentoPA:
+            $ref: '#/definitions/nodoTipoDatiPagamentoPA_ppt'
+    x-xsi-type: esitoNodoAttivaRPTRisposta
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: esitoNodoAttivaRPTRisposta_ppt
+  esitoNodoInviaRTRisposta_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    allOf:
+      - $ref: '#/definitions/risposta_ppt'
+      - xml:
+          namespace: ''
+          prefix: ''
+        type: object
+        properties:
+          esito:
+            type: string
+            xml:
+              namespace: ''
+        required:
+          - esito
+    x-xsi-type: esitoNodoInviaRTRisposta
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: esitoNodoInviaRTRisposta_ppt
+  risposta_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      fault:
+        $ref: '#/definitions/faultBean_ppt'
+    x-xsi-type: risposta
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: risposta_ppt
+    x-ibm-discriminator: true
+  tipoListaQuadrature_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      totRestituiti:
+        type: integer
+        format: int32
+      idQuadratura:
+        type: array
+        items:
+          $ref: '#/definitions/tipoIdQuadratura_ppt'
+        x-nullable: true
+    required:
+      - totRestituiti
+    x-xsi-type: tipoListaQuadrature
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: tipoListaQuadrature_ppt
+  nodoTipoDatiPagamentoPA_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      importoSingoloVersamento:
+        type: number
+        x-ibm-fractionDigits: 2
+        x-ibm-totalDigits: 12
+        minimum: 0
+        maximum: 99999999.99
+      ibanAccredito:
+        type: string
+        pattern: '[a-zA-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}'
+      bicAccredito:
+        type: string
+        pattern: '[A-Z]{6,6}[A-Z2-9][A-NP-Z0-9]([A-Z0-9]{3,3}){0,1}'
+      enteBeneficiario:
+        $ref: '#/definitions/ctEnteBeneficiario_pay_i_unqual'
+      credenzialiPagatore:
+        type: string
+        maxLength: 35
+        minLength: 1
+      causaleVersamento:
+        $ref: '#/definitions/stText140_ppt'
+      spezzoniCausaleVersamento:
+        $ref: '#/definitions/ctSpezzoniCausaleVersamento_ppt'
+    required:
+      - importoSingoloVersamento
+    x-xsi-type: nodoTipoDatiPagamentoPA
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: nodoTipoDatiPagamentoPA_ppt
+  ctSoggettoVersante_pay_i_unqual:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      identificativoUnivocoVersante:
+        $ref: '#/definitions/ctIdentificativoUnivocoPersonaFG_pay_i'
+        description: >-
+          Aggregazione che riporta le informazioni concernenti l’identificazione
+          fiscale del versante.
+      anagraficaVersante:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Indica il nominativo o la ragione sociale del versante.
+      indirizzoVersante:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Indica l’indirizzo del versante.
+      civicoVersante:
+        $ref: '#/definitions/stText16_pay_i'
+        description: Indica il numero civico del versante.
+      capVersante:
+        $ref: '#/definitions/stText16_pay_i'
+        description: Indica il CAP del versante.
+      localitaVersante:
+        $ref: '#/definitions/stText35_pay_i'
+        description: Indica la località del versante.
+      provinciaVersante:
+        $ref: '#/definitions/stText35_pay_i'
+        description: Indica la provincia del versante.
+      nazioneVersante:
+        $ref: '#/definitions/stNazioneProvincia_pay_i'
+        description: Indica il codice nazione del versante secondo lo standard ISO 3166.
+      e-mailVersante:
+        $ref: '#/definitions/stEMail_pay_i'
+        description: Indirizzo di posta elettronica del versante.
+    required:
+      - identificativoUnivocoVersante
+      - anagraficaVersante
+    x-xsi-type: ctSoggettoVersante
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: ctSoggettoVersante_pay_i_unqual
+  ctSoggettoPagatore_pay_i_unqual:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      identificativoUnivocoPagatore:
+        $ref: '#/definitions/ctIdentificativoUnivocoPersonaFG_pay_i'
+        description: >-
+          Aggregazione che riporta le informazioni concernenti l’identificazione
+          fiscale del pagatore.
+      anagraficaPagatore:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Indica il nominativo o la ragione sociale del pagatore.
+      indirizzoPagatore:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Indica l’indirizzo del pagatore.
+      civicoPagatore:
+        $ref: '#/definitions/stText16_pay_i'
+        description: Indica il numero civico del pagatore.
+      capPagatore:
+        $ref: '#/definitions/stText16_pay_i'
+        description: Indica il CAP del pagatore.
+      localitaPagatore:
+        $ref: '#/definitions/stText35_pay_i'
+        description: Indica la località del pagatore.
+      provinciaPagatore:
+        $ref: '#/definitions/stText35_pay_i'
+        description: Indica la provincia del pagatore.
+      nazionePagatore:
+        $ref: '#/definitions/stNazioneProvincia_pay_i'
+        description: Indica il codice nazione del pagatore secondo lo standard ISO 3166.
+      e-mailPagatore:
+        $ref: '#/definitions/stEMail_pay_i'
+        description: Indirizzo di posta elettronica del pagatore.
+    required:
+      - identificativoUnivocoPagatore
+      - anagraficaPagatore
+    x-xsi-type: ctSoggettoPagatore
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: ctSoggettoPagatore_pay_i_unqual
+  faultBean_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      faultCode:
+        type: string
+      faultString:
+        type: string
+      id:
+        type: string
+      description:
+        type: string
+      serial:
+        type: integer
+        format: int32
+    required:
+      - faultCode
+      - faultString
+      - id
+    x-xsi-type: faultBean
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: faultBean_ppt
+  tipoIdQuadratura_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      identificativoFlusso:
+        type: string
+      dataOraFlusso:
+        type: string
+        format: date-time
+    required:
+      - identificativoFlusso
+      - dataOraFlusso
+    x-xsi-type: tipoIdQuadratura
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: tipoIdQuadratura_ppt
+  ctEnteBeneficiario_pay_i_unqual:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      identificativoUnivocoBeneficiario:
+        $ref: '#/definitions/ctIdentificativoUnivocoPersonaG_pay_i'
+        description: >-
+          ["Aggregazione che riporta le informazioni concernenti
+          l’identificazione fiscale dell’ente
+          beneficiario.","tipo_identificativo_univoco - se presente deve
+          assumere il valore ‘G’, Persona
+          Giuridica.","codice_identificativo_univoco - contenente il codice
+          fiscale dell’amministrazione destinataria del pagamento."]
+      denominazioneBeneficiario:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Contiene la denominazione della PA.
+      codiceUnitOperBeneficiario:
+        $ref: '#/definitions/stText35_pay_i'
+        description: Indica il codice dell’unità operativa destinataria.
+      denomUnitOperBeneficiario:
+        $ref: '#/definitions/stText70_pay_i'
+        description: Contiene la denominazione dell’unità operativa destinataria.
+      indirizzoBeneficiario:
+        $ref: '#/definitions/stText70_pay_i'
+        description: >-
+          ["Indica l’indirizzo dell’ente beneficiario.","Può coincidere con
+          quello dell’unità operativa destinataria."]
+      civicoBeneficiario:
+        $ref: '#/definitions/stText16_pay_i'
+        description: >-
+          ["Indica il numero civico del beneficiario.","Può coincidere con
+          quello dell’unità operativa destinataria."]
+      capBeneficiario:
+        $ref: '#/definitions/stText16_pay_i'
+        description: >-
+          ["Indica il CAP dell’ente beneficiario.","Può coincidere con quello
+          dell’unità operativa destinataria."]
+      localitaBeneficiario:
+        $ref: '#/definitions/stText35_pay_i'
+        description: >-
+          ["Indica la località dell’ente beneficiario.","Può coincidere con
+          quello dell’unità operativa destinataria."]
+      provinciaBeneficiario:
+        $ref: '#/definitions/stText35_pay_i'
+        description: >-
+          ["Indica la provincia del beneficiario.","Può coincidere con quello
+          dell’unità operativa destinataria."]
+      nazioneBeneficiario:
+        $ref: '#/definitions/stNazioneProvincia_pay_i'
+        description: >-
+          ["Indica il codice nazione dell’ente beneficiario secondo lo standard
+          ISO 3166.","Può coincidere con quello dell’unità operativa
+          destinataria."]
+    required:
+      - identificativoUnivocoBeneficiario
+      - denominazioneBeneficiario
+    x-xsi-type: ctEnteBeneficiario
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: ctEnteBeneficiario_pay_i_unqual
+  stText140_ppt:
+    xml:
+      namespace: ''
+    type: string
+    maxLength: 140
+    minLength: 1
+    x-xsi-type: stText140
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: stText140_ppt
+  ctSpezzoniCausaleVersamento_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      spezzoneCausaleVersamento:
+        $ref: '#/definitions/stText35_ppt'
+      spezzoneStrutturatoCausaleVersamento:
+        $ref: '#/definitions/ctSpezzoneStrutturatoCausaleVersamento_ppt'
+    x-xsi-type: ctSpezzoniCausaleVersamento
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: ctSpezzoniCausaleVersamento_ppt
+  ctIdentificativoUnivocoPersonaFG_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: object
+    properties:
+      tipoIdentificativoUnivoco:
+        $ref: '#/definitions/stTipoIdentificativoUnivocoPersFG_pay_i'
+        description: >-
+          ["Campo alfanumerico che indica la natura del soggetto,  può assumere
+          i seguenti valori:","F - Persona Fisica","G - Persona Giuridica"]
+      codiceIdentificativoUnivoco:
+        $ref: '#/definitions/stText35_pay_i'
+        description: >-
+          Campo alfanumerico che può contenere il codice fiscale o, in
+          alternativa, la partita IVA del soggetto.
+    required:
+      - tipoIdentificativoUnivoco
+      - codiceIdentificativoUnivoco
+    x-xsi-type: ctIdentificativoUnivocoPersonaFG
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: ctIdentificativoUnivocoPersonaFG_pay_i
+  stText70_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    maxLength: 70
+    minLength: 1
+    x-xsi-type: stText70
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stText70_pay_i
+  stText16_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    maxLength: 16
+    minLength: 1
+    x-xsi-type: stText16
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stText16_pay_i
+  stText35_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    maxLength: 35
+    minLength: 1
+    x-xsi-type: stText35
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stText35_pay_i
+  stNazioneProvincia_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    pattern: '[A-Z]{2,2}'
+    x-xsi-type: stNazioneProvincia
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stNazioneProvincia_pay_i
+  stEMail_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    pattern: >-
+      [A-Za-z0-9_]+([\-\+\.'][A-Za-z0-9_]+)*@[A-Za-z0-9_]+([\-\.][A-Za-z0-9_]+)*\.[A-Za-z0-9_]+([\-\.][A-Za-z0-9_]+)*
+    maxLength: 256
+    x-xsi-type: stEMail
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stEMail_pay_i
+  ctIdentificativoUnivocoPersonaG_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: object
+    properties:
+      tipoIdentificativoUnivoco:
+        $ref: '#/definitions/stTipoIdentificativoUnivocoPersG_pay_i'
+        description: >-
+          ["Campo alfanumerico che indica la natura del soggetto,  può assumere
+          i seguenti valori:","G - Persona Giuridica"]
+      codiceIdentificativoUnivoco:
+        $ref: '#/definitions/stText35_pay_i'
+        description: >-
+          Campo alfanumerico che può contenere il codice fiscale o, in
+          alternativa, la partita IVA del soggetto.
+    required:
+      - tipoIdentificativoUnivoco
+      - codiceIdentificativoUnivoco
+    x-xsi-type: ctIdentificativoUnivocoPersonaG
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: ctIdentificativoUnivocoPersonaG_pay_i
+  ctSpezzoneStrutturatoCausaleVersamento_ppt:
+    xml:
+      namespace: ''
+      prefix: ''
+    type: object
+    properties:
+      causaleSpezzone:
+        $ref: '#/definitions/stText25_ppt'
+      importoSpezzone:
+        $ref: '#/definitions/stImporto_ppt'
+    required:
+      - causaleSpezzone
+      - importoSpezzone
+    x-xsi-type: ctSpezzoneStrutturatoCausaleVersamento
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: ctSpezzoneStrutturatoCausaleVersamento_ppt
+  stTipoIdentificativoUnivocoPersFG_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    minLength: 1
+    maxLength: 1
+    enum:
+      - F
+      - G
+    x-xsi-type: stTipoIdentificativoUnivocoPersFG
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stTipoIdentificativoUnivocoPersFG_pay_i
+  stTipoIdentificativoUnivocoPersG_pay_i:
+    xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    type: string
+    minLength: 1
+    maxLength: 1
+    enum:
+      - G
+    x-xsi-type: stTipoIdentificativoUnivocoPersG
+    x-xsi-type-xml:
+      namespace: 'http://www.digitpa.gov.it/schemas/2011/Pagamenti/'
+      prefix: pay_i
+    x-xsi-type-uniquename: stTipoIdentificativoUnivocoPersG_pay_i
+  stText25_ppt:
+    xml:
+      namespace: ''
+    type: string
+    maxLength: 25
+    minLength: 1
+    x-xsi-type: stText25
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: stText25_ppt
+  stImporto_ppt:
+    xml:
+      namespace: ''
+    type: number
+    x-ibm-fractionDigits: 2
+    x-ibm-totalDigits: 10
+    minimum: 0
+    maximum: 999999.99
+    x-xsi-type: stImporto
+    x-xsi-type-xml:
+      namespace: 'http://ws.pagamenti.telematici.gov/'
+      prefix: ppt
+    x-xsi-type-uniquename: stImporto_ppt

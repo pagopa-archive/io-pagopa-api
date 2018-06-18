@@ -116,7 +116,7 @@ export interface InodoInviaFlussoRendicontazioneInput {
 export interface InodoInviaFlussoRendicontazioneOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 export interface InodoChiediElencoQuadraturePSPInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -172,7 +172,7 @@ export interface InodoInviaEsitoStornoInput {
 export interface InodoInviaEsitoStornoOutput {
     fault: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-    esito: string;
+    esito: PPTPortTypes.Esito;
 }
 export interface InodoInviaRichiestaRevocaInput {
     /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -191,6 +191,14 @@ export interface InodoInviaRichiestaRevocaInput {
     codiceContestoPagamento: string;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     rr: base64Binary;
+}
+export interface IcdInfoWispOutput {
+    esito: PPTPortTypes.Esito.OK | PPTPortTypes.Esito.KO;
+}
+export declare enum codificaInfrastrutturaPSPEnum {
+    QR_CODE = "QR-CODE",
+    BARCODE_GS1_128 = "BARCODE-GS1-128",
+    BARCODE_128_AIM = "BARCODE-128-AIM"
 }
 export interface InodoInviaRichiestaRevocaOutput {
 }
@@ -228,6 +236,10 @@ export interface IPPTPortSoap {
 }
 export declare namespace PPTPortTypes {
     interface IcodiceIdRPT {
+        CF: string;
+        CodStazPA: string;
+        AuxDigit: string;
+        CodIUV: string;
     }
     interface Ifault {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -272,7 +284,7 @@ export declare namespace PPTPortTypes {
         /** http://ws.pagamenti.telematici.gov/#stText25(minLength,maxLength) */
         causaleSpezzone: string;
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSpezzone: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSpezzone: number;
     }
     interface IspezzoniCausaleVersamento {
         /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -281,7 +293,7 @@ export declare namespace PPTPortTypes {
     }
     interface IdatiPagamentoPA {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSingoloVersamento: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSingoloVersamento: number;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
         ibanAccredito: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
@@ -291,12 +303,12 @@ export declare namespace PPTPortTypes {
         credenzialiPagatore: string;
         /** http://ws.pagamenti.telematici.gov/#stText140(minLength,maxLength) */
         causaleVersamento: string;
-        spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento;
+        spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento[];
     }
     interface InodoVerificaRPTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     interface IidentificativoUnivocoVersante {
@@ -351,28 +363,28 @@ export declare namespace PPTPortTypes {
     }
     interface IdatiPagamentoPSP {
         /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-        importoSingoloVersamento: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
+        importoSingoloVersamento: number;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-        ibanAppoggio: string;
+        ibanAppoggio?: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-        bicAppoggio: string;
-        soggettoVersante: PPTPortTypes.IsoggettoVersante;
+        bicAppoggio?: string;
+        soggettoVersante?: PPTPortTypes.IsoggettoVersante;
         /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-        ibanAddebito: string;
+        ibanAddebito?: string;
         /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-        bicAddebito: string;
-        soggettoPagatore: PPTPortTypes.IsoggettoPagatore;
+        bicAddebito?: string;
+        soggettoPagatore?: PPTPortTypes.IsoggettoPagatore;
     }
     interface InodoAttivaRPTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     interface InodoInviaRTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
-        esito: string;
+        esito: PPTPortTypes.Esito;
     }
     interface IidQuadratura {
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
@@ -385,4 +397,9 @@ export declare namespace PPTPortTypes {
         totRestituiti: int;
         idQuadratura: PPTPortTypes.IidQuadratura[];
     }
+    enum Esito {
+        OK = "OK",
+        KO = "KO"
+    }
+    const envelopeKey = "soapenv";
 }

@@ -29,11 +29,11 @@ export async function attachFespPspServer(
 
   const service = {
     FespPspService: {
-      PSPPort: fespPspHandlers,
-    },
+      PSPPort: fespPspHandlers
+    }
   };
 
-  return(soap.listen(server, path, service, wsdl));
+  return soap.listen(server, path, service, wsdl);
 }
 
 /**
@@ -55,9 +55,9 @@ export async function attachAvvisiDigitaliServer(
 
   const service = {
     AvvisiDigitaliService: {
-      PPTPort: avvisiDigitaliHandlers,
+      PPTPort: avvisiDigitaliHandlers
     }
   };
 
-  return(soap.listen(server, path, service, wsdl));
+  return soap.listen(server, path, service, wsdl);
 }
