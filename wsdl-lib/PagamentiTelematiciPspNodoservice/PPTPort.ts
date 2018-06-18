@@ -103,14 +103,6 @@ export interface InodoChiediTemplateInformativaPSPInput {
   password: string;
 }
 
-export interface IcdInfoWispInput {
-  identificativioDominio: string;
-  identificativoUnivocoVersamento: string;
-  codiceContestoPagamento: string;
-  urlWisp: string;
-  idPagamento: string;
-}
-
 export interface InodoChiediTemplateInformativaPSPOutput {
   fault: PPTPortTypes.Ifault;
   /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
@@ -326,15 +318,6 @@ export interface IPPTPortSoap {
       soapHeader: { [k: string]: any }
     ) => any
   ) => void;
-  nodoInviaCdInfoWisp: (
-    input: IcdInfoWispInput,
-    cb: (
-      err: any | null,
-      result: IcdInfoWispOutput,
-      raw: string,
-      soapHeader: { [k: string]: any }
-    ) => any
-  ) => void;
 }
 
 export namespace PPTPortTypes {
@@ -396,7 +379,7 @@ export namespace PPTPortTypes {
   }
   export interface IdatiPagamentoPA {
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-    importoSingoloVersamento: number; //: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
+    importoSingoloVersamento: number; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
     ibanAccredito: string;
     /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
@@ -409,7 +392,7 @@ export namespace PPTPortTypes {
     spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento[];
   }
   export interface InodoVerificaRPTRisposta {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esito: PPTPortTypes.Esito;
     datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
@@ -468,24 +451,24 @@ export namespace PPTPortTypes {
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
     importoSingoloVersamento: number; //TODO: [#158031250] Fix wsdl-to-ts
     /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-    ibanAppoggio?: string;
+    ibanAppoggio?: string; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-    bicAppoggio?: string;
+    bicAppoggio?: string; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     soggettoVersante?: PPTPortTypes.IsoggettoVersante;
     /** http://ws.pagamenti.telematici.gov/#stIBANIdentifier(pattern) */
-    ibanAddebito?: string;
+    ibanAddebito?: string; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#stBICIdentifier(pattern) */
-    bicAddebito?: string;
+    bicAddebito?: string; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     soggettoPagatore?: PPTPortTypes.IsoggettoPagatore;
   }
   export interface InodoAttivaRPTRisposta {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esito: PPTPortTypes.Esito;
     datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
   }
   export interface InodoInviaRTRisposta {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault; //TODO: [#158031250] Fix wsdl-to-ts https://www.pivotaltracker.com/n/projects/2161158/stories/158031250/
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esito: PPTPortTypes.Esito;
   }
