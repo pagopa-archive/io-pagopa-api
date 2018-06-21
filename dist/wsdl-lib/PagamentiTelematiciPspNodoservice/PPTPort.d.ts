@@ -316,7 +316,7 @@ export interface IPPTPortSoap {
 export declare namespace PPTPortTypes {
   interface IcodiceIdRPT {
     CF: string;
-    CodStazPA: string;
+    CodStazPA?: string;
     AuxDigit: string;
     CodIUV: string;
   }
