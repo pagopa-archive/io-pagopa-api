@@ -323,7 +323,7 @@ export interface IPPTPortSoap {
 export namespace PPTPortTypes {
   export interface IcodiceIdRPT {
     CF: string;
-    CodStazPA: string;
+    CodStazPA?: string;
     AuxDigit: string;
     CodIUV: string;
   }
