@@ -13,7 +13,9 @@
   },
   "include": [
     "index.ts",
-    "wsdl-lib/**/*.ts"
+    "wsdl-lib/**/*.ts",
+    "lib/*.ts",
+    "yaml-to-ts/*.ts"
   ],
   "exclude": [
     "node_modules"
