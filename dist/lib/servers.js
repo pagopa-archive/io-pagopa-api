@@ -31,10 +31,10 @@ function attachFespPspServer(server, path, fespPspHandlers) {
         const wsdl = yield utils_1.readWsdl(wsdl_paths.FespPspService_WSDL_PATH);
         const service = {
             FespPspService: {
-                PSPPort: fespPspHandlers
-            }
+                PSPPort: fespPspHandlers,
+            },
         };
-        return soap.listen(server, path, service, wsdl);
+        return (soap.listen(server, path, service, wsdl));
     });
 }
 exports.attachFespPspServer = attachFespPspServer;
@@ -53,10 +53,10 @@ function attachAvvisiDigitaliServer(server, path, avvisiDigitaliHandlers) {
         const wsdl = yield utils_1.readWsdl(wsdl_paths.FespPspService_WSDL_PATH);
         const service = {
             AvvisiDigitaliService: {
-                PPTPort: avvisiDigitaliHandlers
+                PPTPort: avvisiDigitaliHandlers,
             }
         };
-        return soap.listen(server, path, service, wsdl);
+        return (soap.listen(server, path, service, wsdl));
     });
 }
 exports.attachAvvisiDigitaliServer = attachAvvisiDigitaliServer;

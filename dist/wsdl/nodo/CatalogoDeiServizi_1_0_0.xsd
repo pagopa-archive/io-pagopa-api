@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:cds="http://www.digitpa.gov.it/schemas/2011/Pagamenti/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.digitpa.gov.it/schemas/2011/Pagamenti/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	version="1.0.0">
+	<xsd:annotation>
+		<xsd:documentation>= 17/6/2016 - documento base "Il Pagamento
+			Spontaneo presso i PSP: il caso d'uso della Tassa Automobilistica"
+		</xsd:documentation>
+	</xsd:annotation>
+
+
+	<!-- **** BEGIN: tipi semplici **** -->
+
+	<xsd:simpleType name="stISODate">
+		<xsd:restriction base="xsd:date" />
+	</xsd:simpleType>
+
+	<xsd:simpleType name="stIdServizio">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{5,5}" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="stText35">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="35" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="stText70">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="3" />
+			<xsd:maxLength value="70" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- **** END: tipi semplici **** -->
+
+	<!-- **** BEGIN: tipi complessi **** -->
+
+	<xsd:complexType name="ctSoggettoErogante">
+		<xsd:sequence>
+			<xsd:element name="identificativoDominio" type="cds:stText35">
+				<xsd:annotation>
+					<xsd:documentation>Campo alfanumerico contenente il codice fiscale
+						dell'Ente Creditore che eroga quel servizio.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+			<xsd:element name="denominazioneEnteCreditore" type="cds:stText70">
+				<xsd:annotation>
+					<xsd:documentation>Contiene la denominazione dell'Ente Creditore
+						che eroga lo specifico servizio.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+			<xsd:element name="dataInizioValidita" type="cds:stISODate">
+				<xsd:annotation>
+					<xsd:documentation>Data da cui e' attiva l'erogazione del servizio
+						da parte dell'Ente Creditore nel formato ISO 8601
+						[YYYY]-[MM]-[DD].
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+			<xsd:element name="xsdRiferimento" type="cds:stText35">
+				<xsd:annotation>
+					<xsd:documentation>Nome dell'XSD utilizzato per verificare la
+						congruenza dei dati forniti per lo specifico servizio attraverso
+						un'apposita struttura XML.
+						La struttura XML contiene i dati che
+						consentono il pagamento
+						spontaneo c/o PSP.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ctCatalogoServizi">
+		<xsd:sequence>
+			<xsd:element name="elencoSoggettiEroganti" type="cds:ctElencoSoggettiEroganti" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ctElencoSoggettiEroganti">
+		<xsd:sequence>
+			<xsd:element name="soggettoErogante" type="cds:ctSoggettoErogante" maxOccurs="unbounded" minOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ctListaCatalogoServizi">
+		<xsd:sequence>
+			<xsd:element name="catalogoServizi" type="cds:ctCatalogoServizi" maxOccurs="unbounded" minOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- **** END: tipi complessi **** -->
+
+
+	<!-- **** BEGIN: elementi **** -->
+	<xsd:element name="CatalogoServizi" type="cds:ctCatalogoServizi">
+		<xsd:annotation>
+			<xsd:documentation>Catalogo dei Servizi - documento informatico che
+				contiene l'elenco dei servizi attivati dagli Enti Creditori
+				utilizzabili attraverso il modello di pagamento attivato presso i
+				PSP in modalita' spontanea
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="listaCatalogoServizi" type="cds:ctListaCatalogoServizi" />
+
+	<!-- **** END: elementi **** -->
+</xsd:schema>
+
+

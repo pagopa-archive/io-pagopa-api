@@ -48,7 +48,7 @@ export interface IpspInviaCarrelloRPTCarteInput {
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esitoTransazioneCarta: string;
     /** http://ws.pagamenti.telematici.gov/#stImporto(minInclusive,maxInclusive,fractionDigits,totalDigits) */
-    importoTotalePagato: number;
+    importoTotalePagato: "minInclusive" | "maxInclusive" | "fractionDigits" | "totalDigits";
     /** http://ws.pagamenti.telematici.gov/#stISODateTime() */
     timestampOperazione: dateTime;
     /** http://ws.pagamenti.telematici.gov/#stText6(length) */
