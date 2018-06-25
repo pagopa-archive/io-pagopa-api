@@ -59,16 +59,6 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
       iscrizioniAvvisaturaClientBase
     );
 
-    console.log(
-      iscrizioniAvvisaturaClientBase.describe().IscrizioniAvvisaturaService
-        .PPTPort.nodoAggiornaIscrizioniAvvisatura
-    );
-    console.log(
-      iscrizioniAvvisaturaClientBase.describe().IscrizioniAvvisaturaService
-        .PPTPort.nodoAggiornaIscrizioniAvvisatura.input.datiNotifica
-        .identificativoUnivocoSoggetto.tipoIdentificativoUnivoco
-    );
-
     try {
       await iscrizioniAvvisaturaClient.nodoAggiornaIscrizioniAvvisatura(input);
     } catch {
@@ -83,7 +73,6 @@ describe("createIscrizioniAvvisaturaClient#nodoAggiornaIscrizioniAvvisatura", ()
 
     expect(requestOptions).toBeDefined();
     if (requestOptions) {
-      console.log(requestOptions.body);
       expect(requestOptions.body).toEqualXML(expectedRequest);
     }
   });
