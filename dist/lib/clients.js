@@ -16,6 +16,10 @@ function createPagamentiTelematiciPspNodoClient(options) {
     return utils_1.createClient(wsdl_paths.PagamentiTelematiciPspNodoService_WSDL_PATH, options);
 }
 exports.createPagamentiTelematiciPspNodoClient = createPagamentiTelematiciPspNodoClient;
+function createFespPspServiceClient(options) {
+    return utils_1.createClient(wsdl_paths.FespPspService_WSDL_PATH, options);
+}
+exports.createFespPspServiceClient = createFespPspServiceClient;
 /**
  * Creates a client for the "IscrizioniAvvisatura" service
  */

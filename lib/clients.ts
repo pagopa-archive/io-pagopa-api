@@ -1,12 +1,13 @@
 import * as soap from "soap";
 
 import * as wsdl_paths from "./wsdl-paths";
-import { createClient, promisifySoapMethod, readWsdl } from "./utils";
+import { createClient, promisifySoapMethod } from "./utils";
 
 // import interfaces for "pagoPA" services (Nodo and Avvisatura)
 import * as PagamentiTelematiciPspNodoService from "../wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
 import * as IscrizioniAvvisaturaService from "../wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
 import * as NodoChiediElencoAvvisiDigitaliService from "../wsdl-lib/NodoChiediElencoAvvisiDigitaliService/PPTPort";
+import { FespPspService } from "./servers";
 
 // re-export all the interfaces (needed by client app)
 export { PagamentiTelematiciPspNodoService };
@@ -24,6 +25,16 @@ export function createPagamentiTelematiciPspNodoClient(
     options
   );
 }
+
+export function createFespPspServiceClient(
+  options: soap.IOptions
+): Promise<soap.Client & FespPspService.IPSPPortSoap> {
+  return createClient<FespPspService.IPSPPortSoap>(
+    wsdl_paths.FespPspService_WSDL_PATH,
+    options
+  );
+}
+
 
 /**
  * Creates a client for the "IscrizioniAvvisatura" service
