@@ -2,7 +2,6 @@ import * as soap from "soap";
 import * as PagamentiTelematiciPspNodoService from "../wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
 import * as IscrizioniAvvisaturaService from "../wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
 import * as NodoChiediElencoAvvisiDigitaliService from "../wsdl-lib/NodoChiediElencoAvvisiDigitaliService/PPTPort";
-import { FespPspService } from "./servers";
 export { PagamentiTelematiciPspNodoService };
 export { IscrizioniAvvisaturaService };
 export { NodoChiediElencoAvvisiDigitaliService };
@@ -10,7 +9,6 @@ export { NodoChiediElencoAvvisiDigitaliService };
  * Creates a client for the "PagamentiTelematiciPspNodo" service
  */
 export declare function createPagamentiTelematiciPspNodoClient(options: soap.IOptions): Promise<soap.Client & PagamentiTelematiciPspNodoService.IPPTPortSoap>;
-export declare function createFespPspServiceClient(options: soap.IOptions): Promise<soap.Client & FespPspService.IPSPPortSoap>;
 /**
  * Creates a client for the "IscrizioniAvvisatura" service
  */

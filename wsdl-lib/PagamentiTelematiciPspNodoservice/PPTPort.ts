@@ -19,9 +19,7 @@ export interface InodoVerificaRPTInput {
   codiceIdRPT: PPTPortTypes.IcodiceIdRPT;
 }
 
-export interface InodoVerificaRPTOutput {
-  nodoVerificaRPTRisposta: PPTPortTypes.InodoVerificaRPTRisposta;
-}
+export interface InodoVerificaRPTOutput extends PPTPortTypes.InodoVerificaRPTRisposta{}
 
 export interface InodoAttivaRPTInput {
   /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */
@@ -44,9 +42,8 @@ export interface InodoAttivaRPTInput {
   datiPagamentoPSP: PPTPortTypes.IdatiPagamentoPSP;
 }
 
-export interface InodoAttivaRPTOutput {
-  nodoAttivaRPTRisposta: PPTPortTypes.InodoAttivaRPTRisposta;
-}
+export interface InodoAttivaRPTOutput extends PPTPortTypes.InodoAttivaRPTRisposta{}
+
 
 export interface InodoInviaRTInput {
   /** http://ws.pagamenti.telematici.gov/#stText35(minLength,maxLength) */

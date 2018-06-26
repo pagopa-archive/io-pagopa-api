@@ -26,16 +26,6 @@ export function createPagamentiTelematiciPspNodoClient(
   );
 }
 
-export function createFespPspServiceClient(
-  options: soap.IOptions
-): Promise<soap.Client & FespPspService.IPSPPortSoap> {
-  return createClient<FespPspService.IPSPPortSoap>(
-    wsdl_paths.FespPspService_WSDL_PATH,
-    options
-  );
-}
-
-
 /**
  * Creates a client for the "IscrizioniAvvisatura" service
  */
