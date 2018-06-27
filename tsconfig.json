@@ -9,7 +9,11 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./dist",
+    "paths": {
+      "utils": ["utils"]
+    }
   },
   "include": [
     "index.ts",
