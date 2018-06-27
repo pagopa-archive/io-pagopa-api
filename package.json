@@ -1,5 +1,5 @@
 {
-  "name": "italia-pagopa-ts",
+  "name": "italia-pagopa-api",
   "version": "2.0.0",
   "description": "Client and server for interacting with pagoPA",
   "main": "dist/index.js",
