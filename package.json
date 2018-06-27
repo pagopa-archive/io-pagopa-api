@@ -9,7 +9,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "tsc && cp -r wsdl dist",
+    "build": "tsc -p . && cp -r wsdl dist",
     "postversion": "git push && git push --tags",
     "test": "jest"
   },
