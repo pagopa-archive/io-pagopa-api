@@ -1,7 +1,7 @@
 import * as soap from "soap";
 
 import * as wsdl_paths from "./wsdl-paths";
-import { createClient, promisifySoapMethod, readWsdl } from "./utils";
+import { createClient, promisifySoapMethod } from "./utils";
 
 // import interfaces for "pagoPA" services (Nodo and Avvisatura)
 import * as PagamentiTelematiciPspNodoService from "../wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
