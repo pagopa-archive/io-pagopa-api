@@ -401,7 +401,7 @@ export namespace PPTPortTypes {
     credenzialiPagatore: string;
     /** http://ws.pagamenti.telematici.gov/#stText140(minLength,maxLength) */
     causaleVersamento: string;
-    spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento;
+    spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento[];
   }
   export interface InodoVerificaRPTRisposta {
     fault?: PPTPortTypes.Ifault;
