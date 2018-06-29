@@ -74,7 +74,7 @@ export interface InodoChiediInformativaPAInput {
     identificativoDominio: string;
 }
 export interface InodoChiediInformativaPAOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     xmlInformativa: base64Binary;
 }
@@ -96,7 +96,7 @@ export interface IcdInfoWispInput {
     idPagamento: string;
 }
 export interface InodoChiediTemplateInformativaPSPOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     xmlTemplateInformativa: base64Binary;
 }
@@ -119,7 +119,7 @@ export interface InodoInviaFlussoRendicontazioneInput {
     xmlRendicontazione: base64Binary;
 }
 export interface InodoInviaFlussoRendicontazioneOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esito: PPTPortTypes.Esito;
 }
@@ -136,7 +136,7 @@ export interface InodoChiediElencoQuadraturePSPInput {
     identificativoDominio: string;
 }
 export interface InodoChiediElencoQuadraturePSPOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     listaQuadrature: PPTPortTypes.IlistaQuadrature;
 }
 export interface InodoChiediQuadraturaPSPInput {
@@ -152,7 +152,7 @@ export interface InodoChiediQuadraturaPSPInput {
     identificativoFlusso: string;
 }
 export interface InodoChiediQuadraturaPSPOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#base64Binary(undefined) */
     xmlQuadratura: base64Binary;
 }
@@ -175,7 +175,7 @@ export interface InodoInviaEsitoStornoInput {
     er: base64Binary;
 }
 export interface InodoInviaEsitoStornoOutput {
-    fault: PPTPortTypes.Ifault;
+    fault?: PPTPortTypes.Ifault;
     /** http://ws.pagamenti.telematici.gov/#string(undefined) */
     esito: PPTPortTypes.Esito;
 }
@@ -245,7 +245,7 @@ export interface IPPTPortSoap {
 export declare namespace PPTPortTypes {
     interface IcodiceIdRPT {
         CF: string;
-        CodStazPA: string;
+        CodStazPA?: string;
         AuxDigit: string;
         CodIUV: string;
     }
@@ -314,7 +314,7 @@ export declare namespace PPTPortTypes {
         spezzoniCausaleVersamento: PPTPortTypes.IspezzoniCausaleVersamento;
     }
     interface InodoVerificaRPTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
@@ -384,13 +384,13 @@ export declare namespace PPTPortTypes {
         soggettoPagatore?: PPTPortTypes.IsoggettoPagatore;
     }
     interface InodoAttivaRPTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: PPTPortTypes.Esito;
         datiPagamentoPA: PPTPortTypes.IdatiPagamentoPA;
     }
     interface InodoInviaRTRisposta {
-        fault: PPTPortTypes.Ifault;
+        fault?: PPTPortTypes.Ifault;
         /** http://ws.pagamenti.telematici.gov/#string(undefined) */
         esito: PPTPortTypes.Esito;
     }
