@@ -17,7 +17,7 @@ export { NodoChiediElencoAvvisiDigitaliService };
  * Creates a client for the "PagamentiTelematiciPspNodo" service
  */
 export function createPagamentiTelematiciPspNodoClient(options: soap.IOptions): Promise<soap.Client & PagamentiTelematiciPspNodoService.IPPTPortSoap> {
-  return createClient<PagamentiTelematiciPspNodoService.IPPTPortSoap>(wsdl_paths.PagamentiTelematiciPspNodoService_WSDL_PATH, options);
+  return createClient<PagamentiTelematiciPspNodoService.IPPTPortSoap>(wsdl_paths.FespPspService_WSDL_PATH, options);
 }
 
 /**

@@ -13,7 +13,7 @@ exports.NodoChiediElencoAvvisiDigitaliService = NodoChiediElencoAvvisiDigitaliSe
  * Creates a client for the "PagamentiTelematiciPspNodo" service
  */
 function createPagamentiTelematiciPspNodoClient(options) {
-    return utils_1.createClient(wsdl_paths.PagamentiTelematiciPspNodoService_WSDL_PATH, options);
+    return utils_1.createClient(wsdl_paths.FespPspService_WSDL_PATH, options);
 }
 exports.createPagamentiTelematiciPspNodoClient = createPagamentiTelematiciPspNodoClient;
 /**
