@@ -24,16 +24,16 @@ export declare function createNodoChiediElencoAvvisiDigitaliClient(options: soap
 export declare class PagamentiTelematiciPspNodoAsyncClient {
     private readonly client;
     constructor(client: PagamentiTelematiciPspNodoService.IPPTPortSoap);
-    nodoVerificaRPT: (input: PagamentiTelematiciPspNodoService.InodoVerificaRPTInput) => Promise<PagamentiTelematiciPspNodoService.InodoVerificaRPTOutput>;
-    nodoAttivaRPT: (input: PagamentiTelematiciPspNodoService.InodoAttivaRPTInput) => Promise<PagamentiTelematiciPspNodoService.InodoAttivaRPTOutput>;
-    nodoInviaRT: (input: PagamentiTelematiciPspNodoService.InodoInviaRTInput) => Promise<PagamentiTelematiciPspNodoService.InodoInviaRTOutput>;
-    nodoChiediInformativaPA: (input: PagamentiTelematiciPspNodoService.InodoChiediInformativaPAInput) => Promise<PagamentiTelematiciPspNodoService.InodoChiediInformativaPAOutput>;
-    nodoChiediTemplateInformativaPSP: (input: PagamentiTelematiciPspNodoService.InodoChiediTemplateInformativaPSPInput) => Promise<PagamentiTelematiciPspNodoService.InodoChiediTemplateInformativaPSPOutput>;
-    nodoInviaFlussoRendicontazione: (input: PagamentiTelematiciPspNodoService.InodoInviaFlussoRendicontazioneInput) => Promise<PagamentiTelematiciPspNodoService.InodoInviaFlussoRendicontazioneOutput>;
-    nodoChiediElencoQuadraturePSP: (input: PagamentiTelematiciPspNodoService.InodoChiediElencoQuadraturePSPInput) => Promise<PagamentiTelematiciPspNodoService.InodoChiediElencoQuadraturePSPOutput>;
-    nodoChiediQuadraturaPSP: (input: PagamentiTelematiciPspNodoService.InodoChiediQuadraturaPSPInput) => Promise<PagamentiTelematiciPspNodoService.InodoChiediQuadraturaPSPOutput>;
-    nodoInviaEsitoStorno: (input: PagamentiTelematiciPspNodoService.InodoInviaEsitoStornoInput) => Promise<PagamentiTelematiciPspNodoService.InodoInviaEsitoStornoOutput>;
-    nodoInviaRichiestaRevoca: (input: PagamentiTelematiciPspNodoService.InodoInviaRichiestaRevocaInput) => Promise<PagamentiTelematiciPspNodoService.InodoInviaRichiestaRevocaOutput>;
+    nodoVerificaRPT: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoVerificaRPTInput, PagamentiTelematiciPspNodoService.InodoVerificaRPTOutput>;
+    nodoAttivaRPT: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoAttivaRPTInput, PagamentiTelematiciPspNodoService.InodoAttivaRPTOutput>;
+    nodoInviaRT: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoInviaRTInput, PagamentiTelematiciPspNodoService.InodoInviaRTOutput>;
+    nodoChiediInformativaPA: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoChiediInformativaPAInput, PagamentiTelematiciPspNodoService.InodoChiediInformativaPAOutput>;
+    nodoChiediTemplateInformativaPSP: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoChiediTemplateInformativaPSPInput, PagamentiTelematiciPspNodoService.InodoChiediTemplateInformativaPSPOutput>;
+    nodoInviaFlussoRendicontazione: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoInviaFlussoRendicontazioneInput, PagamentiTelematiciPspNodoService.InodoInviaFlussoRendicontazioneOutput>;
+    nodoChiediElencoQuadraturePSP: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoChiediElencoQuadraturePSPInput, PagamentiTelematiciPspNodoService.InodoChiediElencoQuadraturePSPOutput>;
+    nodoChiediQuadraturaPSP: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoChiediQuadraturaPSPInput, PagamentiTelematiciPspNodoService.InodoChiediQuadraturaPSPOutput>;
+    nodoInviaEsitoStorno: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoInviaEsitoStornoInput, PagamentiTelematiciPspNodoService.InodoInviaEsitoStornoOutput>;
+    nodoInviaRichiestaRevoca: import("./utils").SoapMethodPromise<PagamentiTelematiciPspNodoService.InodoInviaRichiestaRevocaInput, PagamentiTelematiciPspNodoService.InodoInviaRichiestaRevocaOutput>;
 }
 /**
  * Converts the callback based methods of a IscrizioniAvvisatura client to
@@ -42,7 +42,7 @@ export declare class PagamentiTelematiciPspNodoAsyncClient {
 export declare class IscrizioniAvvisaturaAsyncClient {
     private readonly client;
     constructor(client: IscrizioniAvvisaturaService.IPPTPortSoap);
-    nodoAggiornaIscrizioniAvvisatura: (input: IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaInput) => Promise<IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaOutput>;
+    nodoAggiornaIscrizioniAvvisatura: import("./utils").SoapMethodPromise<IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaInput, IscrizioniAvvisaturaService.InodoAggiornaIscrizioniAvvisaturaOutput>;
 }
 /**
  * Converts the callback based methods of a NodoChiediElencoAvvisiDigitali
@@ -51,5 +51,5 @@ export declare class IscrizioniAvvisaturaAsyncClient {
 export declare class NodoChiediElencoAvvisiDigitaliAsyncClient {
     private readonly client;
     constructor(client: NodoChiediElencoAvvisiDigitaliService.IPPTPortSoap);
-    nodoChiediElencoAvvisiDigitali: (input: NodoChiediElencoAvvisiDigitaliService.InodoChiediElencoAvvisiDigitaliInput) => Promise<NodoChiediElencoAvvisiDigitaliService.InodoChiediElencoAvvisiDigitaliOutput>;
+    nodoChiediElencoAvvisiDigitali: import("./utils").SoapMethodPromise<NodoChiediElencoAvvisiDigitaliService.InodoChiediElencoAvvisiDigitaliInput, NodoChiediElencoAvvisiDigitaliService.InodoChiediElencoAvvisiDigitaliOutput>;
 }
