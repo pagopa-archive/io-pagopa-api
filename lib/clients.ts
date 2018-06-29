@@ -7,7 +7,6 @@ import { createClient, promisifySoapMethod } from "./utils";
 import * as PagamentiTelematiciPspNodoService from "../wsdl-lib/PagamentiTelematiciPspNodoservice/PPTPort";
 import * as IscrizioniAvvisaturaService from "../wsdl-lib/IscrizioniAvvisaturaService/PPTPort";
 import * as NodoChiediElencoAvvisiDigitaliService from "../wsdl-lib/NodoChiediElencoAvvisiDigitaliService/PPTPort";
-import { FespCdService } from "./servers";
 
 // re-export all the interfaces (needed by client app)
 export { PagamentiTelematiciPspNodoService };
