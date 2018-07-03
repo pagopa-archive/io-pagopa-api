@@ -1,5 +1,7 @@
 [![CircleCI](https://circleci.com/gh/teamdigitale/italia-pagopa-api.svg?style=svg)](https://circleci.com/gh/teamdigitale/italia-pagopa-api)
 
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fteamdigitale%2Fitalia-pagopa-api.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fteamdigitale%2Fitalia-pagopa-api?ref=badge_shield)
+
 # Client and server for interacting with pagoPA (Experimental)
 
 This is experimental code, beware!
@@ -32,3 +34,7 @@ The release process is based on [npm version](https://docs.npmjs.com/cli/version
 ```
 $ npm version [patch|minor|major]
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fteamdigitale%2Fitalia-pagopa-api.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fteamdigitale%2Fitalia-pagopa-api?ref=badge_large)
