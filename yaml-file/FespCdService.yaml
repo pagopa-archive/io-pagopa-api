@@ -28,7 +28,7 @@ x-ibm-configuration:
   cors:
     enabled: true
   wsdl-definition:
-    wsdl: ./wsdl/nodo/CdPerNodo.wsdl
+    wsdl: /home/lskoder/workspace/italia-pagopa-api/wsdl/nodo/CdPerNodo.wsdl
     service: FespCdService
     port: FespCdPortType
     soap-version: '1.1'

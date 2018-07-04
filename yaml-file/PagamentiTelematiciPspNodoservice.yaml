@@ -28,7 +28,7 @@ x-ibm-configuration:
   cors:
     enabled: true
   wsdl-definition:
-    wsdl: ./wsdl/nodo/NodoPerPsp.wsdl
+    wsdl: /home/lskoder/workspace/italia-pagopa-api/wsdl/nodo/NodoPerPsp.wsdl
     service: PagamentiTelematiciPspNodoservice
     port: PPTPort
     soap-version: '1.1'

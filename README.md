@@ -1,15 +1,20 @@
 [![CircleCI](https://circleci.com/gh/teamdigitale/italia-pagopa-api.svg?style=svg)](https://circleci.com/gh/teamdigitale/italia-pagopa-api)
 
-# Client and server for interacting with pagoPA (Experimental)
+# PagoPA API
 
-This is experimental code, beware!
+## What is this?
 
-This repository contains code generated from pagoPA WSDLs for the interaction
-flow between a PSP and the Payment Node.
+This is a library to support communication with PagoPa SOAP WebServices.
+It contains data types and utils to make SOAP client and server.
 
-This repository is part of the [Digital Citizenship project](https://teamdigitale.governo.it/it/projects/cittadinanza-digitale.htm).
+This project is part of the [digital citizenship initiative](https://teamdigitale.governo.it/en/projects/digital-citizenship.htm).
 
-## Development
+## NOTES
+
+This project includes @types/bluebird because it's necessary for node-soap.
+It will be removed when this dependency will be fixed into soap:
+https://github.com/vpulim/node-soap/pull/1009
+
 
 ### Release
 
@@ -18,3 +23,8 @@ The release process is based on [npm version](https://docs.npmjs.com/cli/version
 ```
 $ npm version [patch|minor|major]
 ```
+
+## How to install
+
+1. yarn install
+2. yarn build

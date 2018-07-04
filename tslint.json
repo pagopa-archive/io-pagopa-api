@@ -1,0 +1,38 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "typestrict",
+    "tslint:recommended",
+    "tslint-immutable",
+    "tslint-sonarts",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier",
+    "italia-tslint-rules"
+  ],
+  "linterOptions": {
+      "exclude": [
+          "./yaml-to-ts/*.ts"
+      ]
+  },
+  "jsRules": {},
+  "rules": {
+    "no-null-keyword": true,
+    "no-any": false,
+    "no-var-keyword": true,
+    "typedef": [
+      true,
+      "call-signature"
+    ],
+    "readonly-keyword": true,
+    "readonly-array": true,
+    "no-let": true,
+    "no-method-signature": true,
+    "no-mixed-interface": false,
+    "prettier": true,
+    "no-console": false,
+    "object-literal-sort-keys": false,
+    "max-union-size": false,
+    "no-tslint-disable-all": true
+  },
+  "rulesDirectory": []
+}
