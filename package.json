@@ -24,7 +24,7 @@
     "jest": "^23.1.0",
     "jest-xml-matcher": "^1.1.1",
     "npm-parallel": "^2.0.1",
-    "ts-jest": "^22.4.6",
+    "ts-jest": "^23.0.0",
     "typescript": "^2.9.2",
     "wsdl-to-ts": "^0.1.3"
   },
