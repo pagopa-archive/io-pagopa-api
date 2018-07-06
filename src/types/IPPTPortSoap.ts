@@ -2,10 +2,10 @@
  * Handler interface for PPTPortType SOAP Endpoint
  */
 
-import { nodoAttivaRPT_ppt } from "../../yaml-to-ts/nodoAttivaRPT_ppt";
-import { nodoAttivaRPTRisposta_ppt } from "../../yaml-to-ts/nodoAttivaRPTRisposta_ppt";
-import { nodoVerificaRPT_ppt } from "../../yaml-to-ts/nodoVerificaRPT_ppt";
-import { nodoVerificaRPTRisposta_ppt } from "../../yaml-to-ts/nodoVerificaRPTRisposta_ppt";
+import { nodoAttivaRPT_ppt } from "./yaml-to-ts/nodoAttivaRPT_ppt";
+import { nodoAttivaRPTRisposta_ppt } from "./yaml-to-ts/nodoAttivaRPTRisposta_ppt";
+import { nodoVerificaRPT_ppt } from "./yaml-to-ts/nodoVerificaRPT_ppt";
+import { nodoVerificaRPTRisposta_ppt } from "./yaml-to-ts/nodoVerificaRPTRisposta_ppt";
 
 export interface IPPTPortSoap {
   readonly nodoVerificaRPT: (

@@ -11,7 +11,7 @@
   ],
   "linterOptions": {
       "exclude": [
-          "./yaml-to-ts/*.ts"
+          "./src/types/yaml-to-ts/*"
       ]
   },
   "jsRules": {},

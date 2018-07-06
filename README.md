@@ -27,4 +27,3 @@ $ npm version [patch|minor|major]
 ## How to install
 
 1. yarn install
-2. yarn build
