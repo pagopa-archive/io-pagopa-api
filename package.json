@@ -11,7 +11,7 @@
     "lib/"
   ],
   "scripts": {
-    "build": "npm-run-all -s generate:yaml-from-wsdl generate:ts-from-yaml lint build:tsc && cp -r wsdl lib",
+    "build": "npm-run-all -s generate:yaml-from-wsdl generate:ts-from-yaml lint build:tsc && cp -r wsdl lib && cp -r src/* lib/",
     "build:tsc": "tsc",
     "clean": "rimraf lib && rm -f src/types/yaml-to-ts/*.ts && rm -f yaml-file/*.yaml",
     "generate:ts-from-yaml": "rm -f src/api/*.ts && rm -f src/types/yaml-to-ts/*.ts && gen-api-models --api-spec ./yaml-file/FespCdService.yaml --out-dir src/types/yaml-to-ts/ --ts-spec-file ./src/api/public_api_FespCdService.ts && gen-api-models --api-spec ./yaml-file/PagamentiTelematiciPspNodoservice.yaml --out-dir src/types/yaml-to-ts/ --ts-spec-file ./src/api/public_api_PagamentiTelematiciPspNodoservice.ts",
