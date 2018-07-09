@@ -3,16 +3,14 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "declaration": false,
-    "outDir": "./lib",
-    "rootDir": "./src",
-    "sourceMap": true
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true
   },
   "include": [
-    "src/**/*"
+      "src/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "src/**/__tests__/*"
+    "**/__tests__"
   ]
 }
