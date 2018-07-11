@@ -1,18 +1,13 @@
-
 {
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
-    "declaration": false,
+    "declaration": true,
+    "declarationDir": "./dist/decls",
     "outDir": "./lib",
     "rootDir": "./src",
     "sourceMap": true
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/__tests__/*"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/__tests__/*"]
 }
