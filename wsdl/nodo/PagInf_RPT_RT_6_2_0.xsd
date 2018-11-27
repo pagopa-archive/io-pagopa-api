@@ -728,7 +728,7 @@
 	<!-- Richiesta Pagamento Telematico (RPT)-->
     <xsd:complexType name="ctRichiestaPagamentoTelematico">
 		<xsd:sequence>
-			<xsd:element name="versioneOggetto" type="pay_i:stText16" minOccurs="1">
+			<xsd:element name="versioneOggetto" type="pay_i:stText16" minOccurs="1" fixed="6.2.0">
 				<xsd:annotation>
 					<xsd:documentation>Versione che identifica l’oggetto scambiato.</xsd:documentation>
 				</xsd:annotation>
