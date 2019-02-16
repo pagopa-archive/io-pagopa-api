@@ -4,7 +4,7 @@
   "description": "Client and server for interacting with pagoPA",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/teamdigitale/italia-pagopa-api",
+  "repository": "https://github.com/teamdigitale/io-pagopa-api",
   "author": "Federico Feroldi <federico@teamdigitale.governo.it>",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
