@@ -1,5 +1,5 @@
 {
-  "name": "italia-pagopa-api",
+  "name": "io-pagopa-api",
   "version": "2.1.0",
   "description": "Client and server for interacting with pagoPA",
   "main": "dist/index.js",
@@ -20,7 +20,7 @@
     "@types/soap": "^0.21.0",
     "danger": "^3.7.15",
     "danger-plugin-digitalcitizenship": "^0.3.1",
-    "italia-utils": "^3.11.1",
+    "io-utils": "^3.11.1",
     "jest": "^23.1.0",
     "jest-xml-matcher": "^1.1.1",
     "npm-parallel": "^2.0.1",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "io-ts": "^1.1.5",
-    "italia-ts-commons": "^2.4.1",
+    "io-ts-commons": "^2.4.1",
     "soap": "^0.24.0"
   },
   "jest": {
