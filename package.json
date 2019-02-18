@@ -26,7 +26,7 @@
     "npm-parallel": "^2.0.1",
     "ts-jest": "^23.0.0",
     "typescript": "^2.9.2",
-    "wsdl-to-ts": "^0.1.3"
+    "wsdl-to-ts": "^0.2.3"
   },
   "dependencies": {
     "io-ts": "^1.1.5",
