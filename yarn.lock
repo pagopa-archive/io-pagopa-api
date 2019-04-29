@@ -1539,6 +1539,10 @@ format-util@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/format-util/-/format-util-1.0.3.tgz#032dca4a116262a12c43f4c3ec8566416c5b2d95"
 
+fp-ts@1.12.0:
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-1.12.0.tgz#d333310e4ac104cdcb6bea47908e381bb09978e7"
+
 fp-ts@^1.0.0, fp-ts@^1.6.0:
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/fp-ts/-/fp-ts-1.6.2.tgz#21f3675262d35b507b6e854f68965979e125ff77"
@@ -1908,6 +1912,12 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
+io-ts@1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-1.8.5.tgz#2e102f7f518abe17b0f7e7ede0db54a4c4ddc188"
+  dependencies:
+    fp-ts "^1.0.0"
+
 io-ts@^1.1.4, io-ts@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/io-ts/-/io-ts-1.1.5.tgz#5a943eeb063eebf27517a559359fd121ba04eaaa"
@@ -2216,15 +2226,26 @@ italia-ts-commons@^2.4.1:
     validator "^10.1.0"
     winston "^3.0.0"
 
-italia-utils@^3.11.1:
-  version "3.11.1"
-  resolved "https://registry.yarnpkg.com/italia-utils/-/italia-utils-3.11.1.tgz#2148b5ab9a09128a80e4ab67f02c73324b464c08"
+italia-ts-commons@^5.0.1:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/italia-ts-commons/-/italia-ts-commons-5.0.2.tgz#47ace664d142232e2167e2d33af8cee2003ea636"
+  dependencies:
+    fp-ts "1.12.0"
+    io-ts "1.8.5"
+    json-set-map "^1.0.2"
+    validator "^10.1.0"
+
+italia-utils@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/italia-utils/-/italia-utils-4.0.0.tgz#65e0f2a993e7fac625e840dee9ecc159b91b76c3"
   dependencies:
     fs-extra "^6.0.0"
+    italia-ts-commons "^5.0.1"
     nunjucks "^3.1.2"
     prettier "^1.12.1"
     swagger-parser "^4.1.0"
     swagger-schema-official "^2.0.0-bab6bed"
+    yargs "^11.1.0"
 
 jest-changed-files@^23.2.0:
   version "23.2.0"
@@ -4767,9 +4788,9 @@ yargs-parser@^9.0.2:
   dependencies:
     camelcase "^4.1.0"
 
-yargs@^11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-11.0.0.tgz#c052931006c5eee74610e5fc0354bedfd08a201b"
+yargs@^11.0.0, yargs@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-11.1.0.tgz#90b869934ed6e871115ea2ff58b03f4724ed2d77"
   dependencies:
     cliui "^4.0.0"
     decamelize "^1.1.1"
