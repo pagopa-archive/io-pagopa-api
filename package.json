@@ -18,7 +18,7 @@
     "@types/jest": "^23.0.0",
     "@types/node": "^8.9.4",
     "@types/soap": "^0.21.0",
-    "danger": "^3.7.15",
+    "danger": "^9.2.9",
     "danger-plugin-digitalcitizenship": "^0.3.1",
     "italia-utils": "^3.11.1",
     "jest": "^23.1.0",
