@@ -2206,9 +2206,10 @@ istanbul-reports@^1.3.0:
   dependencies:
     handlebars "^4.0.3"
 
-italia-ts-commons@^2.4.1:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/italia-ts-commons/-/italia-ts-commons-2.5.0.tgz#bf49b82ec043041805776c7ee784a425ccd25e3b"
+italia-ts-commons@^2.14.1:
+  version "2.14.1"
+  resolved "https://registry.yarnpkg.com/italia-ts-commons/-/italia-ts-commons-2.14.1.tgz#4196a9c369181260c8f4eb65a3db10cd90c7f63b"
+  integrity sha512-g8QIuHp2KssfuDTKVS0DgXFv6j4s1oHfAqBX5rZ26nPAO9/87YyMQKzCs6Gb5hbTcEWR05P99zPMVaxX46lPZw==
   dependencies:
     fp-ts "^1.6.0"
     io-ts "^1.1.4"
