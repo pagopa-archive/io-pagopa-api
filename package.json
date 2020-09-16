@@ -31,7 +31,7 @@
   "dependencies": {
     "io-ts": "^1.1.5",
     "italia-ts-commons": "^2.4.1",
-    "soap": "^0.24.0"
+    "soap": "^0.33.0"
   },
   "jest": {
     "globals": {
